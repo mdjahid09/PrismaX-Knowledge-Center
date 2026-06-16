@@ -1,0 +1,6 @@
+{
+  "name": "PrismaX",
+  "description": "The Service Layer for Physical AI - Connecting robots, data, and intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
