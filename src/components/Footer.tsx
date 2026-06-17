@@ -12,6 +12,7 @@ interface FooterProps {
 
 export default function Footer({ currentLanguage, setLanguage, onNavigate }: FooterProps) {
   const t = translations[currentLanguage];
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
   const handleNavClick = (sectionId: string) => {
     onNavigate(sectionId);
@@ -58,7 +59,7 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
               </li>
               <li>
                 <button onClick={() => handleNavClick('about')} className="hover:text-brand-white transition-colors cursor-pointer text-left">
-                  {currentLanguage === 'bn' ? 'সম্পর্কে' : 'About'}
+                  {currentLanguage === 'bn' ? 'সম্পর্কে' : currentLanguage === 'hi' ? 'हमारे बारे में' : 'About'}
                 </button>
               </li>
               <li>
@@ -75,18 +76,55 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
               {t.regionLanguage}
             </h4>
             <div className="flex flex-col space-y-3">
-              <button
-                onClick={() => setLanguage(currentLanguage === 'en' ? 'bn' : 'en')}
-                className="flex items-center space-x-2.5 px-4 py-2.5 rounded-lg border border-brand-cream/10 hover:border-brand-accent/40 bg-[#161618] text-brand-cream hover:text-brand-white transition-all text-sm font-sans text-left cursor-pointer focus:outline-none"
-              >
-                <Globe className="w-4 h-4 text-brand-accent h-4" />
-                <span className="flex-1">
-                  {currentLanguage === 'en' ? 'বাংলা সংস্করণ (BN)' : 'Switch to English (EN)'}
-                </span>
-                <span className="text-[10px] font-mono text-brand-cream/40 bg-brand-black px-1.5 py-0.5 rounded">
-                  {currentLanguage === 'en' ? 'BN' : 'EN'}
-                </span>
-              </button>
+              <div className="relative">
+                <button
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="w-full flex items-center space-x-2.5 px-4 py-2.5 rounded-lg border border-brand-cream/10 hover:border-brand-accent/40 bg-[#161618] text-brand-cream hover:text-brand-white transition-all text-sm font-sans text-left cursor-pointer focus:outline-none"
+                >
+                  <Globe className="w-4 h-4 text-brand-accent" />
+                  <span className="flex-1">
+                    {currentLanguage === 'en' ? 'English (EN)' : currentLanguage === 'hi' ? 'हिन्दी (HI)' : 'বাংলা (BN)'}
+                  </span>
+                  <span className="text-[10px] font-mono text-brand-cream/40 bg-brand-black px-1.5 py-0.5 rounded">
+                    {currentLanguage.toUpperCase()}
+                  </span>
+                </button>
+
+                {dropdownOpen && (
+                  <>
+                    <div 
+                      className="fixed inset-0 z-40" 
+                      onClick={() => setDropdownOpen(false)}
+                    />
+                    <div className="absolute left-0 bottom-full mb-2 w-full rounded-xl border border-brand-cream/15 bg-brand-black/95 backdrop-blur-xl p-1.5 shadow-2xl z-50 animate-fade-in flex flex-col space-y-1">
+                      {(['en', 'hi', 'bn'] as const).map((lang) => {
+                        const isSelected = currentLanguage === lang;
+                        const labels: Record<Language, string> = {
+                          en: 'English (EN)',
+                          hi: 'हिन्दी (HI)',
+                          bn: 'বাংলা (BN)'
+                        };
+                        return (
+                          <button
+                            key={lang}
+                            onClick={() => {
+                              setLanguage(lang);
+                              setDropdownOpen(false);
+                            }}
+                            className={`w-full text-left px-3 py-2 rounded-lg text-xs font-mono tracking-wide transition-all cursor-pointer ${
+                              isSelected
+                                ? 'text-brand-black bg-brand-accent font-semibold'
+                                : 'text-brand-cream/70 hover:text-brand-white hover:bg-brand-white/5'
+                            }`}
+                          >
+                            {labels[lang]}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </>
+                )}
+              </div>
               
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

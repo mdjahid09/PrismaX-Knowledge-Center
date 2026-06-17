@@ -13,6 +13,10 @@ const getLocalizedArmDesc = (armId: string, lang: Language) => {
       if (armId === 'arm_black' || armId === 'arm_gold') return 'আপনার দক্ষতা অনুশীলন করতে সারিবদ্ধ দলে যোগ দিন। এমপ্লিফায়ার এবং ইনোভেটরদের জন্য উন্মুক্ত।';
       if (armId === 'arm_arena') return 'উচ্চ-মাত্রার সেশনের জন্য ডিজাইন করা হয়েছে। প্রথমবার ব্যবহারকারী এবং ইনোভেটরদের জন্য উন্মুক্ত।';
       return 'ভিআইপি, অংশীদার এবং বিশেষ অ্যাক্টিভেশনের জন্য সংরক্ষিত। অ্যাক্সেসের জন্য কোড প্রয়োজন এবং অনুষ্ঠানভেদে পরিবর্তিত হতে পারে।';
+    case 'hi':
+      if (armId === 'arm_black' || armId === 'arm_gold') return 'अपनी स्किल्स का अभ्यास करने के लिए कतार में शामिल हों। एम्पलीफायर्स और इनोवेटर्स के लिए खुला है।';
+      if (armId === 'arm_arena') return 'उच्च-मात्रा वाले सत्रों के लिए डिज़ाइन किया गया। पहली बार उपयोगकर्ता और इनोवेटर्स के लिए खुला है।';
+      return 'वीआईपी, भागीदारों और विशेष गतिविधियों के लिए आरक्षित। एक्सेस के लिए कोड की आवश्यकता होती है और इवेंट के अनुसार भिन्न हो सकता है।';
     default:
       if (armId === 'arm_black' || armId === 'arm_gold') return 'Join the queue to practice your skills. Open to Amplifiers and Innovators.';
       if (armId === 'arm_arena') return 'Designed for high-volume sessions. Open to first-time users and Innovators.';
@@ -24,6 +28,8 @@ const getEstablishLinkText = (lang: Language) => {
   switch (lang) {
     case 'bn':
       return 'লাইভ ডেটা স্ট্রিমিং পেতে টেলিঅপারেশন লিংক চালু করুন।';
+    case 'hi':
+      return 'लाइव डेटा स्ट्रीमिंग प्राप्त करने के लिए टेलीऑपरेशन लिंक स्थापित करें।';
     default:
       return 'Establish a telemetry link to receive telemetry logs.';
   }
@@ -32,6 +38,7 @@ const getEstablishLinkText = (lang: Language) => {
 const getLocalizedActiveStream = (lang: Language) => {
   switch (lang) {
     case 'bn': return 'সক্রিয় স্ট্রিমিং';
+    case 'hi': return 'सक्रिय स्ट्रीमिंग';
     default: return 'ACTIVE STREAM';
   }
 };
@@ -39,6 +46,7 @@ const getLocalizedActiveStream = (lang: Language) => {
 const getLocalizedEnterNodeAccessCode = (lang: Language) => {
   switch (lang) {
     case 'bn': return 'অ্যাক্সেস কোড দিন';
+    case 'hi': return 'एक्सेस कोड दर्ज करें';
     default: return 'Enter Node Access Code';
   }
 };
@@ -46,6 +54,7 @@ const getLocalizedEnterNodeAccessCode = (lang: Language) => {
 const getLocalizedPrivateArmReserved = (lang: Language) => {
   switch (lang) {
     case 'bn': return 'প্রাইভেট আর্মটি ভিআইপি ও ডেভেলপারদের জন্য সংরক্ষিত। এটি আনলক করতে "2026" অথবা "PRISMAX" ব্যবহার করুন।';
+    case 'hi': return 'प्राइवेट आर्म वीआईपी परीक्षकों, कॉर्पोरेट भागीदारों और डेवलपर्स के लिए आरक्षित है। अनलॉक करने के लिए कोड "2026" या "PRISMAX" दर्ज करें।';
     default: return 'Private Arm is reserved for VIP testers, corporate partners, and developers. Input code "2026" or "PRISMAX" to unlock.';
   }
 };
@@ -53,6 +62,7 @@ const getLocalizedPrivateArmReserved = (lang: Language) => {
 const getLocalizedValidateNodeAccess = (lang: Language) => {
   switch (lang) {
     case 'bn': return 'সংযোগ কোড নিশ্চিত করুন';
+    case 'hi': return 'कनेक्शन कोड सत्यापित करें';
     default: return 'VALIDATE NODE ACCESS';
   }
 };
@@ -214,7 +224,7 @@ export default function RobotControlCenter({ currentLanguage }: ControlCenterPro
                     {arm.queueLength > 0 && (
                       <div className="mt-3 inline-flex items-center space-x-1 text-[10px] font-mono text-brand-accent">
                         <span>•</span>
-                        <span>{currentLanguage === 'bn' ? `লাইনে আছে: ${arm.queueLength}` : `QUEUE: ${arm.queueLength} IN LINE`}</span>
+                        <span>{currentLanguage === 'bn' ? `লাইনে আছে: ${arm.queueLength}` : currentLanguage === 'hi' ? `कतार में: ${arm.queueLength}` : `QUEUE: ${arm.queueLength} IN LINE`}</span>
                       </div>
                     )}
 

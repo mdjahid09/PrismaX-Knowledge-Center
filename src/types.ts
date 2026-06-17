@@ -1,4 +1,4 @@
-export type Language = 'en' | 'bn';
+export type Language = 'en' | 'bn' | 'hi';
 
 export interface Translation {
   // Navigation & General
@@ -112,6 +112,8 @@ export interface Robot {
   type: string;
   bengaliDescription: string;
   bengaliTags: string[];
+  hindiDescription: string;
+  hindiTags: string[];
 }
 
 export interface RoboticArm {
@@ -119,6 +121,7 @@ export interface RoboticArm {
   name: string;
   description: string;
   bengaliDescription: string;
+  hindiDescription: string;
   status: 'online' | 'active' | 'reserved';
   queueLength: number;
   bgHex: string;
@@ -129,10 +132,14 @@ export interface DocArticle {
   slug: string;
   category: string;
   bengaliCategory: string;
+  hindiCategory: string;
   title: string;
   bengaliTitle: string;
+  hindiTitle: string;
   summary: string;
   bengaliSummary: string;
+  hindiSummary: string;
   content: string[];
   bengaliContent: string[];
+  hindiContent: string[];
 }

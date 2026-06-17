@@ -15,17 +15,21 @@ interface HeaderProps {
 
 export default function Header({ currentLanguage, setLanguage, activeSection, onNavigate, theme, setTheme }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   
   const t = translations[currentLanguage];
 
   const languages: { code: Language; name: string }[] = [
     { code: 'en', name: 'English' },
+    { code: 'hi', name: 'हिन्दी' },
     { code: 'bn', name: 'বাংলা' }
   ];
 
   const getAboutLabel = (lang: Language): string => {
     switch (lang) {
       case 'bn': return 'সম্পর্কে';
+      case 'hi': return 'हमारे बारे में';
       default: return 'About';
     }
   };
@@ -33,7 +37,7 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
   const menuItems = [
     { id: 'home', label: t.navHome },
     { id: 'about', label: getAboutLabel(currentLanguage) },
-    { id: 'teleporting', label: t.navSimulation }
+    { id: 'teleoperating', label: t.navSimulation }
   ];
 
   const handleNavClick = (sectionId: string) => {
@@ -50,8 +54,11 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
-          <div className="flex-shrink-0 cursor-pointer" onClick={() => handleNavClick('home')}>
+          <div className="flex-shrink-0 cursor-pointer flex items-center space-x-1.5" onClick={() => handleNavClick('home')}>
             <Logo size="sm" theme={theme} />
+            <span className="font-sans text-xs sm:text-sm md:text-base font-semibold tracking-wider text-brand-cream hover:text-brand-white transition-colors duration-300 whitespace-nowrap self-center pt-0.5">
+              Knowledge Center
+            </span>
           </div>
 
           {/* Desktop Navigation */}
@@ -104,34 +111,101 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
               </button>
             </div>
             
-            {/* Language Selector (Instant Toggle - Desktop) */}
-            <button
-              onClick={() => setLanguage(currentLanguage === 'en' ? 'bn' : 'en')}
-              id="language-switch-desktop"
-              className="flex items-center space-x-1.5 p-1 pr-3 rounded-full bg-brand-black/40 border border-brand-cream/10 hover:border-brand-accent/25 transition-all duration-300 text-xs font-mono font-medium tracking-wide cursor-pointer focus:outline-none"
-              title={currentLanguage === 'en' ? 'Switch to Bengali' : 'Switch to English'}
-            >
-              <div className="p-1 rounded-full bg-brand-accent text-brand-black shadow flex items-center justify-center">
-                <Globe className="w-3.5 h-3.5" />
-              </div>
-              <span className="text-brand-cream font-mono">{currentLanguage === 'en' ? 'English' : 'বাংলা'}</span>
-            </button>
+            {/* Language Selector (Dropdown - Desktop) */}
+            <div className="relative">
+              <button
+                onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
+                id="language-switch-desktop"
+                className="flex items-center space-x-1.5 p-1 pr-3 rounded-full bg-brand-black/40 border border-brand-cream/10 hover:border-brand-accent/25 transition-all duration-300 text-xs font-mono font-medium tracking-wide cursor-pointer focus:outline-none"
+              >
+                <div className="p-1 rounded-full bg-brand-accent text-brand-black shadow flex items-center justify-center">
+                  <Globe className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-brand-cream font-mono">
+                  {currentLanguage === 'en' ? 'English' : currentLanguage === 'hi' ? 'हिन्दी' : 'বাংলা'}
+                </span>
+              </button>
+
+              {desktopDropdownOpen && (
+                <>
+                  <div 
+                    className="fixed inset-0 z-40" 
+                    onClick={() => setDesktopDropdownOpen(false)}
+                  />
+                  <div className="absolute right-0 mt-2 w-36 rounded-xl border border-brand-cream/15 bg-brand-black/95 backdrop-blur-xl p-1.5 shadow-2xl z-50 animate-fade-in flex flex-col space-y-1">
+                    {languages.map((lang) => {
+                      const isSelected = currentLanguage === lang.code;
+                      return (
+                        <button
+                          key={lang.code}
+                          onClick={() => {
+                            setLanguage(lang.code);
+                            setDesktopDropdownOpen(false);
+                          }}
+                          id={`lang-select-${lang.code}`}
+                          className={`w-full text-left px-3 py-2 rounded-lg text-xs font-mono tracking-wide transition-all cursor-pointer ${
+                            isSelected
+                              ? 'text-brand-black bg-brand-accent font-semibold'
+                              : 'text-brand-cream/70 hover:text-brand-white hover:bg-brand-white/5'
+                          }`}
+                        >
+                          {lang.name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button & Language selector */}
           <div className="flex md:hidden items-center space-x-2">
-            {/* Language Selector (Instant Toggle - Mobile) */}
-            <button
-              onClick={() => setLanguage(currentLanguage === 'en' ? 'bn' : 'en')}
-              id="language-switch-mobile"
-              className="flex items-center space-x-1.5 p-1 pr-2.5 rounded-full bg-brand-black/40 border border-brand-cream/10 text-xs font-mono tracking-wide focus:outline-none"
-              title={currentLanguage === 'en' ? 'Switch to Bengali' : 'Switch to English'}
-            >
-              <div className="p-1 rounded-full bg-brand-accent text-brand-black shadow flex items-center justify-center">
-                <Globe className="w-3 h-3" />
-              </div>
-              <span className="text-brand-cream text-[11px] font-mono">{currentLanguage === 'en' ? 'EN' : 'বাংলা'}</span>
-            </button>
+            {/* Language Selector (Dropdown - Mobile) */}
+            <div className="relative">
+              <button
+                onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+                id="language-switch-mobile"
+                className="flex items-center space-x-1.5 p-1 pr-2.5 rounded-full bg-brand-black/40 border border-brand-cream/10 text-xs font-mono tracking-wide focus:outline-none"
+              >
+                <div className="p-1 rounded-full bg-brand-accent text-brand-black shadow flex items-center justify-center">
+                  <Globe className="w-3 h-3" />
+                </div>
+                <span className="text-brand-cream text-[11px] font-mono">
+                  {currentLanguage === 'en' ? 'EN' : currentLanguage === 'hi' ? 'HI' : 'বাংলা'}
+                </span>
+              </button>
+
+              {mobileDropdownOpen && (
+                <>
+                  <div 
+                    className="fixed inset-0 z-40" 
+                    onClick={() => setMobileDropdownOpen(false)}
+                  />
+                  <div className="absolute right-0 mt-2 w-28 rounded-xl border border-brand-cream/15 bg-brand-black/95 backdrop-blur-xl p-1.5 shadow-2xl z-50 animate-fade-in flex flex-col space-y-1">
+                    {languages.map((lang) => {
+                      const isSelected = currentLanguage === lang.code;
+                      return (
+                        <button
+                          key={lang.code}
+                          onClick={() => {
+                            setLanguage(lang.code);
+                            setMobileDropdownOpen(false);
+                          }}
+                          className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-mono tracking-wide transition-all cursor-pointer ${
+                            isSelected
+                              ? 'text-brand-black bg-brand-accent font-semibold'
+                              : 'text-brand-cream/70 hover:text-brand-white hover:bg-brand-white/5'
+                          }`}
+                        >
+                          {lang.name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
+            </div>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

@@ -4,7 +4,7 @@ export const translations: Record<Language, Translation> = {
   en: {
     navHome: "Home",
     navFleet: "Fleet",
-    navSimulation: "Teleporting",
+    navSimulation: "Teleoperating",
     navDocs: "Documentation",
     navTelemetry: "Data Labs",
     langName: "English",
@@ -30,7 +30,7 @@ export const translations: Record<Language, Translation> = {
       },
       teleoperation: {
         title: "Teleoperation",
-        desc: "Explore low-latency robot operation, remote control systems and human-in-the-loop intelligence."
+        desc: "Explore low-latency robot operation, remote control systems and haptic human-in-the-loop intelligence."
       },
       dataLayer: {
         title: "Data Layer",
@@ -115,7 +115,7 @@ export const translations: Record<Language, Translation> = {
   bn: {
     navHome: "হোম",
     navFleet: "রোবট বহর",
-    navSimulation: "টেলিপোর্টিং",
+    navSimulation: "টেলিঅপারেটিং",
     navDocs: "ডকুমেন্টেশন",
     navTelemetry: "ডাটা ল্যাবস",
     langName: "বাংলা",
@@ -133,11 +133,11 @@ export const translations: Record<Language, Translation> = {
     topics: {
       whatIsPrismax: {
         title: "প্রিজম্যাক্স কি",
-        desc: "প্রিজম্যাক্স, এর মিশন, প্রযুক্তি এবং ফিজিক্যাল এআই-এর ভবিষ্যতে এর ভূমিকা সম্পর্কে জানুন।"
+        desc: "প্রিজম্যাক্স, এর মিশন, প্রযুক্তি এবং ফিজিক্যাল এআই এর ভবিষৎ সম্পর্কে জানুন।"
       },
       physicalAI: {
         title: "ফিজিক্যাল এআই",
-        desc: "বুদ্ধিমত্তা কীভাবে সফ্টওয়্যারের বাইরে বাস্তব জগতের মেশিন এবং রোবোটিক্সে স্থানান্তরিত হয় তা বুঝুন।"
+        desc: "বুদ্ধিমত্তা কীভাবে শুধুমাত্র সফ্টওয়্যার এর বাইরে বাস্তব জগতের মেশিন এবং রোবোটিক্সে স্থানান্তরিত হয় তা বুঝুন।"
       },
       teleoperation: {
         title: "টেলিঅপারেশন",
@@ -149,10 +149,10 @@ export const translations: Record<Language, Translation> = {
       },
       intelligenceLayer: {
         title: "ইন্টেলিজেন্স লেয়ার",
-        desc: "মডেল, রিজনিং সিস্টেম এবং machine ইন্টেলিজেন্স কীভাবে ফিজিক্যাল এআই সিস্টেমকে চালিত করে তা আবিষ্কার করুন।"
+        desc: "মডেল, রিজনিং সিস্টেম এবং মেশিন বুদ্ধিমত্তা কীভাবে ফিজিক্যাল এআই সিস্টেমকে চালিত করে তা আবিষ্কার করুন।"
       },
       systemArchitecture: {
-        title: "সিস্টেম আর্কিটেкচার",
+        title: "সিস্টেম আর্কিটেকচার",
         desc: "রোবট, অপারেটর, ডেটা এবং বুদ্ধিমত্তা সহ সম্পূর্ণ প্রিজম্যাক্স ইকোসিস্টেম দেখুন।"
       }
     },
@@ -174,7 +174,7 @@ export const translations: Record<Language, Translation> = {
     ctrlConnect: "টেলিঅপারেশন লিংক চালু করুন",
     ctrlDisconnect: "টেলিঅপারেশন লিংক বিচ্ছিন্ন করুন",
     ctrlActive: "সক্রিয় স্ট্রিমিং",
-    ctrlReserved: "সংরक्षित",
+    ctrlReserved: "সংরক্ষিত",
     ctrlQueue: "অপারেটর লাইনের দৈর্ঘ্য",
     ctrlSimulateAction: "কাজের স্ট্রোক সম্পন্ন করুন",
 
@@ -210,7 +210,7 @@ export const translations: Record<Language, Translation> = {
     enterNodeCode: "অ্যাক্সেস কোড দিন",
     enterNodeCodeDesc: "সরাসরি কন্ট্রোল রুমে প্রবেশ করতে এবং রোবোট লাইভ সংযোগ করতে সঠিক পিন ব্যবহার করুন।",
     validateNodeAccess: "সংযোগ কোড নিশ্চিত করুন",
-    cooperativeSub: "কোঅপারেティブ সাবস্ক্রিপশন",
+    cooperativeSub: "কোঅপারেটিভ সাবস্ক্রিপশন",
     membershipNetwork: "অ্যামপ্লিফায়ার মেম্বারশিপ নেটওয়ার্ক",
     linkActivated: "অ্যামপ্লিফায়ার লিংক সক্রিয় করা হয়েছে",
     memberLabel: "অ্যামপ্লিফায়ার মেম্বার",
@@ -222,6 +222,117 @@ export const translations: Record<Language, Translation> = {
     scrollToTop: "উপরে ফিরে যান",
     systemSpecs: "সিস্টেম স্পেসিফিকেশন",
     readFramework: "ফ্রেমওয়ার্ক পড়ুন"
+  },
+  hi: {
+    navHome: "होम",
+    navFleet: "रोबोट बेड़ा",
+    navSimulation: "टैलीऑपरेटिंग",
+    navDocs: "दस्तावेज़",
+    navTelemetry: "डेटा लैब्स",
+    langName: "हिन्दी",
+    byLine: "PRISMAX • फिजिकल एआई इंजन",
+    
+    heroTitle: "फिजिकल एआई के लिए सर्विस लेयर",
+    heroSubtitle: "रोबोट, डेटा और इंटेलिजेंस को सहजता से जोड़ना।",
+    heroDesc: "PrismaX डिजिटल मॉडल और वास्तविक दुनिया की भौतिक मशीनों के बीच की खाई को पाटने का काम करता है। हमारा नेटवर्क अगली पीढ़ी के ह्यूमनॉइड और विशिष्ट रोबोट बेड़े के लिए कम-विलंबता टेलीऑपरेशन, निरंतर सीखने के लूप और क्रॉस-हार्डवेयर फिजिकल इंटेलिजेंस को सक्षम बनाता है।",
+    btnLearnMore: "और जानें",
+    btnExplore: "बेड़े का अन्वेषण करें",
+    btnOperate: "वास्तविक रोबोट संचालित करें",
+    
+    topicTitle: "सिस्टम आर्किटेक्चर",
+    topicSubtitle: "PrismaX फिजिकल नेटवर्क के मुख्य आयामों का अन्वेषण करें।",
+    topics: {
+      whatIsPrismax: {
+        title: "PrismaX क्या है",
+        desc: "PrismaX, उसके मिशन, तकनीक और फिजिकल एआई के भविष्य में उसकी भूमिका के बारे में जानें।"
+      },
+      physicalAI: {
+        title: "फिजिकल एआई",
+        desc: "समझें कि कैसे इंटेलिजेंस सॉफ्टवेयर से आगे बढ़कर वास्तविक दुनिया की मशीनों और रोबोटिक्स में स्थानांतरित होता है।"
+      },
+      teleoperation: {
+        title: "टेलीऑपरेशन",
+        desc: "कम-विलंबता रोबोट संचालन, रिमोट नियंत्रण प्रणालियों और ह्यूमन-इन-द-लूप इंटेलिजेंस का अन्वेषण करें।"
+      },
+      dataLayer: {
+        title: "डेटा लेयर",
+        desc: "जानें कि कैसे रोबोटिक्स डेटा को एकत्र, संसाधित और प्रशिक्षण इंटेलिजेंस में बदला जाता है।"
+      },
+      intelligenceLayer: {
+        title: "इंटेलिजेंस लेयर",
+        desc: "खोजें कि कैसे मॉडल, रीजनिंग सिस्टम और मशीन इंटेलिजेंस फिजिकल एआई सिस्टम को संचालित करते हैं।"
+      },
+      systemArchitecture: {
+        title: "सिस्टम आर्किटेक्चर",
+        desc: "रोबोट, ऑपरेटर, डेटा और इंटेलिजेंस सहित संपूर्ण PrismaX इकोसिस्टम देखें।"
+      }
+    },
+    
+    fleetTitle: "बेड़े की तैनाती",
+    fleetSubtitle: "स्वागत है! आपकी सहायता के लिए चुने गए हमारे रोबोट बेड़े से मिलें।",
+    fleetDesc: "PrismaX अग्रणी रोबोटिक हार्डवेयर के लिए एकीकृत निम्न-स्तरीय API कनेक्शन स्थिति प्रदान करता है। ये एजेंट सक्रिय रूप से कार्यस्थल के कार्यों को निष्पादित करते हैं और ट्रैजेक्टरी डेटा को स्वतंत्र रूप से हमारे वैश्विक मर्चेंट या मॉडल में सुरक्षित रूप से भेजते हैं।",
+    taglineFleet: "संगत मशीन प्रणालियां",
+
+    ctrlTitle: "रोबोट नियंत्रण केंद्र",
+    ctrlSubtitle: "PrismaX नेटवर्क पर सक्रिय फिजिकल हार्डवेयर के साथ कम-विलंबता द्विपक्षीय टेलीऑपरेशन संचालित करें।",
+    ctrlStatus: "स्थिति",
+    ctrlAngleX: "संयुक्त कोण X (आधार)",
+    ctrlAngleY: "संयुक्त कोण Y (कोहनी)",
+    ctrlGrip: "ग्रिपर नियंत्रण",
+    ctrlLatency: "नेटवर्क विलंबता",
+    ctrlSignal: "सिग्नल की शक्ति",
+    ctrlBattery: "सिस्टम तापमान",
+    ctrlConnect: "टेलीऑपरेशन लिंक प्रारंभ करें",
+    ctrlDisconnect: "लिंक डिस्कनेक्ट करें",
+    ctrlActive: "सक्रिय स्ट्रीमिंग",
+    ctrlReserved: "आरक्षित",
+    ctrlQueue: "ऑपरेटर कतार",
+    ctrlSimulateAction: "कार्य स्ट्रोक निष्पादित करें",
+
+    membershipTitle: "एम्पलीफायर समुदाय में शामिल हों",
+    membershipSubtitle: "रोबोटिक्स इंटेलिजेंस को आगे बढ़ाने और तेजी से अपनाने को बढ़ावा देने के लिए हमारे एम्पलीफायर समुदाय में शामिल हों।",
+    membershipBenefit1: "प्रीमियम रोबोट बेड़े तक निरंतर रिमोट एक्सेस और सिमुलेशन",
+    membershipBenefit2: "संवर्धित $PRISMA टोकन संचय क्षमता (3 गुना अधिक गति)",
+    paymentMethod: "भुगतान मुद्रा का चयन करें",
+    paymentMethodDesc: "कृपया भुगतान विधि का चयन करें। यह एक बार का भुगतान है।",
+    membershipBtn: "अभी एम्पलीफायर सदस्य बनें",
+    membershipSuccess: "एम्पलीफायर सदस्य के रूप में शामिल होने के लिए धन्यवाद! आपकी एक्सेस क्रेडेंशियल आपके वर्कस्पेस कुंजियों पर भेज दी गई हैं।",
+
+    docsTitle: "ज्ञान भंडार (दस्तावेज़)",
+    docsSubtitle: "डेवलपर्स, मशीन इंटेलिजेंस शोधकर्ताओं और हार्डवेयर होस्ट के लिए व्यापक तकनीकी दिशानिर्देश।",
+    docsSearchPlaceholder: "प्रोटोकॉल, URDF स्कीमा, API इंटीग्रेशन खोजें...",
+    docsBack: "होम पर वापस जाएं",
+    teleopActiveTag: "अब सक्रिय टेलीऑपरेशन तैनाती में",
+    btnViewSpecs: "तकनीकी विवरण",
+    btnLaunchCtrl: "कंट्रोल सेंटर लॉन्च करें",
+    knowledgeHubTitle: "PRISMAX नॉलेज हब",
+    readArticle: "लेख पढ़ें",
+    contentSoon: "सामग्री जल्द ही आ रही है।",
+    overview: "सारांश",
+    coreSpecConcepts: "मुख्य अवधारणाएं",
+    visualExpl: "दृश्य स्पष्टीकरण और योजनाबद्ध",
+    relatedEcosystem: "अन्य संबंधित विषय",
+    done: "संपन्न",
+    socialTitle: "PrismaX सोशल",
+    sweepingWorkspace: "वर्कस्पेस साफ किया जा रहा है...",
+    labControls: "प्रयोगशाला नियंत्रण",
+    selectNode: "हार्डवेयर नोड चुनें",
+    queueInLine: "कतार में: {count}",
+    enterNodeCode: "एक्सेस कोड दर्ज करें",
+    enterNodeCodeDesc: "सक्रिय रूप से नियंत्रण कक्ष में प्रवेश करने और सीधे रोबोट लाइव लिंक को जोड़ने के लिए सही पिन का उपयोग करें।",
+    validateNodeAccess: "कनेक्शन कोड सत्यापित करें",
+    cooperativeSub: "सहकारी सदस्यता",
+    membershipNetwork: "एम्पलीफायर मेंबरशिप नेटवर्क",
+    linkActivated: "एम्पलीफायर लिंक सक्रिय किया गया",
+    memberLabel: "एम्पलीफायर सदस्य",
+    cooperativeLevel: "सहकारी स्तर 1",
+    totalInvestment: "कुल बिल",
+    oneTimePayment: "एक बार का भुगतान",
+    coreSubsystem: "मुख्य सबसिस्टम",
+    regionLanguage: "क्षेत्र और भाषा",
+    scrollToTop: "ऊपर स्क्रॉल करें",
+    systemSpecs: "सिस्टम विशिष्टताएं",
+    readFramework: "फ्रेमवर्क पढ़ें"
   }
 };
 
@@ -234,7 +345,9 @@ export const robotsData: Robot[] = [
     type: "Bipedal Humanoid",
     description: "Highly nimble, ultra-lightweight humanoid designed for social engagement and agile movement tasks. Operates on a 23-DOF high-precision motor framework.",
     bengaliDescription: "সামাজিক যোগাযোগ এবং দ্রুতগামী চলাচলের জন্য অত্যন্ত চটপটে ও হালকা ওজনের হিউম্যানয়েড রোবট। এটি ২৩ ডিগ্রি-অফ-ফ্রিডম মোটর ফ্রেমওয়ার্কে কাজ করে।",
-    bengaliTags: ["বিজ্ঞাপন", "ট্যুর গাইড", "কনফারেন্স"]
+    bengaliTags: ["বিজ্ঞাপন", "ট্যুর গাইড", "কনফারেন্স"],
+    hindiDescription: "सामाजिक सहभागिता और चुस्त गतिशीलता के लिए डिज़ाइन किया गया अत्यधिक फुर्तीला, बेहद हल्का ह्यूमनॉइड रोबोट। यह 23-DOF उच्च-सटीक मोटर फ्रेमवर्क पर काम करता है।",
+    hindiTags: ["विज्ञापन", "टूर गाइड", "सम्मेलन"]
   },
   {
     id: "walker",
@@ -243,8 +356,10 @@ export const robotsData: Robot[] = [
     tags: ["Foodservice", "Light Warehousing", "Tour Guide", "Advertising", "Locomotion Research"],
     type: "Full-Sized Humanoid",
     description: "A full-scale service humanoid integrated with tactile payload handling, stable uneven locomotion, and intelligent autonomous navigation.",
-    bengaliDescription: "ভঙ্গুর বা অসম স্থানে সুস্থিত চলাচলে সক্ষম পূর্ণ-আকারের পেশাদার সার্ভিস রোবট, যা স্পর্শকাতর মালামাল পরিবহন ও স্বায়ত্তশাসित নেভিগেশনের জন্য উপযুক্ত।",
-    bengaliTags: ["খাদ্য পরিবেশন", "হালকা গুদামজাতকরণ", "ভ্রমণ সহায়িকা", "বিজ্ঞাপন", "চলাচল গবেষণা"]
+    bengaliDescription: "ভঙ্গুর বা অসম স্থানে সুস্থিত চলাচলে সক্ষম পূর্ণ-আকারের পেশাদার সার্ভিস রোবট, যা স্পর্শকাতর মালামাল পরিবহন ও স্বায়ত্তশাসিত নেভিগেশনের জন্য উপযুক্ত।",
+    bengaliTags: ["খাদ্য পরিবেশন", "হালকা গুদামজাতকরণ", "ভ্রমণ সহায়িকা", "বিজ্ঞাপন", "চলাচল গবেষণা"],
+    hindiDescription: "एक पूर्ण-आकार का सेवा ह्यूमनॉइड रोबोट जो स्पर्श संवेदनशील लोड हैंडलिंग, स्थिर असमान गतिशीलता और बुद्धिमान स्वायत्त नेविगेशन के साथ एकीकृत है।",
+    hindiTags: ["खाद्य सेवा", "हल्का भंडारण", "टूर गाइड", "विज्ञापन", "गतिशीलता अनुसंधान"]
   },
   {
     id: "reachy2",
@@ -254,7 +369,9 @@ export const robotsData: Robot[] = [
     type: "Bi-Manual Mobile Upper-Body",
     description: "State-of-the-art dual-arm platform fitted with high-fidelity camera feeds, ideal for learning-from-demonstration and high-detail assembly work.",
     bengaliDescription: "উચ્চ-নির্ভুল ক্যামেরা ফিড সমৃদ্ধ দুটি হাত সংবলিত বিশেষ প্ল্যাটফর্ম, যা হাতে কলমে প্রদর্শন-প্রশিক্ষণ ও খুব সূক্ষ্ম সংযোজনমূলক কাজের জন্য চরম উপযোগী।",
-    bengaliTags: ["অপারেশনাল গবেষণা", "হালকা ম্যানুয়াল কাজ"]
+    bengaliTags: ["অপারেশনাল গবেষণা", "হালকা ম্যানুয়াল কাজ"],
+    hindiDescription: "उच्च-सटीक कैमरा फीड से लैस अत्याधुनिक डुअल-आर्म प्लेटफॉर्म, जो व्यावहारिक प्रदर्शन-प्रशिक्षण और अत्यधिक सटीक असेंबली कार्यों के लिए आदर्श है।",
+    hindiTags: ["मैनिप्यूलेशन अनुसंधान", "हल्के मैन्युअल कार्य"]
   },
   {
     id: "alex",
@@ -264,7 +381,9 @@ export const robotsData: Robot[] = [
     type: "Torso-Mounted Industrial Humanoid",
     description: "Industrial strength upper torso humanoid with high peak torque actuators, engineered to perform complex, rugged force-sensitive operations.",
     bengaliDescription: "উচ্চ টর্ক সম্পন্ন ভারী শিল্প গ্রেডের আংশিক হিউম্যানয়েড রোবট, যা কঠোর ও জটিল বল-সংবেদনশীল কারখানার কাজ পরিচালনার জন্য বিশেষভাবে নকশাকৃত।",
-    bengaliTags: ["ম্যানিপুলেশন গবেষণা", "রক্ষণাবেক্ষণ", "উত্পাদন"]
+    bengaliTags: ["ম্যানিপুলেশন গবেষণা", "রক্ষণাবেক্ষণ", "উত্পাদন"],
+    hindiDescription: "उच्च पीक टॉर्क एक्चुएटर्स के साथ औद्योगिक मजबूती वाला ऊपरी धड़ ह्यूमनॉइड, जिसे जटिल, कठिन बल-संवेदनशील कार्यों को पूरा करने के लिए तैयार किया गया है।",
+    hindiTags: ["मैनिप्यूलेशन अनुसंधान", "रखरखाव", "विनिर्माण"]
   },
   {
     id: "mirokai",
@@ -274,7 +393,9 @@ export const robotsData: Robot[] = [
     type: "Sphere-Based Mobile Humanoid",
     description: "Stylized, exceptionally expressive companion robot with highly innovative rolling sphere balance kinematics, designed for frictionless clinical or corporate assistance.",
     bengaliDescription: "অত্যন্ত অভিব্যক্তিময় এবং অনন্য রোলিং স্ফিয়ার (গোলকাকার চাকা) ব্যালেন্সের চটপটে রোবট, যা চিকিৎসালয় বা কর্পোরেট সহায়তার জন্য নির্বিঘ্ন সেবা দেয়।",
-    bengaliTags: ["সাহচর্য", "কনফারেন্স", "আতিথেয়তা"]
+    bengaliTags: ["সাহচর্য", "কনফারেন্স", "আতিথেয়তা"],
+    hindiDescription: "अत्यधिक प्रभावशाली और अद्वितीय रोलिंग स्फेयर (गोलाकार पहिया) संतुलन गतिकी वाला साथी रोबोट, जिसे अस्पतालों या कॉर्पोरेट सहायता के लिए सहज सेवा प्रदान करने के लिए डिज़ाइन किया गया है।",
+    hindiTags: ["साथी", "सम्मेलन", "आतिथ्य"]
   },
   {
     id: "go2w",
@@ -284,7 +405,9 @@ export const robotsData: Robot[] = [
     type: "Quadruped-Wheeled Robot",
     description: "All-terrain hybrid wheeled-legged robotic canine fitted with 3D LiDAR mapping, showcasing superb resilience across high slopes and rough industrial corridors.",
     bengaliDescription: "চাকা সমৃদ্ধ চতুষ্পদ হাইব্রিড ডগ রোবট যা ত্রিমাত্রিক লিডার ম্যাপিং সংবলিত। এটি কারখানার অসমান বা ঢালু করিডোরে দারুণ সক্ষমতার পরিচয় দেয়।",
-    bengaliTags: ["চলাচল গবেষণা", "বিজ্ঞাপন", "পরিদর্শন"]
+    bengaliTags: ["চলাচল গবেষণা", "বিজ্ঞাপন", "পরিদর্শন"],
+    hindiDescription: "सभी इलाकों में काम करने वाला पहिएदार और पैरों वाला हाइब्रिड डॉग रोबोट जो 3D LiDAR मैपिंग से लैस है। यह कारखानों के ढलानों और उबड़-खाबड़ रास्तों पर उत्कृष्ट प्रदर्शन करता है।",
+    hindiTags: ["गतिशीलता अनुसंधान", "विज्ञापन", "निरीक्षण"]
   }
 ];
 
@@ -294,6 +417,7 @@ export const roboticArms: RoboticArm[] = [
     name: "Training Arm Black",
     description: "Join the queue to practice your skills. Open to Amplifiers and Innovators.",
     bengaliDescription: "আপনার দক্ষতা অনুশীলন করতে সারিবদ্ধ দলে যোগ দিন। এমপ্লিফায়ার এবং ইনোভেটরদের জন্য উন্মুক্ত।",
+    hindiDescription: "अपनी स्किल्स का अभ्यास करने के लिए कतार में शामिल हों। एम्पलीफायर्स और इनोवेटर्स के लिए खुला है।",
     status: "online",
     queueLength: 4,
     bgHex: "#18181A"
@@ -303,6 +427,7 @@ export const roboticArms: RoboticArm[] = [
     name: "Training Arm Gold",
     description: "Join the queue to practice your skills. Open to Amplifiers and Innovators.",
     bengaliDescription: "আপনার দক্ষতা অনুশীলন করতে সারিবদ্ধ দলে যোগ দিন। এমপ্লিফায়ার এবং ইনোভেটরদের জন্য উন্মুক্ত।",
+    hindiDescription: "अपनी स्किल्स का अभ्यास करने के लिए कतार में शामिल हों। एम्पलीफायर्स और इनोवेटर्स के लिए खुला है।",
     status: "active",
     queueLength: 0,
     bgHex: "#DFD8D0"
@@ -312,6 +437,7 @@ export const roboticArms: RoboticArm[] = [
     name: "Arena Arm",
     description: "Designed for high-volume sessions. Open to first-time users and Innovators.",
     bengaliDescription: "উচ্চ-মাত্রার সেশনের জন্য ডিজাইন করা হয়েছে। প্রথমবার ব্যবহারকারী এবং ইনোভেটরদের জন্য উন্মুক্ত।",
+    hindiDescription: "उच्च-मात्रा वाले सत्रों के लिए डिज़ाइन किया गया। पहली बार उपयोगकर्ता और इनोवेटर्स के लिए खुला है।",
     status: "online",
     queueLength: 12,
     bgHex: "#5E564D"
@@ -321,6 +447,7 @@ export const roboticArms: RoboticArm[] = [
     name: "Private Arm",
     description: "Reserved for VIPs, partners, and special activations. Access requires a code and may vary by event.",
     bengaliDescription: "ভিআইপি, অংশীদার এবং বিশেষ অ্যাক্টিভেশনের জন্য সংরক্ষিত। অ্যাক্সেসের জন্য কোড প্রয়োজন এবং অনুষ্ঠানভেদে পরিবর্তিত হতে পারে।",
+    hindiDescription: "वीआईपी, भागीदारों और विशेष गतिविधियों के लिए आरक्षित। एक्सेस के लिए कोड की आवश्यकता होती है और इवेंट के अनुसार भिन्न हो सकता है।",
     status: "reserved",
     queueLength: 0,
     bgHex: "#332B25",
@@ -333,10 +460,13 @@ export const documentationArticles: DocArticle[] = [
     slug: "getting-started",
     category: "Introduction",
     bengaliCategory: "উপক্রমণিকা",
+    hindiCategory: "परिचय",
     title: "PrismaX Overview & Quick Start",
     bengaliTitle: "প্রিজম্যাক্স ওভারভিউ ও দ্রুত শুরু",
+    hindiTitle: "PrismaX अवलोकन और त्वरित शुरुआत",
     summary: "An introduction to the PrismaX decentralized physical connection network and API endpoints.",
     bengaliSummary: "প্রিজম্যাক্স বিকেন্দ্রীভূত ফিজিক্যাল কানেকশন নেটওয়ার্ক ও এপিআই এর সাথে প্রথম পরিচিতি।",
+    hindiSummary: "PrismaX विकेंद्रीकृत भौतिक कनेक्शन नेटवर्क और API एंडपॉइंट्स का एक परिचय।",
     content: [
       "PrismaX serves as an abstraction firmware layer spanning cloud model instances and real machine controllers. By standardizing physical telemetry records, we resolve mechanical variability into predictable digital twins.",
       "The fast-track integration operates via standard URDF configurations combined with our localized client agent. Running the local server binary connects your machine joints directly.",
@@ -346,39 +476,57 @@ export const documentationArticles: DocArticle[] = [
     bengaliContent: [
       "প্রিজম্যাক্স মূলত ক্লাউড মডেল এবং রোবটের মূল হার্ডওয়্যার মাদারবোর্ডের মধ্যে সংযোগকারী সাব-লেয়ার হিসেবে কাজ করে। জটিল নড়াচড়ার তথ্য বা টেলিমেট্রিকে সুনির্দিষ্ট ও প্রমিত করার মাধ্যমে আমরা প্রতিটি রোবটকে সহজে নিয়ন্ত্রণযোগ্য ডিজিটাল টুইনে রূপান্তর করি।",
       "আমাদের দেওয়া লোকাল ক্লায়েন্ট এজেন্ট সফটওয়্যারের সাথে স্ট্যান্ডার্ড URDF কনফিগারেশন যুক্ত করার মাধ্যমে খুব দ্রুত রোবট নেটওয়ার্কে সংস্থাপিত করা সম্ভব। সিস্টেম বাইনারি চালু করা মাত্রই জয়েন্টসমূহ একটি আইপি ঠিকানায় ব্রডকাস্ট শুরু করে।",
-      "যেকোনো রোবটিক বাহু বা দ্বিপদী বা চতুষ্পদ রোবটের জন্য চালনা নির্দেশনাগুলো রেডিয়ান পরিমাপকে সাধারণীকরণ করে পাঠানো হয়, ফলে বিভিন্ন ব্যান্ডের রোবটের নিজস্ব কাইনেমেটিক জটিলতা পুরোপুরি দূরীभूत হয়।",
+      "যেকোনো রোবটিক বাহু বা দ্বিপদী বা চতুষ্পদ রোবটের জন্য চালনা নির্দেশনাগুলো রেডিয়ান পরিমাপকে সাধারণীকরণ করে পাঠানো হয়, ফলে বিভিন্ন ব্যান্ডের রোবটের নিজস্ব কাইনেমেটিক জটিলতা পুরোপুরি দূরীভূত হয়।",
       "স্ট্যান্ডার্ড ফাইবার সংযোগের আওতায় টেলিঅপারেশনাল বিলম্ব ৩০ মিলিসেকেন্ডের নিচে রাখতে আমাদের সিস্টেম আদিম ইউডিপি (UDP) বাইনারি প্যাকেটের মাধ্যমে ডেটা সিঙ্ক সম্পন্ন করে থাকে।"
+    ],
+    hindiContent: [
+      "PrismaX क्लाउड मॉडल इंस्टेंस और वास्तविक मशीन कंट्रोलर्स के बीच एक एब्स्ट्रैक्शन फ़र्मवेयर लेयर के रूप में कार्य करता है। भौतिक टेलीमेट्री रिकॉर्ड्स को मानकीकृत करके, हम यांत्रिक भिन्नता को पूर्वानुमेय डिजिटल ट्विन में हल करते हैं।",
+      "फास्ट-ट्रैक इंटीग्रेशन हमारे स्थानीयकृत क्लाइंट एजेंट के साथ संयुक्त मानक URDF कॉन्फ़िगरेशन के माध्यम से संचालित होता है। स्थानीय सर्वर बाइनरी चलाने से आपकी मशीन के जोड़ सीधे जुड़ जाते हैं।",
+      "संयुक्त कॉन्फ़िगरेशन को कमांड करना पूरी तरह से दो पैरों वाले, चार पैरों वाले और औद्योगिक आर्म वर्गीकरणों में सामान्यीकृत रेडियन के अनुरूप होता है, जिससे स्थानीयकृत ब्रांड किनेमैटिक स्केलिंग समस्याएं समाप्त हो जाती हैं।",
+      "हमारा सिस्टम मानक फाइबर कनेक्शन के तहत द्विपक्षीय टेलीमेट्री सिंकिंग को 30 मिलीसेकंड से नीचे रखने के लिए कम-विलंबता UDP स्ट्रीम के साथ मूल रूप से काम करता है।"
     ]
   },
   {
     slug: "teleop-protocol",
     category: "Protocols",
     bengaliCategory: "প্রোটোকল সমূহ",
+    hindiCategory: "प्रोटोकॉल",
     title: "Sub-50ms Haptic & Video Teleoperations",
-    bengaliTitle: "৫০ми.се-এর নিচের হ্যাপটিক ও ভিডিও টেলিঅপারেশন",
+    bengaliTitle: "৫০মি.সে-এর নিচের হ্যাপটিক ও ভিডিও টেলিঅপারেশন",
+    hindiTitle: "50ms से कम हैप्टिक और वीडियो टेलीऑपरेशन",
     summary: "Technical breakdown of our bilateral live stream protocol optimized for remote control and action collection.",
-    bengaliSummary: "দূরবর্তী রোবট নিয়ন্ত্রণ ও প্রশিক্ষণের জন্য বিশেষভাবে তৈরি দ্বিপাক্ষিক প্রোটোকলের কারಿಗরি বিবরণ।",
+    bengaliSummary: "দূরবর্তী রোবট নিয়ন্ত্রণ ও প্রশিক্ষণের জন্য বিশেষভাবে তৈরি দ্বিপাক্ষিক প্রোটোকলের কারিগরি বিবরণ।",
+    hindiSummary: "दूरस्थ नियंत्रण और गतिविधि संग्रह के लिए अनुकूलित हमारे द्विपक्षीय लाइव स्ट्रीम प्रोटोकॉल का तकनीकी विवरण।",
     content: [
       "To enable zero-lag safe human intervention, PrismaX segments telemetry packets into active core-states and peripheral sensory fields. Core structural angles are prioritized first on real-time scheduler threads.",
-      "Video streams utilize optimized WebRTC formats with raw spatial coordinate overlays. This maps deep haptic coordinates directly on camera pixels so operators have tactile awareness in tight workspaces.",
+      "Video streams utilize optimized WebRTC formats with raw spatial coordinate overlays. This maps haptic coordinates directly on camera pixels so operators have tactile awareness in tight workspaces.",
       "Should the latency spike beyond 120 milliseconds, the local control loop triggers automated safe deceleration, stabilizing robot torque limits instantly until connectivity re-establishes.",
       "This safety layer ensures that remote human operation poses no risk of structural damage to hardware, even during high-precision industrial manipulations."
     ],
     bengaliContent: [
-      "কম্পিউটার এবং ফিজিক্যাল অবজেক্টের মধ্যে শূন্য-বিলম্বের সুরক্ষিত সংযোগ নিশ্চিত করতে প্রিজম্যাক্স মূল কাজের ডেটা প্যাকেজকে মূল নিয়ন্ত্রণ অ্যাকশন এবং পারিপার্শ্বিক সেন্সর ডেটায় ভাগ করে নেয়। জয়েন্ট কোণের তথ্যগুলো রিয়েল-тайм থ্রেডে সর্বাধিক প্রাধান্য পায়।",
-      "আমরা সমন্বित কোঅর্ডينات সহ অপ্টিমাইজড ওয়েবআরটিসি (WebRTC) প্রোটোকল ব্যবহার করি। এটি ক্যামেরার পিক্সেলের ওপর স্পর্শ সংবেদনশীল ডেটা ম্যাপ করে দেয় যাতে চরম আঁটসাঁট জায়গায় অপারেটর হ্যাপটিক অনুভূতি পান।",
+      "কম্পিউটার এবং ফিজিক্যাল অবজেক্টের মধ্যে শূন্য-বিলম্বের সুরক্ষিত সংযোগ নিশ্চিত করতে প্রিজম্যাক্স মূল কাজের ডেটা প্যাকেজকে মূল নিয়ন্ত্রণ অ্যাকশন এবং পারিপার্শ্বিক সেন্সর ডেটায় ভাগ করে নেয়। জয়েন্ট কোণের তথ্যগুলো রিয়েল-тайম থ্রেডে সর্বাধিক প্রাধান্য পায়।",
+      "আমরা সমন্বিত কোঅর্ডينات সহ অপ্টিমাইজড ওয়েবআরটিসি (WebRTC) প্রোটোকল ব্যবহার করি। এটি ক্যামেরার পিক্সেলের ওপর স্পর্শ সংবেদনশীল ডেটা ম্যাপ করে দেয় যাতে চরম আঁটসাঁট জায়গায় অপারেটর হ্যাপটিক অনুভূতি পান।",
       "যদি কোনো কারণে সংযোগের বিলম্ব ১২০ মিলিসেকেন্ড অতিক্রম করে, তবে সিস্টেম স্বয়ংক্রিয়ভাবে একটি প্রতিরোধমূলক ব্রেক ট্রিগার করে এবং নেটওয়ার্ক ঠিক না হওয়া পর্যন্ত টর্ক এবং গতিকে সুস্থিত রাখে।",
-      "এই নিরাপত্তা স্তরটি নিশ্চিত করে যে দূরবর্তী অপারেটরের কোনো ভুল বা আকস্মিক নেটওয়ার্ক স্পाइকের দরুন দামি ল্যাব হার্ডওয়্যারের কোনো গাঠনিক ক্ষতিসাধন হবে না।"
+      "এই নিরাপত্তা স্তরটি নিশ্চিত করে যে দূরবর্তী অপারেটরের কোনো ভুল বা আকস্মিক নেটওয়ার্ক স্পাইকের দরুন দামি ল্যাব হার্ডওয়্যারের কোনো গাঠনিক ক্ষতিসাধন হবে না।"
+    ],
+    hindiContent: [
+      "शून्य-विलंब सुरक्षित मानव हस्तक्षेप को सक्षम करने के लिए, PrismaX टेलीमेट्री पैकेट्स को सक्रिय कोर-स्टेट्स और परिधीय संवेदी फ़ील्ड्स में विभाजित करता है। कोर संरचनात्मक कोणों को वास्तविक समय के शेड्यूलर थ्रेड्स पर सबसे पहले प्राथमिकता दी जाती है।",
+      "वीडियो स्ट्रीम कच्चे स्थानिक समन्वय ओवरले के साथ अनुकूलित WebRTC प्रारूपों का उपयोग करते हैं। यह गहन हैप्टिक निर्देशांक को सीधे कैमरा पिक्सल पर मैप करता है ताकि ऑपरेटरों को तंग कार्यक्षेत्रों में स्पर्श संबंधी जागरूकता मिले।",
+      "यदि विलंबता 120 मिलीसेकंड से अधिक हो जाती है, तो स्थानीय नियंत्रण लूप स्वचालित सुरक्षित मंदी को ट्रिगर करता है, जिससे कनेक्टिविटी फिर से स्थापित होने तक रोबोट टार्क सीमाएं तुरंत स्थिर हो जाती हैं।",
+      "यह सुरक्षा परत यह सुनिश्चित करती है कि दूरस्थ मानव संचालन से हार्डवेयर को संरचनात्मक क्षति का कोई जोखिम न हो, यहाँ तक कि उच्च-परिशुद्धता औद्योगिक हेरफेर के दौरान भी।"
     ]
   },
   {
     slug: "physical-ai-integration",
     category: "AI Integration",
     bengaliCategory: "এআই ইন্টিগ্রেশন",
+    hindiCategory: "एआई एकीकरण",
     title: "Connecting Large Action Models (LAM)",
     bengaliTitle: "লার্জ অ্যাকশন মডেল (LAM) সংযুক্তিকরণ",
+    hindiTitle: "लार्ज एक्शन मॉडल (LAM) को जोड़ना",
     summary: "How to route tokenized trajectory data directly to foundational transformer layers to enable spatial reasoning.",
     bengaliSummary: "স্থানিক যৌক্তিকতা ও স্বয়ংক্রিয় কাজের ক্ষমতা অর্জনে টোকেনাইজড গতিবিধির ডেটা সরাসরি ফাউন্ডেশন ট্রান্সফরমার মডেলে যুক্ত করার নিয়ম।",
+    hindiSummary: "स्थानिक तर्क को सक्षम करने के लिए टोकनयुक्त प्रक्षेपवक्र डेटा को सीधे मूलभूत ट्रांसफार्मर परतों तक कैसे रूट करें।",
     content: [
       "Every trajectory executed during human teleoperation is tokenized into spatial-action vectors. These represent absolute position velocities combined with context frames from local camera arrays.",
       "These tokens feed directly into continuous transformer learning loops. Machine models digest physical trials and improve their spatial success probability distributions autonomously over thousands of cloud epochs.",
@@ -387,9 +535,15 @@ export const documentationArticles: DocArticle[] = [
     ],
     bengaliContent: [
       "মানুষ দ্বারা পরিচালিত প্রতি সেকেন্ডের সূক্ষ্ম সঞ্চালনগুলোকে আমরা স্থানিক ম্যাপে স্পেশিয়াল-অ্যাকশন ভেক্টরে টোকেনাইজ করি। এগুলো রোবটের জয়েন্টের ঘূর্ণন গতি ব্যাখ্যা করে যা বাহ্যিক ক্যামেরা ছবির সাথে যুক্ত থাকে।",
-      "এই গতিবিধি সম্পর্কিত ভেক্টর টোকেনগুলো সরাসরি স্বয়ংক্রিয় এআই লার্নিং লুপে ইনপুট দেওয়া হয়। ট্রান্সফরমার মডেলগুলো ক্রমাগত কোটি কোটি ট্রেনিং ট্রায়াল থেকে ত্রিমাত্রিক জগতের সাকсеস রেশিও বা সফলতার গাণিতিক হায়ারার্কি নির্ধারণ করে।",
-      "ডেভেলপাররা সহজেই `/v1/spatial/reason` এপিআই অ্যান্ডপয়েন্ট ব্যবহারের মাধ্যমে যেকোনো সময় модельের সিদ্ধান্ত সূচক বা কনফিডেন্স স্কোর কল করতে পারেন, যা থেকে মোটর টর্কের চমৎকার রিয়েল-টাইম এডজাস্টমেন্ট পাওয়া যায়।",
+      "এই গতিবিধি সম্পর্কিত ভেক্টর টোকেনগুলো সরাসরি স্বয়ংক্রিয় এআই লার্নিং লুপে ইনপুট দেওয়া হয়। ট্রান্সফরমার মডেলগুলো ক্রমাগত কোটি কোটি ট্রেনিং ট্রায়াল থেকে ত্রিমাত্রিক জগতের সাকসেস রেশিও বা সফলতার গাণিতিক হায়ারার্কি নির্ধারণ করে।",
+      "ডেভেলপাররা সহজেই `/v1/spatial/reason` এপিআই অ্যান্ডপয়েন্ট ব্যবহারের মাধ্যমে যেকোনো সময় মডেলের সিদ্ধান্ত সূচক বা কনফিডেন্স স্কোর কল করতে পারেন, যা থেকে মোটর টর্কের চমৎকার রিয়েল-টাইম এডজাস্টমেন্ট পাওয়া যায়।",
       "এই প্রক্রিয়াটি বাস্তব জগতের রোবট প্রশিক্ষণের চূড়ান্ত সমাধান দেয় যা মানুষের প্রাথমিক দেখানোর মধ্য দিয়ে শুরু হয়ে স্বয়ংক্রিয় কাজের দক্ষতায় শেষ হয়।"
+    ],
+    hindiContent: [
+      "मानव टेलीऑपरेशन के दौरान निष्पादित प्रत्येक प्रक्षेपवक्र को स्थानिक-कार्रवाई वैक्टर में टोकन किया जाता है। ये स्थानीय कैमरा सरणियों से संदर्भ फ़्रेम के साथ संयुक्त पूर्ण स्थिति वेग का प्रतिनिधित्व करते हैं।",
+      "ये टोकन सीधे निरंतर ट्रांसफार्मर सीखने के लूप में फ़ीड करते हैं। मशीन मॉडल भौतिक परीक्षणों को पचाते हैं और हजारों क्लाउड युगों में स्वायत्त रूप से अपने स्थानिक सफलता संभाव्यता वितरण में सुधार करते हैं।",
+      "डेवलपर्स एकीकृत `/v1/spatial/reason` API एंड-पॉइंट के माध्यम से सक्रिय वर्कस्पेस पर वर्तमान मॉडल के विश्वास स्कोर क्वेरी कर सकते हैं, वास्तविक समय में लक्षित मोटर टार्क समायोजन प्राप्त कर सकते हैं।",
+      "यह प्रक्रिया मानव प्रदर्शन से स्वायत्त परिचालन तरलता की ओर बढ़ते हुए, भौतिक मशीन प्रशिक्षण पर लूप को प्रभावी ढंग से बंद कर देती है।"
     ]
   }
 ];

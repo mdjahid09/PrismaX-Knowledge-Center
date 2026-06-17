@@ -23,6 +23,8 @@ import {
   Code,
   Info
 } from 'lucide-react';
+import { Language } from './types';
+import { hindiKnowledgeTranslations } from './hindiKnowledgeData';
 
 export interface KeyConcept {
   heading: string;
@@ -1516,38 +1518,73 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   }
 ];
 
-export const getArticleById = (id: string, currentLanguage: 'en' | 'bn') => {
-  const isEn = currentLanguage !== 'bn';
+export const getArticleById = (id: string, currentLanguage: Language) => {
   const article = knowledgeArticles.find(a => a.id === id);
   if (!article) return null;
 
-  return {
-    id: article.id,
-    title: isEn ? article.title : article.bengaliTitle,
-    subtitle: isEn ? article.subtitle : article.bengaliSubtitle,
-    overview: isEn ? article.overview : article.bengaliOverview,
-    mainExplanation: isEn ? article.mainExplanation : article.bengaliMainExplanation,
-    keyConcepts: article.keyConcepts.map(c => ({
-      heading: isEn ? c.heading : c.bengaliHeading,
-      text: isEn ? c.text : c.bengaliText
-    })),
-    visualExplanation: {
-      desc: isEn ? article.visualExplanation.desc : article.visualExplanation.bengaliDesc,
-      code: article.visualExplanation.code
-    },
-    relatedTopics: isEn 
-      ? article.relatedTopicIds.map(rid => {
+  if (currentLanguage === 'hi') {
+    const hiTrans = hindiKnowledgeTranslations[id];
+    if (hiTrans) {
+      return {
+        id: article.id,
+        title: hiTrans.title,
+        subtitle: hiTrans.subtitle,
+        overview: hiTrans.overview,
+        mainExplanation: hiTrans.mainExplanation,
+        keyConcepts: article.keyConcepts.map((c, idx) => ({
+          heading: hiTrans.keyConcepts[idx]?.heading || c.heading,
+          text: hiTrans.keyConcepts[idx]?.text || c.text
+        })),
+        visualExplanation: {
+          desc: hiTrans.visualDesc || article.visualExplanation.desc,
+          code: article.visualExplanation.code
+        },
+        relatedTopics: article.relatedTopicIds.map(rid => {
+          const matchedHi = hindiKnowledgeTranslations[rid];
+          if (matchedHi) return matchedHi.title;
           const matched = knowledgeArticles.find(item => item.id === rid);
           return matched ? matched.title : rid;
+        }),
+        relatedTopicIds: article.relatedTopicIds,
+        previousTopicId: article.previousTopicId,
+        nextTopicId: article.nextTopicId,
+        category: hiTrans.category,
+        badge: article.badge,
+        color: article.color,
+        icon: article.icon
+      };
+    }
+  }
+
+  const isBn = currentLanguage === 'bn';
+
+  return {
+    id: article.id,
+    title: isBn ? article.bengaliTitle : article.title,
+    subtitle: isBn ? article.bengaliSubtitle : article.subtitle,
+    overview: isBn ? article.bengaliOverview : article.overview,
+    mainExplanation: isBn ? article.bengaliMainExplanation : article.mainExplanation,
+    keyConcepts: article.keyConcepts.map(c => ({
+      heading: isBn ? c.bengaliHeading : c.heading,
+      text: isBn ? c.bengaliText : c.text
+    })),
+    visualExplanation: {
+      desc: isBn ? article.visualExplanation.bengaliDesc : article.visualExplanation.desc,
+      code: article.visualExplanation.code
+    },
+    relatedTopics: isBn 
+      ? article.relatedTopicIds.map(rid => {
+          const matched = knowledgeArticles.find(item => item.id === rid);
+          return matched ? matched.bengaliTitle : rid;
         })
       : article.relatedTopicIds.map(rid => {
           const matched = knowledgeArticles.find(item => item.id === rid);
-          return matched ? matched.bengaliTitle : rid;
+          return matched ? matched.title : rid;
         }),
     relatedTopicIds: article.relatedTopicIds,
     previousTopicId: article.previousTopicId,
     nextTopicId: article.nextTopicId,
-    category: isEn ? article.category : article.bengaliCategory,
+    category: isBn ? article.bengaliCategory : article.category,
     badge: article.badge,
     color: article.color,
     icon: article.icon
