@@ -202,7 +202,7 @@ export const hindiKnowledgeTranslations: Record<string, HindiArticleTranslation>
     ],
     visualDesc: "एक बाहरी झटके के कारण हिलती हुई रोबोटिक बांह का एक्ट्यूएटर्स द्वारा त्वरित स्वतः विरूपण सुधार विश्लेषण।"
   },
-  "robotics-data-collect": {
+  "robotics-data-collection": {
     title: "डेटा संग्रह पद्धतियां",
     subtitle: "MULTIMODAL_TRAJECTORY_ACCUMULATION",
     category: "Robot Control & Operations",
@@ -214,7 +214,7 @@ export const hindiKnowledgeTranslations: Record<string, HindiArticleTranslation>
     ],
     visualDesc: "हैप्टिक दस्ताने पहने एक मानव ऑपरेटर की हाथ गतिविधियों का डिजिटल रूप से सटीक रिकॉर्डिंग डेटा ग्रिड।"
   },
-  "future-physical-ai": {
+  "future-of-physical-ai": {
     title: "फिजिकल एआई का भविष्य",
     subtitle: "THE_SOVEREIGN_ROBOTICS_ECOSYSTEM",
     category: "Future & Roadmap",
@@ -250,19 +250,19 @@ export const hindiKnowledgeTranslations: Record<string, HindiArticleTranslation>
     ],
     visualDesc: "एक पारदर्शी डिजिटल बहीखाता जहां डेटा खरीदार और स्वतंत्र हार्डवेयर ऑपरेटर सुरक्षित विनिमय स्थापित कर रहे हैं।"
   },
-  "quick-return": {
+  "quick-return-bonus": {
     title: "क्विक रिटर्न बोनस",
     subtitle: "OPERATOR_PRODUCTIVITY_MULTIPLIER",
     category: "Network & Economics",
     overview: "दूरस्थ रूप से काम कर रहे ऑपरेटरों के असाधारण प्रदर्शन और तेजी के लिए एक विशेष प्रोत्साहन और त्वरित रिवॉर्ड योजना।",
     mainExplanation: "ऑपरेटरों की कार्यक्षमता और दक्षता बढ़ाने के लिए PrismaX नेटवर्क क्विक रिटर्न (त्वरित कार्यशीलता) बोनस प्रदान करता है। उत्कृष्ट ऑपरेटर जो न्यूनतम त्रुटि दर और सबसे सुचारू गति पथ (Trajectory) का विकास करते हैं, वे सिस्टम एल्गोरिदम द्वारा अतिरिक्त क्रेडिट और प्रीमियम एक्सेस स्तर हासिल कर सकते हैं।",
     keyConcepts: [
-      { heading: "प्रदर्शन-आधारित बोनस दर", text: "ऑपरेटर की कार्य उत्पादकता, सटीकता और गतिशीलता नियंत्रण के अनुसार अतिरिक्त क्रेडेंशियल रिवॉर्ड।" },
+      { heading: "प्रदर्शन-आधारित बोनस दर", text: "ऑपरेटर की कार्य उत्पादकता, सटीकता and गतिशीलता नियंत्रण के अनुसार अतिरिक्त क्रेडेंशियल रिवॉर्ड।" },
       { heading: "प्रीमियम परिचालन स्तर अनलॉकिंग", text: "लगातार सर्वश्रेष्ठ प्रदर्शन करके अधिक महत्वपूर्ण औद्योगिक नोड्स के संचालन का विशेषाधिकार पाना।" }
     ],
     visualDesc: "ऑपरेटर के कार्यों की विश्लेषण चार्टिंग; उच्च सटीकता वाले स्ट्रोक पूर्ण होते ही अतिरिक्त आर्थिक मूल्य क्रेडिट होना।"
   },
-  "tokenomics": {
+  "tokenomics-pix": {
     title: "टोकनॉमिक्स और $PIX",
     subtitle: "UTILITY_RESERVATIONS_UTILITY",
     category: "Network & Economics",

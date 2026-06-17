@@ -459,13 +459,13 @@ export default function App() {
       {/* ==================================================================== */}
       {/* TOPIC CARD SPEC DETAILED DRAWER/MODAL (For easy developer expansion) */}
       {/* ==================================================================== */}
-      {selectedTopic && activeTopicDetails && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-black/75 backdrop-blur-md animate-fade-in" id="topic-spec-modal">
+       {selectedTopic && activeTopicDetails && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-brand-black/75 backdrop-blur-md animate-fade-in" id="topic-spec-modal">
           <div className="w-full max-w-2xl bg-brand-black/95 backdrop-blur-xl border border-brand-cream/15 rounded-xl overflow-hidden shadow-layered-lg cursor-border-active relative">
             
             <button 
               onClick={() => setSelectedTopic(null)}
-              className="absolute top-4 right-4 p-2 rounded-full hover:bg-brand-white/10 text-brand-cream hover:text-white transition-colors cursor-pointer z-25"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 rounded-full hover:bg-brand-white/10 text-brand-cream hover:text-white transition-colors cursor-pointer z-25"
               aria-label="Close modal"
               id="close-topic-modal"
             >
@@ -473,17 +473,17 @@ export default function App() {
             </button>
 
             {/* Spec Header */}
-            <div className="p-6 md:p-8 pt-12 md:pt-14 border-b border-brand-cream/10 bg-brand-black/40">
-              <span className="text-[10px] font-mono tracking-widest text-brand-accent uppercase block">
+            <div className="p-4 sm:p-6 md:p-8 pt-10 sm:pt-12 md:pt-14 border-b border-brand-cream/10 bg-brand-black/40">
+              <span className="text-[9px] sm:text-[10px] font-mono tracking-widest text-brand-accent uppercase block">
                 {activeTopicDetails.subtitle}
               </span>
-              <h3 className="text-xl md:text-3xl font-serif text-brand-white font-semibold mt-1">
+              <h3 className="text-lg sm:text-xl md:text-3xl font-serif text-brand-white font-semibold mt-1">
                 {activeTopicDetails.title}
               </h3>
             </div>
 
             {/* Spec Body content */}
-            <div className="p-6 md:p-8 space-y-6 overflow-y-auto max-h-[55vh] scrollbar-thin">
+            <div className="p-4 sm:p-6 md:p-8 space-y-6 overflow-y-auto max-h-[50vh] sm:max-h-[58vh] scrollbar-thin">
               {/* Overview */}
               <div className="space-y-2">
                 <span className="text-[10px] font-mono text-brand-accent uppercase block tracking-wider">

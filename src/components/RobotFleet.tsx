@@ -150,7 +150,7 @@ export default function RobotFleet({ currentLanguage, onSelectRobot }: FleetProp
           </div>
           <div className="lg:col-span-4 lg:text-right">
             <span className="text-xs font-mono text-brand-cream/40 bg-brand-black/50 border border-brand-cream/5 px-3 py-1.5 rounded-full inline-block">
-              {translations[currentLanguage].taglineFleet} • {robotsData.length} ONLINE
+              {translations[currentLanguage].taglineFleet} • {robotsData.length} {currentLanguage === 'bn' ? 'অনলাইন' : currentLanguage === 'hi' ? 'ऑनलाइन' : 'ONLINE'}
             </span>
           </div>
         </div>

@@ -67,6 +67,20 @@ const getLocalizedValidateNodeAccess = (lang: Language) => {
   }
 };
 
+const getLocalizedStatusText = (status: string, lang: Language) => {
+  if (lang === 'bn') {
+    if (status === 'active') return 'সক্রিয়';
+    if (status === 'reserved') return 'সংরক্ষিত';
+    return 'অফলাইন';
+  } else if (lang === 'hi') {
+    if (status === 'active') return 'सक्रिय';
+    if (status === 'reserved') return 'आरक्षित';
+    return 'ऑफ़लाइन';
+  } else {
+    return status.toUpperCase();
+  }
+};
+
 export default function RobotControlCenter({ currentLanguage }: ControlCenterProps) {
   const t = translations[currentLanguage];
   const [selectedArm, setSelectedArm] = useState<RoboticArm>(roboticArms[1]); // Gold is active by default
@@ -198,14 +212,14 @@ export default function RobotControlCenter({ currentLanguage }: ControlCenterPro
                     {/* Status Dot */}
                     <div className="flex items-center justify-between mb-2 z-10 relative">
                       <span className="text-xs font-mono text-brand-cream/40 uppercase tracking-widest">
-                        {arm.id.replace('arm_','').toUpperCase()} NODE
+                        {arm.id.replace('arm_','').toUpperCase()} {currentLanguage === 'bn' ? 'নোড' : currentLanguage === 'hi' ? 'नोड' : 'NODE'}
                       </span>
                       <div className="flex items-center space-x-1.5">
                         <span className={`w-2 h-2 rounded-full ${
                           arm.status === 'reserved' ? 'bg-amber-500' : arm.status === 'active' ? 'bg-emerald-500' : 'bg-brand-cream/30'
                         }`}></span>
                         <span className="text-[10px] font-mono tracking-widest uppercase text-brand-cream/50">
-                          {arm.status}
+                          {getLocalizedStatusText(arm.status, currentLanguage)}
                         </span>
                       </div>
                     </div>
@@ -231,7 +245,7 @@ export default function RobotControlCenter({ currentLanguage }: ControlCenterPro
                     {/* Optional diagonal Reserved Ribbon matching image 14 exactly */}
                     {arm.hasRibbon && (
                       <div className="absolute top-4 right-0 transform rotate-45 translate-x-10 translate-y-3 bg-[#C5A880] text-brand-black text-[10px] font-bold py-1 px-14 tracking-widest shadow-md text-center">
-                        RESERVED
+                        {currentLanguage === 'bn' ? 'সংরক্ষিত' : currentLanguage === 'hi' ? 'आरक्षित' : 'RESERVED'}
                       </div>
                     )}
 
@@ -275,7 +289,10 @@ export default function RobotControlCenter({ currentLanguage }: ControlCenterPro
                   <span className={`px-2.5 py-1 rounded text-[10px] font-mono tracking-widest uppercase ${
                     isConnected ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-400' : 'bg-brand-cream/5 border border-brand-cream/10 text-brand-cream/40'
                   }`}>
-                    {isConnected ? 'LIVE_SECURE' : 'OFFLINE'}
+                    {isConnected 
+                      ? (currentLanguage === 'bn' ? 'লাইভ সুরক্ষিত' : currentLanguage === 'hi' ? 'लाइव सुरक्षित' : 'LIVE_SECURE') 
+                      : (currentLanguage === 'bn' ? 'অফলাইন' : currentLanguage === 'hi' ? 'ऑफ़लाइन' : 'OFFLINE')
+                    }
                   </span>
                 </div>
               </div>
@@ -299,7 +316,7 @@ export default function RobotControlCenter({ currentLanguage }: ControlCenterPro
                         type="text"
                         value={enteredPasscode}
                         onChange={(e) => setEnteredPasscode(e.target.value)}
-                        placeholder="ENTER VIP PASSKEY"
+                        placeholder={currentLanguage === 'bn' ? 'ভিআইপি পাসকি লিখুন' : currentLanguage === 'hi' ? 'वीआईपी पासकी दर्ज करें' : 'ENTER VIP PASSKEY'}
                         className="w-full text-center px-4 py-3 bg-[#18181a] border border-brand-cream/20 rounded-lg text-brand-white placeholder-brand-cream/30 focus:border-brand-accent focus:outline-none uppercase font-mono tracking-widest text-sm"
                       />
                     </div>
@@ -307,7 +324,7 @@ export default function RobotControlCenter({ currentLanguage }: ControlCenterPro
                     {passcodeError && (
                       <p className="text-xs text-red-400 font-mono flex items-center justify-center space-x-1">
                         <ShieldAlert className="w-3.5 h-3.5" />
-                        <span>INVALID CREDENTIALS</span>
+                        <span>{currentLanguage === 'bn' ? 'ভুল পাসকোড' : currentLanguage === 'hi' ? 'अमान्य क्रेडेंशियल' : 'INVALID CREDENTIALS'}</span>
                       </p>
                     )}
                     
@@ -396,15 +413,15 @@ export default function RobotControlCenter({ currentLanguage }: ControlCenterPro
 
                     <div className="w-full grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-brand-cream/5 text-center text-[10px] font-mono text-brand-cream/40">
                       <div>
-                        <span>BASE:</span>
+                        <span>{currentLanguage === 'bn' ? 'বেস:' : currentLanguage === 'hi' ? 'आधार:' : 'BASE:'}</span>
                         <span className="text-brand-white ml-1">{angleX}°</span>
                       </div>
                       <div>
-                        <span>ELBOW:</span>
+                        <span>{currentLanguage === 'bn' ? 'কনুই:' : currentLanguage === 'hi' ? 'कोहनी:' : 'ELBOW:'}</span>
                         <span className="text-brand-white ml-1">{angleY}°</span>
                       </div>
                       <div>
-                        <span>VALV_CLAMP:</span>
+                        <span>{currentLanguage === 'bn' ? 'ক্ল্যাম্প:' : currentLanguage === 'hi' ? 'क्लैंप:' : 'VALV_CLAMP:'}</span>
                         <span className="text-brand-white ml-1">{gripForce}%</span>
                       </div>
                     </div>

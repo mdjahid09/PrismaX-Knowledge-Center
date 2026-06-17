@@ -64,7 +64,7 @@ export default function AmplifierCheckout({ currentLanguage }: CheckoutProps) {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-stretch" id="amplifier-selection-view">
                 
                 {/* Left side benefits column */}
-                <div className="md:col-span- così md:col-span-5 flex flex-col justify-between space-y-6">
+                <div className="md:col-span-5 flex flex-col justify-between space-y-6">
                   <div>
                     <h3 className="text-2xl font-serif font-semibold text-brand-white">
                       {t.memberLabel}
