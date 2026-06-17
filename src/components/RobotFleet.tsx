@@ -150,7 +150,7 @@ export default function RobotFleet({ currentLanguage, onSelectRobot }: FleetProp
           </div>
           <div className="lg:col-span-4 lg:text-right">
             <span className="text-xs font-mono text-brand-cream/40 bg-brand-black/50 border border-brand-cream/5 px-3 py-1.5 rounded-full inline-block">
-              {translations[currentLanguage].taglineFleet} • {robotsData.length} {currentLanguage === 'bn' ? 'অনলাইন' : currentLanguage === 'hi' ? 'ऑनलाइन' : 'ONLINE'}
+              {translations[currentLanguage].taglineFleet} • {robotsData.length} {currentLanguage === 'bn' ? 'অনলাইন' : currentLanguage === 'hi' ? 'ऑनलाइन' : currentLanguage === 'ur' ? 'آن لائن' : 'ONLINE'}
             </span>
           </div>
         </div>
@@ -158,8 +158,24 @@ export default function RobotFleet({ currentLanguage, onSelectRobot }: FleetProp
         {/* Fleet Grid Showcase (recreating Image 13 layout exactly) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="fleet-showcase-grid">
           {robotsData.map((robot) => {
-            const tags = currentLanguage === 'bn' ? robot.bengaliTags : currentLanguage === 'hi' ? robot.hindiTags : robot.tags;
-            const desc = currentLanguage === 'bn' ? robot.bengaliDescription : currentLanguage === 'hi' ? robot.hindiDescription : robot.description;
+            const tags = currentLanguage === 'bn' 
+              ? robot.bengaliTags 
+              : currentLanguage === 'hi' 
+              ? robot.hindiTags 
+              : currentLanguage === 'zh' 
+              ? robot.chineseTags 
+              : currentLanguage === 'ur' && robot.urduTags 
+              ? robot.urduTags 
+              : robot.tags;
+            const desc = currentLanguage === 'bn' 
+              ? robot.bengaliDescription 
+              : currentLanguage === 'hi' 
+              ? robot.hindiDescription 
+              : currentLanguage === 'zh' 
+              ? robot.chineseDescription 
+              : currentLanguage === 'ur' && robot.urduDescription 
+              ? robot.urduDescription 
+              : robot.description;
             return (
               <div
                 key={robot.id}

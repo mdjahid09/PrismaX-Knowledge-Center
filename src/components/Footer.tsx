@@ -59,7 +59,7 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
               </li>
               <li>
                 <button onClick={() => handleNavClick('about')} className="hover:text-brand-white transition-colors cursor-pointer text-left">
-                  {currentLanguage === 'bn' ? 'সম্পর্কে' : currentLanguage === 'hi' ? 'हमारे बारे में' : 'About'}
+                  {currentLanguage === 'bn' ? 'সম্পর্কে' : currentLanguage === 'hi' ? 'हमारे بارے میں' : currentLanguage === 'zh' ? '关于我们' : currentLanguage === 'ur' ? 'ہمارے بارے میں' : 'About'}
                 </button>
               </li>
               <li>
@@ -83,7 +83,7 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
                 >
                   <Globe className="w-4 h-4 text-brand-accent" />
                   <span className="flex-1">
-                    {currentLanguage === 'en' ? 'English (EN)' : currentLanguage === 'hi' ? 'हिन्दी (HI)' : 'বাংলা (BN)'}
+                    {currentLanguage === 'en' ? 'English (EN)' : currentLanguage === 'hi' ? 'हिन्दी (HI)' : currentLanguage === 'bn' ? 'বাংলা (BN)' : currentLanguage === 'zh' ? '简体中文 (ZH)' : 'اردو (UR)'}
                   </span>
                   <span className="text-[10px] font-mono text-brand-cream/40 bg-brand-black px-1.5 py-0.5 rounded">
                     {currentLanguage.toUpperCase()}
@@ -97,12 +97,14 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
                       onClick={() => setDropdownOpen(false)}
                     />
                     <div className="absolute left-0 bottom-full mb-2 w-full rounded-xl border border-brand-cream/15 bg-brand-black/95 backdrop-blur-xl p-1.5 shadow-2xl z-50 animate-fade-in flex flex-col space-y-1">
-                      {(['en', 'hi', 'bn'] as const).map((lang) => {
+                      {(['en', 'hi', 'bn', 'zh', 'ur'] as const).map((lang) => {
                         const isSelected = currentLanguage === lang;
                         const labels: Record<Language, string> = {
                           en: 'English (EN)',
                           hi: 'हिन्दी (HI)',
-                          bn: 'বাংলা (BN)'
+                          bn: 'বাংলা (BN)',
+                          zh: '简体中文 (ZH)',
+                          ur: 'اردو (UR)'
                         };
                         return (
                           <button

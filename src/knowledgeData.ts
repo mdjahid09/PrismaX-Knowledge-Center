@@ -25,6 +25,8 @@ import {
 } from 'lucide-react';
 import { Language } from './types';
 import { hindiKnowledgeTranslations } from './hindiKnowledgeData';
+import { chineseKnowledgeTranslations } from './chineseKnowledgeData';
+import { urduKnowledgeTranslations } from './urduKnowledgeData';
 
 export interface KeyConcept {
   heading: string;
@@ -1549,6 +1551,40 @@ export const getArticleById = (id: string, currentLanguage: Language) => {
         previousTopicId: article.previousTopicId,
         nextTopicId: article.nextTopicId,
         category: hiTrans.category,
+        badge: article.badge,
+        color: article.color,
+        icon: article.icon
+      };
+    }
+  }
+
+  if (currentLanguage === 'zh') {
+    const zhTrans = chineseKnowledgeTranslations[id];
+    if (zhTrans) {
+      return {
+        id: article.id,
+        title: zhTrans.title,
+        subtitle: zhTrans.subtitle,
+        overview: zhTrans.overview,
+        mainExplanation: zhTrans.mainExplanation,
+        keyConcepts: article.keyConcepts.map((c, idx) => ({
+          heading: zhTrans.keyConcepts[idx]?.heading || c.heading,
+          text: zhTrans.keyConcepts[idx]?.text || c.text
+        })),
+        visualExplanation: {
+          desc: zhTrans.visualDesc || article.visualExplanation.desc,
+          code: article.visualExplanation.code
+        },
+        relatedTopics: article.relatedTopicIds.map(rid => {
+          const matchedZh = chineseKnowledgeTranslations[rid];
+          if (matchedZh) return matchedZh.title;
+          const matched = knowledgeArticles.find(item => item.id === rid);
+          return matched ? matched.title : rid;
+        }),
+        relatedTopicIds: article.relatedTopicIds,
+        previousTopicId: article.previousTopicId,
+        nextTopicId: article.nextTopicId,
+        category: zhTrans.category,
         badge: article.badge,
         color: article.color,
         icon: article.icon

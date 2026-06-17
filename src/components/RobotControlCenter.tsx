@@ -17,6 +17,10 @@ const getLocalizedArmDesc = (armId: string, lang: Language) => {
       if (armId === 'arm_black' || armId === 'arm_gold') return 'अपनी स्किल्स का अभ्यास करने के लिए कतार में शामिल हों। एम्पलीफायर्स और इनोवेटर्स के लिए खुला है।';
       if (armId === 'arm_arena') return 'उच्च-मात्रा वाले सत्रों के लिए डिज़ाइन किया गया। पहली बार उपयोगकर्ता और इनोवेटर्स के लिए खुला है।';
       return 'वीआईपी, भागीदारों और विशेष गतिविधियों के लिए आरक्षित। एक्सेस के लिए कोड की आवश्यकता होती है और इवेंट के अनुसार भिन्न हो सकता है।';
+    case 'ur':
+      if (armId === 'arm_black' || armId === 'arm_gold') return 'اپنی مہارتوں کی مشق کرنے کے لیے قطار میں شامل ہوں۔ یہ ایمپلیفائرز اور انوویٹرز کے لیے دستیاب ہے۔';
+      if (armId === 'arm_arena') return 'زیادہ کثرت والے سیشنز کے لیے ڈیزائن کیا گیا ہے۔ پہلی بار استعمال کرنے والوں اور انوویٹرز کے لیے کھلا ہے۔';
+      return 'وی آئی پی، شراکت داروں اور خصوصی سرگرمیوں کے لیے مخصوص ہے۔ رسائی کے لیے کوڈ درکار ہے اور یہ ہر ایونٹ کے لحاظ سے مختلف ہو سکتا ہے۔';
     default:
       if (armId === 'arm_black' || armId === 'arm_gold') return 'Join the queue to practice your skills. Open to Amplifiers and Innovators.';
       if (armId === 'arm_arena') return 'Designed for high-volume sessions. Open to first-time users and Innovators.';
@@ -30,6 +34,8 @@ const getEstablishLinkText = (lang: Language) => {
       return 'লাইভ ডেটা স্ট্রিমিং পেতে টেলিঅপারেশন লিংক চালু করুন।';
     case 'hi':
       return 'लाइव डेटा स्ट्रीमिंग प्राप्त करने के लिए टेलीऑपरेशन लिंक स्थापित करें।';
+    case 'ur':
+      return 'لائیو ڈیٹا اسٹریمنگ حاصل کرنے کے لیے ٹیلی آپریشن کا لنک قائم کریں۔';
     default:
       return 'Establish a telemetry link to receive telemetry logs.';
   }
@@ -39,6 +45,7 @@ const getLocalizedActiveStream = (lang: Language) => {
   switch (lang) {
     case 'bn': return 'সক্রিয় স্ট্রিমিং';
     case 'hi': return 'सक्रिय स्ट्रीमिंग';
+    case 'ur': return 'فعال اسٹریمنگ';
     default: return 'ACTIVE STREAM';
   }
 };
@@ -47,6 +54,7 @@ const getLocalizedEnterNodeAccessCode = (lang: Language) => {
   switch (lang) {
     case 'bn': return 'অ্যাক্সেস কোড দিন';
     case 'hi': return 'एक्सेस कोड दर्ज करें';
+    case 'ur': return 'نوڈ رسائی کوڈ درج کریں';
     default: return 'Enter Node Access Code';
   }
 };
@@ -55,6 +63,7 @@ const getLocalizedPrivateArmReserved = (lang: Language) => {
   switch (lang) {
     case 'bn': return 'প্রাইভেট আর্মটি ভিআইপি ও ডেভেলপারদের জন্য সংরক্ষিত। এটি আনলক করতে "2026" অথবা "PRISMAX" ব্যবহার করুন।';
     case 'hi': return 'प्राइवेट आर्म वीआईपी परीक्षकों, कॉर्पोरेट भागीदारों और डेवलपर्स के लिए आरक्षित है। अनलॉक करने के लिए कोड "2026" या "PRISMAX" दर्ज करें।';
+    case 'ur': return 'پرائیویٹ آرم صرف وی آئی پی ممبرز اور ڈویلپرز کے لیے مخصوص ہے۔ اسے ان لاک کرنے کے لیے "2026" یا "PRISMAX" درج کریں۔';
     default: return 'Private Arm is reserved for VIP testers, corporate partners, and developers. Input code "2026" or "PRISMAX" to unlock.';
   }
 };
@@ -63,6 +72,7 @@ const getLocalizedValidateNodeAccess = (lang: Language) => {
   switch (lang) {
     case 'bn': return 'সংযোগ কোড নিশ্চিত করুন';
     case 'hi': return 'कनेक्शन कोड सत्यापित करें';
+    case 'ur': return 'نوڈ رسائی کو درست کریں';
     default: return 'VALIDATE NODE ACCESS';
   }
 };
@@ -76,6 +86,10 @@ const getLocalizedStatusText = (status: string, lang: Language) => {
     if (status === 'active') return 'सक्रिय';
     if (status === 'reserved') return 'आरक्षित';
     return 'ऑफ़लाइन';
+  } else if (lang === 'ur') {
+    if (status === 'active') return 'فعال';
+    if (status === 'reserved') return 'محفوظ';
+    return 'آف لائن';
   } else {
     return status.toUpperCase();
   }
@@ -212,7 +226,7 @@ export default function RobotControlCenter({ currentLanguage }: ControlCenterPro
                     {/* Status Dot */}
                     <div className="flex items-center justify-between mb-2 z-10 relative">
                       <span className="text-xs font-mono text-brand-cream/40 uppercase tracking-widest">
-                        {arm.id.replace('arm_','').toUpperCase()} {currentLanguage === 'bn' ? 'নোড' : currentLanguage === 'hi' ? 'नोड' : 'NODE'}
+                        {arm.id.replace('arm_','').toUpperCase()} {currentLanguage === 'bn' ? 'নোড' : currentLanguage === 'hi' ? 'नोड' : currentLanguage === 'ur' ? 'نوڈ' : 'NODE'}
                       </span>
                       <div className="flex items-center space-x-1.5">
                         <span className={`w-2 h-2 rounded-full ${
@@ -238,14 +252,14 @@ export default function RobotControlCenter({ currentLanguage }: ControlCenterPro
                     {arm.queueLength > 0 && (
                       <div className="mt-3 inline-flex items-center space-x-1 text-[10px] font-mono text-brand-accent">
                         <span>•</span>
-                        <span>{currentLanguage === 'bn' ? `লাইনে আছে: ${arm.queueLength}` : currentLanguage === 'hi' ? `कतार में: ${arm.queueLength}` : `QUEUE: ${arm.queueLength} IN LINE`}</span>
+                        <span>{currentLanguage === 'bn' ? `লাইনে আছে: ${arm.queueLength}` : currentLanguage === 'hi' ? `कतार में: ${arm.queueLength}` : currentLanguage === 'ur' ? `قطار میں: ${arm.queueLength}` : `QUEUE: ${arm.queueLength} IN LINE`}</span>
                       </div>
                     )}
 
                     {/* Optional diagonal Reserved Ribbon matching image 14 exactly */}
                     {arm.hasRibbon && (
                       <div className="absolute top-4 right-0 transform rotate-45 translate-x-10 translate-y-3 bg-[#C5A880] text-brand-black text-[10px] font-bold py-1 px-14 tracking-widest shadow-md text-center">
-                        {currentLanguage === 'bn' ? 'সংরক্ষিত' : currentLanguage === 'hi' ? 'आरक्षित' : 'RESERVED'}
+                        {currentLanguage === 'bn' ? 'সংরক্ষিত' : currentLanguage === 'hi' ? 'आरक्षित' : currentLanguage === 'ur' ? 'محفوظ' : 'RESERVED'}
                       </div>
                     )}
 
@@ -290,8 +304,8 @@ export default function RobotControlCenter({ currentLanguage }: ControlCenterPro
                     isConnected ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-400' : 'bg-brand-cream/5 border border-brand-cream/10 text-brand-cream/40'
                   }`}>
                     {isConnected 
-                      ? (currentLanguage === 'bn' ? 'লাইভ সুরক্ষিত' : currentLanguage === 'hi' ? 'लाइव सुरक्षित' : 'LIVE_SECURE') 
-                      : (currentLanguage === 'bn' ? 'অফলাইন' : currentLanguage === 'hi' ? 'ऑफ़लाइन' : 'OFFLINE')
+                      ? (currentLanguage === 'bn' ? 'লাইভ সুরক্ষিত' : currentLanguage === 'hi' ? 'लाइव सुरक्षित' : currentLanguage === 'ur' ? 'لائیو محفوظ' : 'LIVE_SECURE') 
+                      : (currentLanguage === 'bn' ? 'অফলাইন' : currentLanguage === 'hi' ? 'ऑफ़लाइन' : currentLanguage === 'ur' ? 'آف لائن' : 'OFFLINE')
                     }
                   </span>
                 </div>
@@ -316,7 +330,7 @@ export default function RobotControlCenter({ currentLanguage }: ControlCenterPro
                         type="text"
                         value={enteredPasscode}
                         onChange={(e) => setEnteredPasscode(e.target.value)}
-                        placeholder={currentLanguage === 'bn' ? 'ভিআইপি পাসকি লিখুন' : currentLanguage === 'hi' ? 'वीआईपी पासकी दर्ज करें' : 'ENTER VIP PASSKEY'}
+                        placeholder={currentLanguage === 'bn' ? 'ভিআইপি পাসকি লিখুন' : currentLanguage === 'hi' ? 'वीआईपी पासकी दर्ज करें' : currentLanguage === 'ur' ? 'وی آئی پی پاس کی درج کریں' : 'ENTER VIP PASSKEY'}
                         className="w-full text-center px-4 py-3 bg-[#18181a] border border-brand-cream/20 rounded-lg text-brand-white placeholder-brand-cream/30 focus:border-brand-accent focus:outline-none uppercase font-mono tracking-widest text-sm"
                       />
                     </div>
@@ -324,7 +338,7 @@ export default function RobotControlCenter({ currentLanguage }: ControlCenterPro
                     {passcodeError && (
                       <p className="text-xs text-red-400 font-mono flex items-center justify-center space-x-1">
                         <ShieldAlert className="w-3.5 h-3.5" />
-                        <span>{currentLanguage === 'bn' ? 'ভুল পাসকোড' : currentLanguage === 'hi' ? 'अमान्य क्रेडेंशियल' : 'INVALID CREDENTIALS'}</span>
+                        <span>{currentLanguage === 'bn' ? 'ভুল পাসকোড' : currentLanguage === 'hi' ? 'अमान्य क्रेडेंशियल' : currentLanguage === 'ur' ? 'غلط پاس ورڈ' : 'INVALID CREDENTIALS'}</span>
                       </p>
                     )}
                     
@@ -413,15 +427,15 @@ export default function RobotControlCenter({ currentLanguage }: ControlCenterPro
 
                     <div className="w-full grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-brand-cream/5 text-center text-[10px] font-mono text-brand-cream/40">
                       <div>
-                        <span>{currentLanguage === 'bn' ? 'বেস:' : currentLanguage === 'hi' ? 'आधार:' : 'BASE:'}</span>
+                        <span>{currentLanguage === 'bn' ? 'বেস:' : currentLanguage === 'hi' ? 'आधार:' : currentLanguage === 'ur' ? 'بیس:' : 'BASE:'}</span>
                         <span className="text-brand-white ml-1">{angleX}°</span>
                       </div>
                       <div>
-                        <span>{currentLanguage === 'bn' ? 'কনুই:' : currentLanguage === 'hi' ? 'कोहनी:' : 'ELBOW:'}</span>
+                        <span>{currentLanguage === 'bn' ? 'কনুই:' : currentLanguage === 'hi' ? 'कोहनी:' : currentLanguage === 'ur' ? 'کہنی:' : 'ELBOW:'}</span>
                         <span className="text-brand-white ml-1">{angleY}°</span>
                       </div>
                       <div>
-                        <span>{currentLanguage === 'bn' ? 'ক্ল্যাম্প:' : currentLanguage === 'hi' ? 'क्लैंप:' : 'VALV_CLAMP:'}</span>
+                        <span>{currentLanguage === 'bn' ? 'ক্ল্যাম্প:' : currentLanguage === 'hi' ? 'क्लैंप:' : currentLanguage === 'ur' ? 'کلیمپ:' : 'VALV_CLAMP:'}</span>
                         <span className="text-brand-white ml-1">{gripForce}%</span>
                       </div>
                     </div>
