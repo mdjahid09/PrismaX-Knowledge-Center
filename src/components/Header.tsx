@@ -130,7 +130,7 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
                   <Globe className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-brand-cream font-mono">
-                  {currentLanguage === 'en' ? 'English' : currentLanguage === 'hi' ? 'हिन्दी' : currentLanguage === 'bn' ? 'বাংলা' : currentLanguage === 'zh' ? '简体中文' : currentLanguage === 'ur' ? 'اردو' : 'Tiếng Việt'}
+                  {languages.find(l => l.code === currentLanguage)?.name || 'English'}
                 </span>
               </button>
 
@@ -180,7 +180,7 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
                   <Globe className="w-3 h-3" />
                 </div>
                 <span className="text-brand-cream text-[11px] font-mono">
-                  {currentLanguage === 'en' ? 'EN' : currentLanguage === 'hi' ? 'HI' : currentLanguage === 'bn' ? 'BN' : currentLanguage === 'zh' ? 'ZH' : currentLanguage === 'ur' ? 'UR' : 'VI'}
+                  {currentLanguage.toUpperCase()}
                 </span>
               </button>
 

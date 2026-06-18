@@ -194,7 +194,7 @@ export default function App() {
                     onClick={() => handleNavigate('teleoperating')}
                     className="w-full sm:w-auto px-8 py-3 rounded-md border border-brand-cream/20 hover:border-brand-accent/40 bg-brand-black/50 hover:bg-brand-black/90 text-brand-cream hover:text-brand-white font-medium text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
                   >
-                    {language === 'en' ? 'Teleoperation' : language === 'hi' ? 'टेलीऑपरेशन' : language === 'zh' ? '遥操作' : language === 'ur' ? 'ٹیلی آپریشن' : language === 'vi' ? 'Vận hành từ xa' : 'টেলিঅপারেশন'}
+                    {t.navSimulation}
                   </button>
                 </div>
 
