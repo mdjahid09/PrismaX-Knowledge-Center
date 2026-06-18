@@ -268,7 +268,7 @@ export default function App() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder={language === 'uk' ? 'Шукати зазначені статті...' : language === 'en' ? 'Search specified articles...' : language === 'hi' ? 'लेख खोजें...' : language === 'zh' ? '搜索技术文档...' : language === 'ur' ? 'مخصوص مضامین تلاش کریں...' : language === 'vi' ? 'Tìm kiếm tài liệu kỹ thuật...' : 'নিবন্ধ অনুসন্ধান করুন...'}
+                  placeholder={language === 'uk' ? 'Шукати зазначені статті...' : language === 'en' ? 'Search specified articles...' : language === 'hi' ? 'लेख खोजें...' : language === 'zh' ? '搜索技术文档...' : language === 'ur' ? 'مخصوص مضامین تلاش کریں...' : language === 'vi' ? 'Tìm kiếm tài liệu kỹ thuật...' : language === 'in' ? 'Cari artikel spesifikasi...' : 'নিবন্ধ অনুসন্ধান করুন...'}
                   className="w-full pl-9 pr-4 py-2 rounded-lg bg-brand-black/70 border border-brand-cream/10 focus:border-brand-accent/50 focus:outline-none text-xs font-mono text-brand-cream placeholder-brand-cream/30 transition-all shadow-inner"
                 />
                 {searchQuery && (
@@ -318,7 +318,7 @@ export default function App() {
                   <div className="py-20 p-8 rounded-2xl border border-brand-cream/10 bg-brand-black/30 backdrop-blur-md text-center max-w-md mx-auto">
                     <BookOpen className="w-12 h-12 text-brand-accent/40 mx-auto mb-4 animate-pulse" />
                     <h3 className="text-lg font-serif text-brand-white font-medium">
-                      {language === 'uk' ? 'Не знайдено статей' : language === 'en' ? 'No Articles Found' : language === 'hi' ? 'कोई लेख नहीं मिला' : language === 'zh' ? '未找到相关文章' : language === 'ur' ? 'کوئی مضمون نہیں ملا' : language === 'vi' ? 'Không tìm thấy bài viết nào' : 'কোন নিবন্ধ পাওয়া যায়নি'}
+                      {language === 'uk' ? 'Не знайдено статей' : language === 'en' ? 'No Articles Found' : language === 'hi' ? 'कोई लेख नहीं मिला' : language === 'zh' ? '未找到相关文章' : language === 'ur' ? 'کوئی مضمون نہیں ملا' : language === 'vi' ? 'Không tìm thấy bài viết nào' : language === 'in' ? 'Tidak Ada Artikel Ditemukan' : 'কোন নিবন্ধ পাওয়া যায়নি'}
                     </h3>
                     <p className="text-xs text-brand-cream/60 mt-2 leading-relaxed">
                       {language === 'uk'
@@ -331,13 +331,14 @@ export default function App() {
                         ? '尝试修改您的搜索关键词或切换过滤器，以查找相关的技术章节。'
                         : language === 'ur'
                         ? 'متعلقہ تکنیکی ابواب تلاش کرنے کے لیے تلاش کے مطلوبہ الفاظ کو تبدیل کرنے یا فلٹرز کو تبدیل کرنے کی کوشش کریں۔'
-                        : language === 'vi' ? 'Thử thay đổi từ khóa tìm kiếm của bạn hoặc đổi bộ lọc khác để tìm những phần kỹ thuật tương ứng.' : 'অন্যান্য কীওয়ার্ড চেষ্টা করুন বা সার্চ ফিল্টার পরিবর্তন করুন।'}
+                        : language === 'vi' ? 'Thử thay đổi từ khóa tìm kiếm của bạn hoặc đổi bộ lọc khác để tìm những phần kỹ thuật tương ứng.'
+                        : language === 'in' ? 'Coba ubah kata kunci Anda atau ganti filter untuk menemukan bagian teknis yang relevan.' : 'অন্যান্য কীওয়ার্ড চেষ্টা করুন বা সার্চ ফিল্টার পরিবর্তন করুন।'}
                     </p>
                     <button
                       onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
                       className="mt-6 px-4 py-2 rounded border border-brand-accent/20 hover:border-brand-accent text-brand-accent font-mono text-[10px] uppercase transition-colors cursor-pointer"
                     >
-                      {language === 'uk' ? 'Скинути фільтри' : language === 'en' ? 'Reset Filters' : language === 'hi' ? 'फ़िल्टर रीसेट करें' : language === 'zh' ? '重置过滤器' : language === 'ur' ? 'فلٹرز ری سیٹ کریں' : language === 'vi' ? 'Đặt lại bộ lọc' : 'ফিল্টার রিসেট করুন'}
+                      {language === 'uk' ? 'Скинути фільтри' : language === 'en' ? 'Reset Filters' : language === 'hi' ? 'फ़िल्टर रीसेट करें' : language === 'zh' ? '重置过滤器' : language === 'ur' ? 'فلٹرز ری سیٹ کریں' : language === 'vi' ? 'Đặt lại bộ lọc' : language === 'in' ? 'Reset Filter' : 'ফিল্টার রিসেট করুন'}
                     </button>
                   </div>
                 );
@@ -367,7 +368,7 @@ export default function App() {
                                 <IconComponent className="w-4 h-4" />
                               </div>
                               <span className="text-[9px] font-mono text-brand-cream/30 uppercase tracking-widest">
-                                {language === 'uk' ? `СТАТТЯ ${index + 1}` : language === 'bn' ? `নিবন্ধ ${index + 1}` : language === 'hi' ? `लेख ${index + 1}` : language === 'zh' ? `文章 ${index + 1}` : language === 'ur' ? `مضمون ${index + 1}` : language === 'vi' ? `BÀI VIẾT ${index + 1}` : `ARTICLE ${index + 1}`}
+                                {language === 'uk' ? `СТАТТЯ ${index + 1}` : language === 'bn' ? `নিবন্ধ ${index + 1}` : language === 'hi' ? `लेख ${index + 1}` : language === 'zh' ? `文章 ${index + 1}` : language === 'ur' ? `مضمون ${index + 1}` : language === 'vi' ? `BÀI VIẾT ${index + 1}` : language === 'in' ? `ARTIKEL ${index + 1}` : `ARTICLE ${index + 1}`}
                               </span>
                             </div>
                             <div>
@@ -383,7 +384,7 @@ export default function App() {
                             </p>
                           </div>
                           <div className="mt-4 pt-3 border-t border-brand-cream/5 flex items-center justify-between text-[10px] font-mono text-brand-cream/40 group-hover:text-brand-accent transition-colors">
-                            <span>{language === 'uk' ? 'ЧИТАТИ ПОВНУ СПЕЦИФІКАЦІЮ' : language === 'en' ? 'READ FULL SPECIFICATION' : language === 'hi' ? 'विशेष विवरण पढ़ें' : language === 'zh' ? '阅读完整规格说明' : language === 'ur' ? 'مکمل تفصیلات پڑھیں' : language === 'vi' ? 'ĐỌC THÔNG SỐ CHI TIẾT' : 'বিস্তারিত বিবরণ পড়ুন'}</span>
+                            <span>{language === 'uk' ? 'ЧИТАТИ ПОВНУ СПЕЦИФІКАЦІЮ' : language === 'en' ? 'READ FULL SPECIFICATION' : language === 'hi' ? 'विशेष विवरण पढ़ें' : language === 'zh' ? '阅读完整规格说明' : language === 'ur' ? 'مکمل تفصیلات پڑھیں' : language === 'vi' ? 'ĐỌC THÔNG SỐ CHI TIẾT' : language === 'in' ? 'BACA SPESIFIKASI LENGKAP' : 'বিস্তারিত বিবরণ পড়ুন'}</span>
                             <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1.5 transition-transform" />
                           </div>
                         </div>
@@ -491,7 +492,7 @@ export default function App() {
               {/* Overview */}
               <div className="space-y-2">
                 <span className="text-[10px] font-mono text-brand-accent uppercase block tracking-wider">
-                  {language === 'uk' ? '1. ВСТУП' : language === 'en' ? '1. INTRODUCTION' : language === 'hi' ? '1. परिचय और अवलोकन' : language === 'zh' ? '1. 简介与概述' : language === 'ur' ? '1. تعارف اور جائزہ' : language === 'vi' ? '1. GIỚI THIỆU' : '১. পরিচিতি ও ওভারভিউ'}
+                  {language === 'uk' ? '1. ВСТУП' : language === 'en' ? '1. INTRODUCTION' : language === 'hi' ? '1. परिचय और अवलोकन' : language === 'zh' ? '1. 简介与概述' : language === 'ur' ? '1. تعارف اور جائزہ' : language === 'vi' ? '1. GIỚI THIỆU' : language === 'in' ? '1. PENDAHULUAN' : '১. পরিচিতি ও ওভারভিউ'}
                 </span>
                 <p className="text-sm font-sans font-light text-brand-cream/90 leading-relaxed bg-brand-black/45 p-4 rounded-lg border border-brand-cream/5">
                   {activeTopicDetails.overview}
@@ -502,7 +503,7 @@ export default function App() {
               {activeTopicDetails.mainExplanation && (
                 <div className="space-y-2 pt-2">
                   <span className="text-[10px] font-mono text-brand-accent uppercase block tracking-wider">
-                    {language === 'uk' ? '2. ГЛИБОКИЙ ТЕХНІЧНИЙ АНАЛІЗ' : language === 'en' ? '2. IN-DEPTH TECHNICAL ANALYSIS' : language === 'hi' ? '2. विस्तृत तकनीकी सारांश' : language === 'zh' ? '2. 深度技术解析' : language === 'ur' ? '2. تفصیلی تکنیکی تجزیہ' : language === 'vi' ? '2. PHÂN TÍCH KỸ THUẬT CHUYÊN SÂU' : '২. বিস্তারিত কারিগরি সারসংক্ষেপ'}
+                    {language === 'uk' ? '2. ГЛИБОКИЙ ТЕХНІЧНИЙ АНАЛІЗ' : language === 'en' ? '2. IN-DEPTH TECHNICAL ANALYSIS' : language === 'hi' ? '2. विस्तृत तकनीकी सारांश' : language === 'zh' ? '2. 深度技术解析' : language === 'ur' ? '2. تفصیلی تکنیکی تجزیہ' : language === 'vi' ? '2. PHÂN TÍCH KỸ THUẬT CHUYÊN SÂU' : language === 'in' ? '2. ANALISIS TEKNIS MENDALAM' : '২. বিস্তারিত কারিগরি সারসংক্ষেপ'}
                   </span>
                   <p className="text-sm font-sans font-light text-brand-cream/80 stroke-brand-cream/20 leading-relaxed whitespace-pre-wrap bg-brand-black/30 p-4 rounded-lg border border-brand-cream/5">
                     {activeTopicDetails.mainExplanation}
@@ -514,7 +515,7 @@ export default function App() {
               {activeTopicDetails.keyConcepts && activeTopicDetails.keyConcepts.length > 0 && (
                 <div className="space-y-3 pt-2">
                   <span className="text-[10px] font-mono text-brand-accent uppercase block tracking-wider">
-                    {language === 'uk' ? '3. ОСНОВНІ КОНЦЕПЦІЇ СПЕЦИФІКАЦІЇ' : language === 'en' ? '3. CORE SPECIFICATION CONCEPTS' : language === 'hi' ? '3. मुख्य अवधारणाएँ' : language === 'zh' ? '3. 核心规格要点' : language === 'vi' ? '3. KHÁI NIỆM THÔNG SỐ CỐT LÕI' : language === 'ur' ? '3. بنیادی تصریح کے تصورات' : '৩. প্রধান ধারণাসমূহ'}
+                    {language === 'uk' ? '3. ОСНОВНІ КОНЦЕПЦІЇ СПЕЦИФІКАЦІЇ' : language === 'en' ? '3. CORE SPECIFICATION CONCEPTS' : language === 'hi' ? '3. मुख्य अवधारणाएँ' : language === 'zh' ? '3. 核心规格要点' : language === 'vi' ? '3. KHÁI NIỆM THÔNG SỐ CỐT LÕI' : language === 'ur' ? '3. بنیادی تصریح کے تصورات' : language === 'in' ? '3. KONSEP SPESIFIKASI INTI' : '৩. প্রধান ধারণাসমূহ'}
                   </span>
                   <div className="grid grid-cols-1 gap-3">
                     {activeTopicDetails.keyConcepts.map((concept: any, idx: number) => (
