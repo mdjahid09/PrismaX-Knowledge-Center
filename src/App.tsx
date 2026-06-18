@@ -194,7 +194,7 @@ export default function App() {
                     onClick={() => handleNavigate('teleoperating')}
                     className="w-full sm:w-auto px-8 py-3 rounded-md border border-brand-cream/20 hover:border-brand-accent/40 bg-brand-black/50 hover:bg-brand-black/90 text-brand-cream hover:text-brand-white font-medium text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
                   >
-                    {language === 'en' ? 'LAUNCH TELEOPERATING' : language === 'hi' ? 'टेलीऑपरेशन लॉन्च करें' : language === 'zh' ? '启动遥操作' : language === 'ur' ? 'ٹیلی آپریشن شروع کریں' : 'টেলিঅপারেটিং শুরু করুন'}
+                    {language === 'en' ? 'Teleoperation' : language === 'hi' ? 'टेलीऑपरेशन' : language === 'zh' ? '遥操作' : language === 'ur' ? 'ٹیلی آپریشن' : 'টেলিঅপারেশন'}
                   </button>
                 </div>
 
@@ -409,7 +409,7 @@ export default function App() {
 
             <div className="space-y-3">
               <h2 className="text-3xl sm:text-4xl font-serif text-brand-cream tracking-tight uppercase leading-tight">
-                {language === 'en' ? 'Teleoperating' : language === 'hi' ? 'टेलीऑपरेटिंग' : language === 'zh' ? '远程遥操作控制中枢' : language === 'ur' ? 'ٹیلی آپریشن' : 'টেলিঅপারেটিং'}
+                {language === 'en' ? 'Become a Teleoperator' : language === 'hi' ? 'एक टेलीऑपरेटर बनें' : language === 'zh' ? '成为遥操作员' : language === 'ur' ? 'ٹیلی آپریٹر بنیں' : 'টেলিঅপারেটর হোন'}
               </h2>
               <p className="text-xs sm:text-sm font-sans font-light text-brand-cream/80 max-w-xl leading-relaxed mx-auto text-center">
                 {language === 'en' 
