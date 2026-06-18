@@ -16,9 +16,39 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
 
   // Process search query
   const filteredArticles = documentationArticles.filter(article => {
-    const title = currentLanguage === 'bn' ? article.bengaliTitle.toLowerCase() : currentLanguage === 'hi' ? article.hindiTitle.toLowerCase() : article.title.toLowerCase();
-    const summary = currentLanguage === 'bn' ? article.bengaliSummary.toLowerCase() : currentLanguage === 'hi' ? article.hindiSummary.toLowerCase() : article.summary.toLowerCase();
-    const category = currentLanguage === 'bn' ? article.bengaliCategory.toLowerCase() : currentLanguage === 'hi' ? article.hindiCategory.toLowerCase() : article.category.toLowerCase();
+    const titleVal = currentLanguage === 'bn' 
+      ? article.bengaliTitle 
+      : currentLanguage === 'hi' 
+      ? article.hindiTitle 
+      : currentLanguage === 'zh' 
+      ? article.chineseTitle 
+      : currentLanguage === 'ur' 
+      ? (article.urduTitle || article.title) 
+      : article.title;
+
+    const summaryVal = currentLanguage === 'bn' 
+      ? article.bengaliSummary 
+      : currentLanguage === 'hi' 
+      ? article.hindiSummary 
+      : currentLanguage === 'zh' 
+      ? article.chineseSummary 
+      : currentLanguage === 'ur' 
+      ? (article.urduSummary || article.summary) 
+      : article.summary;
+
+    const catVal = currentLanguage === 'bn' 
+      ? article.bengaliCategory 
+      : currentLanguage === 'hi' 
+      ? article.hindiCategory 
+      : currentLanguage === 'zh' 
+      ? article.chineseCategory 
+      : currentLanguage === 'ur' 
+      ? (article.urduCategory || article.category) 
+      : article.category;
+
+    const title = titleVal.toLowerCase();
+    const summary = summaryVal.toLowerCase();
+    const category = catVal.toLowerCase();
     const query = searchQuery.toLowerCase();
     
     return title.includes(query) || summary.includes(query) || category.includes(query);
@@ -77,19 +107,36 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
             {/* Index Checklist Block */}
             <div className="rounded-xl border border-brand-cream/10 bg-brand-black/40 backdrop-blur-md p-4 space-y-3 cursor-border-active premium-interactive-card shadow-layered-md">
               <span className="text-[10px] font-mono uppercase tracking-widest text-brand-cream/40 px-1 pb-1 border-b border-brand-cream/5 block">
-                {currentLanguage === 'bn' ? 'সূচিপত্র' : currentLanguage === 'hi' ? 'विषय-सूची' : 'TABLE OF CONTENTS'}
+                {currentLanguage === 'bn' ? 'সূচিপত্র' : currentLanguage === 'hi' ? 'विषय-सूची' : currentLanguage === 'zh' ? '目录' : currentLanguage === 'ur' ? 'فہرست مضامین' : 'TABLE OF CONTENTS'}
               </span>
 
               {filteredArticles.length === 0 ? (
                 <p className="text-xs font-mono text-brand-cream/40 p-4 text-center">
-                  {currentLanguage === 'bn' ? 'কোনো তথ্য পাওয়া যায়নি' : currentLanguage === 'hi' ? 'कोई लेख नहीं मिला' : 'NO ARTICLES MATCHING SEARCH'}
+                  {currentLanguage === 'bn' ? 'কোনো তথ্য পাওয়া যায়নি' : currentLanguage === 'hi' ? 'कोई लेख नहीं मिला' : currentLanguage === 'zh' ? '没有找到匹配的文章' : currentLanguage === 'ur' ? 'کوئی مضمون نہیں ملا' : 'NO ARTICLES MATCHING SEARCH'}
                 </p>
               ) : (
                 <div className="space-y-1.5" id="docs-articles-index-list">
                   {filteredArticles.map((article) => {
                     const isSelected = activeArticle.slug === article.slug;
-                    const cat = currentLanguage === 'bn' ? article.bengaliCategory : currentLanguage === 'hi' ? article.hindiCategory : article.category;
-                    const title = currentLanguage === 'bn' ? article.bengaliTitle : currentLanguage === 'hi' ? article.hindiTitle : article.title;
+                    const cat = currentLanguage === 'bn' 
+                      ? article.bengaliCategory 
+                      : currentLanguage === 'hi' 
+                      ? article.hindiCategory 
+                      : currentLanguage === 'zh' 
+                      ? article.chineseCategory 
+                      : currentLanguage === 'ur' 
+                      ? (article.urduCategory || article.category) 
+                      : article.category;
+
+                    const title = currentLanguage === 'bn' 
+                      ? article.bengaliTitle 
+                      : currentLanguage === 'hi' 
+                      ? article.hindiTitle 
+                      : currentLanguage === 'zh' 
+                      ? article.chineseTitle 
+                      : currentLanguage === 'ur' 
+                      ? (article.urduTitle || article.title) 
+                      : article.title;
 
                     return (
                       <button
@@ -151,24 +198,58 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
                 {/* Meta details */}
                 <div className="flex items-center space-x-2 text-[10px] font-mono uppercase tracking-widest text-[#C5A880] mb-4">
                   <Compass className="w-4 h-4 text-brand-accent" />
-                  <span>{currentLanguage === 'bn' ? activeArticle.bengaliCategory : currentLanguage === 'hi' ? activeArticle.hindiCategory : activeArticle.category}</span>
+                  <span>
+                    {currentLanguage === 'bn' 
+                      ? activeArticle.bengaliCategory 
+                      : currentLanguage === 'hi' 
+                      ? activeArticle.hindiCategory 
+                      : currentLanguage === 'zh' 
+                      ? activeArticle.chineseCategory 
+                      : currentLanguage === 'ur' 
+                      ? (activeArticle.urduCategory || activeArticle.category) 
+                      : activeArticle.category}
+                  </span>
                   <span>/</span>
                   <span className="text-brand-cream/50">{activeArticle.slug.toUpperCase()}</span>
                 </div>
 
                 {/* Article Main Header */}
                 <h2 className="text-2xl md:text-4xl font-serif text-brand-white tracking-tight leading-tight">
-                  {currentLanguage === 'bn' ? activeArticle.bengaliTitle : currentLanguage === 'hi' ? activeArticle.hindiTitle : activeArticle.title}
+                  {currentLanguage === 'bn' 
+                    ? activeArticle.bengaliTitle 
+                    : currentLanguage === 'hi' 
+                    ? activeArticle.hindiTitle 
+                    : currentLanguage === 'zh' 
+                    ? activeArticle.chineseTitle 
+                    : currentLanguage === 'ur' 
+                    ? (activeArticle.urduTitle || activeArticle.title) 
+                    : activeArticle.title}
                 </h2>
 
                 {/* Article Summary Quote block */}
                 <p className="mt-4 p-4 rounded-lg bg-brand-white/5 border border-brand-cream/10 text-brand-cream text-sm font-sans font-light italic leading-relaxed">
-                  {currentLanguage === 'bn' ? activeArticle.bengaliSummary : currentLanguage === 'hi' ? activeArticle.hindiSummary : activeArticle.summary}
+                  {currentLanguage === 'bn' 
+                    ? activeArticle.bengaliSummary 
+                    : currentLanguage === 'hi' 
+                    ? activeArticle.hindiSummary 
+                    : currentLanguage === 'zh' 
+                    ? activeArticle.chineseSummary 
+                    : currentLanguage === 'ur' 
+                    ? (activeArticle.urduSummary || activeArticle.summary) 
+                    : activeArticle.summary}
                 </p>
 
                 {/* Article Content Paragraphs */}
                 <div className="mt-8 space-y-6 text-brand-cream/80 text-sm md:text-base font-sans font-light leading-relaxed">
-                  {(currentLanguage === 'bn' ? activeArticle.bengaliContent : currentLanguage === 'hi' ? activeArticle.hindiContent : activeArticle.content).map((para, idx) => (
+                  {(currentLanguage === 'bn' 
+                    ? activeArticle.bengaliContent 
+                    : currentLanguage === 'hi' 
+                    ? activeArticle.hindiContent 
+                    : currentLanguage === 'zh' 
+                    ? activeArticle.chineseContent 
+                    : currentLanguage === 'ur' 
+                    ? (activeArticle.urduContent || activeArticle.content) 
+                    : activeArticle.content).map((para, idx) => (
                     <p key={idx} className="indent-2 select-text">
                       {para}
                     </p>

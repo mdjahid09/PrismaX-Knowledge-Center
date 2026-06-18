@@ -59,7 +59,7 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
               </li>
               <li>
                 <button onClick={() => handleNavClick('about')} className="hover:text-brand-white transition-colors cursor-pointer text-left">
-                  {currentLanguage === 'bn' ? 'সম্পর্কে' : currentLanguage === 'hi' ? 'हमारे بارے میں' : currentLanguage === 'zh' ? '关于我们' : currentLanguage === 'ur' ? 'ہمارے بارے میں' : 'About'}
+                  {currentLanguage === 'bn' ? 'লাইব্রেরি' : currentLanguage === 'hi' ? 'लाइब्रेरी' : currentLanguage === 'zh' ? '图书馆' : currentLanguage === 'ur' ? 'لائبریری' : 'Library'}
                 </button>
               </li>
               <li>
@@ -97,7 +97,7 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
                       onClick={() => setDropdownOpen(false)}
                     />
                     <div className="absolute left-0 bottom-full mb-2 w-full rounded-xl border border-brand-cream/15 bg-brand-black/95 backdrop-blur-xl p-1.5 shadow-2xl z-50 animate-fade-in flex flex-col space-y-1">
-                      {(['en', 'hi', 'bn', 'zh', 'ur'] as const).map((lang) => {
+                      {(['en', 'bn', 'hi', 'zh', 'ur'] as const).map((lang) => {
                         const isSelected = currentLanguage === lang;
                         const labels: Record<Language, string> = {
                           en: 'English (EN)',

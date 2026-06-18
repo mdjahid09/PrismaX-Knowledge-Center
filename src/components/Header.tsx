@@ -28,19 +28,19 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
     { code: 'ur', name: 'اردو' }
   ];
 
-  const getAboutLabel = (lang: Language): string => {
+  const getLibraryLabel = (lang: Language): string => {
     switch (lang) {
-      case 'bn': return 'সম্পর্কে';
-      case 'hi': return 'हमारे बारे में';
-      case 'zh': return '关于我们';
-      case 'ur': return 'ہمارے بارے میں';
-      default: return 'About';
+      case 'bn': return 'লাইব্রেরি';
+      case 'hi': return 'लाइब्रेरी';
+      case 'zh': return '图书馆';
+      case 'ur': return 'لائبریری';
+      default: return 'Library';
     }
   };
 
   const menuItems = [
     { id: 'home', label: t.navHome },
-    { id: 'about', label: getAboutLabel(currentLanguage) },
+    { id: 'about', label: getLibraryLabel(currentLanguage) },
     { id: 'teleoperating', label: t.navSimulation }
   ];
 
@@ -58,10 +58,10 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
-          <div className="flex-shrink-0 cursor-pointer flex items-center space-x-1.5" onClick={() => handleNavClick('home')}>
-            <Logo size="sm" theme={theme} />
-            <span className="font-sans text-xs sm:text-sm md:text-base font-semibold tracking-wider text-brand-cream hover:text-brand-white transition-colors duration-300 whitespace-nowrap self-center pt-0.5">
-              {currentLanguage === 'bn' ? 'নলেজ সেন্টার' : currentLanguage === 'hi' ? 'ज्ञान केंद्र' : currentLanguage === 'zh' ? '技术知识库' : currentLanguage === 'ur' ? 'نالج سینٹر' : 'Knowledge Center'}
+          <div className="flex-shrink-0 cursor-pointer flex items-center h-full space-x-0" onClick={() => handleNavClick('home')}>
+            <Logo size="sm" theme={theme} className="mr-0 pr-0" />
+            <span className="font-sans text-xs sm:text-sm md:text-base font-semibold tracking-wider text-brand-cream hover:text-brand-white transition-colors duration-300 whitespace-nowrap self-center pt-0.5 -ml-1.5 sm:-ml-2">
+              {currentLanguage === 'bn' ? 'নলেজ সেন্টার' : currentLanguage === 'hi' ? 'ज्ञान केंद्र' : currentLanguage === 'zh' ? '技术知识库' : currentLanguage === 'ur' ? 'نالج سینٹر' : 'knowledge center'}
             </span>
           </div>
 

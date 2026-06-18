@@ -123,7 +123,7 @@ export default function App() {
 
       {activeSection === 'home' && (
         <>
-          <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden" id="hero">
+          <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden" id="hero">
           {/* Ambient background graphic with overlays to maintain perfect text contrast */}
           <div className="absolute inset-0 z-0">
             <img 
@@ -142,10 +142,10 @@ export default function App() {
           {/* Diagonal wire background lines */}
           <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[linear-gradient(rgba(223,216,208,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(223,216,208,0.1)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
 
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 relative z-10 text-center w-full">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10 text-center w-full">
             
             {/* Elegant Brand Glassmorphic Glow Card */}
-            <div className="relative p-6 sm:p-12 md:p-16 rounded-3xl border border-brand-accent/15 bg-brand-black/40 backdrop-blur-xl cursor-border-active premium-interactive-card shadow-layered-lg overflow-hidden group transition-all duration-700 hover:border-brand-accent/35 max-w-3xl mx-auto">
+            <div className="relative p-6 sm:p-10 md:p-12 rounded-3xl border border-brand-accent/15 bg-brand-black/40 backdrop-blur-xl cursor-border-active premium-interactive-card shadow-layered-lg overflow-hidden group transition-all duration-700 hover:border-brand-accent/35 max-w-3xl mx-auto">
               
               {/* Dynamic light/dark brand-colored radial glowing background behind the logo */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-brand-accent/8 rounded-full blur-[80px] pointer-events-none transition-all duration-700 group-hover:scale-110 group-hover:bg-brand-accent/12" />
@@ -154,15 +154,9 @@ export default function App() {
               <div className="absolute top-0 left-0 w-24 h-[1px] bg-gradient-to-r from-transparent via-brand-accent/40 to-transparent group-hover:w-48 transition-all duration-700" />
               <div className="absolute bottom-0 right-0 w-24 h-[1px] bg-gradient-to-r from-transparent via-brand-accent/40 to-transparent group-hover:w-48 transition-all duration-700" />
               
-              <div className="space-y-6 sm:space-y-8 flex flex-col items-center relative z-10">
+              <div className="space-y-5 sm:space-y-6 flex flex-col items-center relative z-10">
                 
-                {/* Badge */}
-                <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-black/85 border border-brand-accent/25 backdrop-blur-md animate-fade-in transition-colors duration-300 group-hover:border-brand-accent/40">
-                  <Sparkles className="w-3.5 h-3.5 text-brand-accent animate-pulse" />
-                  <span className="text-[10px] font-mono tracking-widest text-brand-accent animate-pulse">
-                    {t.teleopActiveTag}
-                  </span>
-                </div>
+
 
                 {/* Pixel-perfect official PrismaX Brand Logo dynamically blended and rendered transparently with scale animation */}
                 <div className="flex items-center justify-center animate-fade-in pt-2 pb-2 w-full">
@@ -370,7 +364,7 @@ export default function App() {
                                 <IconComponent className="w-4 h-4" />
                               </div>
                               <span className="text-[9px] font-mono text-brand-cream/30 uppercase tracking-widest">
-                                ARTICLE {index + 1}
+                                {language === 'bn' ? `নিবন্ধ ${index + 1}` : language === 'hi' ? `लेख ${index + 1}` : language === 'zh' ? `文章 ${index + 1}` : language === 'ur' ? `مضمون ${index + 1}` : `ARTICLE ${index + 1}`}
                               </span>
                             </div>
                             <div>
@@ -411,13 +405,7 @@ export default function App() {
 
           <div className="max-w-3xl w-full p-6 sm:p-12 rounded-3xl border border-brand-accent/15 bg-brand-black/50 backdrop-blur-xl text-center flex flex-col items-center space-y-6 relative z-10 shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_80px_rgba(197,168,128,0.06),inset_0_1px_1px_rgba(255,255,255,0.05),0_15px_30px_rgba(0,0,0,0.15)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.8),0_0_100px_rgba(197,168,128,0.12)] hover:border-brand-accent/35 transition-all duration-500">
             
-            {/* Badge */}
-            <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-black/85 border border-brand-accent/25 backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5 text-brand-accent animate-pulse" />
-              <span className="text-[10px] font-mono tracking-widest text-[#E3D5CA] uppercase">
-                {language === 'en' ? 'ACTIVE TELEOPERATION LINK' : language === 'hi' ? 'सक्रिय टेलीऑपरेशन लिंक' : language === 'zh' ? '活动智能遥操作链路' : language === 'ur' ? 'فعال ٹیلی آپریشن لنک' : 'সক্রিয় টেলিঅপারেশন সংযোগ'}
-              </span>
-            </div>
+
 
             <div className="space-y-3">
               <h2 className="text-3xl sm:text-4xl font-serif text-brand-cream tracking-tight uppercase leading-tight">
@@ -459,11 +447,7 @@ export default function App() {
               </a>
             </div>
 
-            {/* Technical system trace element */}
-            <div className="pt-4 border-t border-brand-cream/5 text-[9px] font-mono text-brand-cream/30 space-y-1 w-full text-center">
-              <div>PRISMAX_TELEOPERATION_PROTOCOL_ACTIVE</div>
-              <div>FLEET ADDRESS: APP.PRISMAX.AI/FLEET</div>
-            </div>
+
 
           </div>
         </section>
@@ -639,27 +623,27 @@ export default function App() {
 
 
       {/* PrismaX Social Section */}
-      {(activeSection === 'home' || activeSection === 'about') && (
-        <section className="py-20 border-t border-brand-cream/10 bg-brand-black/20" id="prismas-social">
+      {(activeSection === 'home' || activeSection === 'about' || activeSection === 'teleoperating') && (
+        <section className="py-8 border-t border-brand-cream/10 bg-brand-black/20" id="prismas-social">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-lg mx-auto mb-10">
-              <h2 className="text-xs font-mono uppercase text-brand-cream/40 tracking-[0.3em]" id="social-title">
+            <div className="text-center max-w-lg mx-auto mb-4">
+              <h2 className="text-[10px] font-mono uppercase text-brand-cream/40 tracking-[0.25em]" id="social-title">
                 {t.socialTitle}
               </h2>
             </div>
 
             {/* Display the icons in a SINGLE HORIZONTAL ROW */}
-            <div className="flex items-center justify-center gap-12" id="social-icons-row">
+            <div className="flex items-center justify-center gap-6" id="social-icons-row">
               {/* Official Website */}
               <a
                 href="https://www.prismax.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-4 rounded-full border border-brand-cream/10 hover:border-brand-accent/40 bg-brand-black/40 hover:bg-brand-black/90 transition-all duration-300 hover:scale-[1.15] hover:shadow-[0_0_20px_rgba(197,168,128,0.25)] flex items-center justify-center text-brand-cream"
+                className="group p-2.5 rounded-full border border-brand-cream/10 hover:border-brand-accent/40 bg-brand-black/40 hover:bg-brand-black/90 transition-all duration-300 hover:scale-[1.1] hover:shadow-[0_0_15px_rgba(197,168,128,0.2)] flex items-center justify-center text-brand-cream"
                 id="social-link-website"
                 title="Official Website"
               >
-                <Globe className="w-8 h-8 md:w-9 md:h-9 hover:text-white transition-all duration-300" />
+                <Globe className="w-6 h-6 hover:text-white transition-all duration-300" />
               </a>
 
               {/* X (Twitter) */}
@@ -667,11 +651,11 @@ export default function App() {
                 href="https://x.com/PrismaXai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-4 rounded-full border border-brand-cream/10 hover:border-brand-accent/40 bg-brand-black/40 hover:bg-brand-black/90 transition-all duration-300 hover:scale-[1.15] hover:shadow-[0_0_20px_rgba(197,168,128,0.25)] flex items-center justify-center text-brand-cream"
+                className="group p-2.5 rounded-full border border-brand-cream/10 hover:border-brand-accent/40 bg-brand-black/40 hover:bg-brand-black/90 transition-all duration-300 hover:scale-[1.1] hover:shadow-[0_0_15px_rgba(197,168,128,0.2)] flex items-center justify-center text-brand-cream"
                 id="social-link-x"
                 title="X"
               >
-                <XIcon className="w-8 h-8 md:w-9 md:h-9 hover:text-white transition-all duration-300" />
+                <XIcon className="w-6 h-6 hover:text-white transition-all duration-300" />
               </a>
 
               {/* Discord */}
@@ -679,11 +663,11 @@ export default function App() {
                 href="https://discord.gg/prismaxai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-4 rounded-full border border-brand-cream/10 hover:border-brand-accent/40 bg-brand-black/40 hover:bg-brand-black/90 transition-all duration-300 hover:scale-[1.15] hover:shadow-[0_0_20px_rgba(197,168,128,0.25)] flex items-center justify-center text-brand-cream"
+                className="group p-2.5 rounded-full border border-brand-cream/10 hover:border-brand-accent/40 bg-brand-black/40 hover:bg-brand-black/90 transition-all duration-300 hover:scale-[1.1] hover:shadow-[0_0_15px_rgba(197,168,128,0.2)] flex items-center justify-center text-brand-cream"
                 id="social-link-discord"
                 title="Discord"
               >
-                <DiscordIcon className="w-8 h-8 md:w-9 md:h-9 hover:text-white transition-all duration-300" />
+                <DiscordIcon className="w-6 h-6 hover:text-white transition-all duration-300" />
               </a>
 
               {/* YouTube */}
@@ -691,11 +675,11 @@ export default function App() {
                 href="https://www.youtube.com/@PrismaX-AI"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-4 rounded-full border border-brand-cream/10 hover:border-brand-accent/40 bg-brand-black/40 hover:bg-brand-black/90 transition-all duration-300 hover:scale-[1.15] hover:shadow-[0_0_20px_rgba(197,168,128,0.25)] flex items-center justify-center text-brand-cream"
+                className="group p-2.5 rounded-full border border-brand-cream/10 hover:border-brand-accent/40 bg-brand-black/40 hover:bg-brand-black/90 transition-all duration-300 hover:scale-[1.1] hover:shadow-[0_0_15px_rgba(197,168,128,0.2)] flex items-center justify-center text-brand-cream"
                 id="social-link-youtube"
                 title="YouTube"
               >
-                <Youtube className="w-8 h-8 md:w-9 md:h-9 hover:text-white transition-all duration-300" />
+                <Youtube className="w-6 h-6 hover:text-white transition-all duration-300" />
               </a>
             </div>
           </div>
