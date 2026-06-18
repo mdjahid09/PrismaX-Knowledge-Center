@@ -24,6 +24,8 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
       ? article.chineseTitle 
       : currentLanguage === 'ur' 
       ? (article.urduTitle || article.title) 
+      : currentLanguage === 'vi'
+      ? (article.vietnameseTitle || article.title)
       : article.title;
 
     const summaryVal = currentLanguage === 'bn' 
@@ -34,6 +36,8 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
       ? article.chineseSummary 
       : currentLanguage === 'ur' 
       ? (article.urduSummary || article.summary) 
+      : currentLanguage === 'vi'
+      ? (article.vietnameseSummary || article.summary)
       : article.summary;
 
     const catVal = currentLanguage === 'bn' 
@@ -44,6 +48,8 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
       ? article.chineseCategory 
       : currentLanguage === 'ur' 
       ? (article.urduCategory || article.category) 
+      : currentLanguage === 'vi'
+      ? (article.vietnameseCategory || article.category)
       : article.category;
 
     const title = titleVal.toLowerCase();
@@ -62,8 +68,8 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-8 border-b border-brand-cream/10 mb-10">
           <div>
             <span className="text-xs font-mono tracking-[0.3em] uppercase text-brand-accent flex items-center gap-1">
-              <Terminal className="w-3.5 h-3.5" />
-              {currentLanguage === 'bn' ? 'ডকুমেন্টেশন মডিউল' : currentLanguage === 'hi' ? 'दस्तावेज़ मॉड्यूल' : 'DOCUMENTATION MODULE'}
+              <Compass className="w-3.5 h-3.5" />
+              {currentLanguage === 'bn' ? 'ডকুমেন্টেশন মডিউল' : currentLanguage === 'hi' ? 'दस्तावेज़ मॉड्यूल' : currentLanguage === 'vi' ? 'MÔ-ĐUN TÀI LIỆU' : 'DOCUMENTATION MODULE'}
             </span>
             <h1 className="text-3xl md:text-4xl font-serif tracking-tight mt-1">
               {t.docsTitle}
@@ -107,7 +113,7 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
             {/* Index Checklist Block */}
             <div className="rounded-xl border border-brand-cream/10 bg-brand-black/40 backdrop-blur-md p-4 space-y-3 cursor-border-active premium-interactive-card shadow-layered-md">
               <span className="text-[10px] font-mono uppercase tracking-widest text-brand-cream/40 px-1 pb-1 border-b border-brand-cream/5 block">
-                {currentLanguage === 'bn' ? 'সূচিপত্র' : currentLanguage === 'hi' ? 'विषय-सूची' : currentLanguage === 'zh' ? '目录' : currentLanguage === 'ur' ? 'فہرست مضامین' : 'TABLE OF CONTENTS'}
+                {currentLanguage === 'bn' ? 'সূচিপত্র' : currentLanguage === 'hi' ? 'विषय-सूची' : currentLanguage === 'zh' ? '目录' : currentLanguage === 'ur' ? 'فہرست مضامین' : currentLanguage === 'vi' ? 'MỤC LỤC' : 'TABLE OF CONTENTS'}
               </span>
 
               {filteredArticles.length === 0 ? (
@@ -207,6 +213,8 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
                       ? activeArticle.chineseCategory 
                       : currentLanguage === 'ur' 
                       ? (activeArticle.urduCategory || activeArticle.category) 
+                      : currentLanguage === 'vi'
+                      ? (activeArticle.vietnameseCategory || activeArticle.category)
                       : activeArticle.category}
                   </span>
                   <span>/</span>
@@ -223,6 +231,8 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
                     ? activeArticle.chineseTitle 
                     : currentLanguage === 'ur' 
                     ? (activeArticle.urduTitle || activeArticle.title) 
+                    : currentLanguage === 'vi'
+                    ? (activeArticle.vietnameseTitle || activeArticle.title)
                     : activeArticle.title}
                 </h2>
 
@@ -236,6 +246,8 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
                     ? activeArticle.chineseSummary 
                     : currentLanguage === 'ur' 
                     ? (activeArticle.urduSummary || activeArticle.summary) 
+                    : currentLanguage === 'vi'
+                    ? (activeArticle.vietnameseSummary || activeArticle.summary)
                     : activeArticle.summary}
                 </p>
 
@@ -249,6 +261,8 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
                     ? activeArticle.chineseContent 
                     : currentLanguage === 'ur' 
                     ? (activeArticle.urduContent || activeArticle.content) 
+                    : currentLanguage === 'vi'
+                    ? (activeArticle.vietnameseContent || activeArticle.content)
                     : activeArticle.content).map((para, idx) => (
                     <p key={idx} className="indent-2 select-text">
                       {para}

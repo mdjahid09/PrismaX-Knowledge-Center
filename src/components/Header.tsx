@@ -25,7 +25,9 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
     { code: 'hi', name: 'हिन्दी' },
     { code: 'bn', name: 'বাংলা' },
     { code: 'zh', name: '简体中文' },
-    { code: 'ur', name: 'اردو' }
+    { code: 'ur', name: 'اردو' },
+    { code: 'vi', name: 'Tiếng Việt' },
+    { code: 'uk', name: 'Українська' }
   ];
 
   const getLibraryLabel = (lang: Language): string => {
@@ -34,6 +36,8 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
       case 'hi': return 'लाइब्रेरी';
       case 'zh': return '图书馆';
       case 'ur': return 'لائبریری';
+      case 'vi': return 'Thư viện';
+      case 'uk': return 'Бібліотека';
       default: return 'Library';
     }
   };
@@ -61,7 +65,7 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
           <div className="flex-shrink-0 cursor-pointer flex items-center h-full space-x-0" onClick={() => handleNavClick('home')}>
             <Logo size="sm" theme={theme} className="mr-0 pr-0" />
             <span className="font-sans text-xs sm:text-sm md:text-base font-semibold tracking-wider text-brand-cream hover:text-brand-white transition-colors duration-300 whitespace-nowrap self-center pt-0.5 -ml-1.5 sm:-ml-2">
-              {currentLanguage === 'bn' ? 'নলেজ সেন্টার' : currentLanguage === 'hi' ? 'ज्ञान केंद्र' : currentLanguage === 'zh' ? '技术知识库' : currentLanguage === 'ur' ? 'نالج سینٹر' : 'knowledge center'}
+              {currentLanguage === 'bn' ? 'নলেজ সেন্টার' : currentLanguage === 'hi' ? 'ज्ञान केंद्र' : currentLanguage === 'zh' ? '技术知识库' : currentLanguage === 'ur' ? 'نالج سینٹر' : currentLanguage === 'vi' ? 'trung tâm tri thức' : currentLanguage === 'uk' ? 'центр знань' : 'knowledge center'}
             </span>
           </div>
 
@@ -126,7 +130,7 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
                   <Globe className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-brand-cream font-mono">
-                  {currentLanguage === 'en' ? 'English' : currentLanguage === 'hi' ? 'हिन्दी' : currentLanguage === 'bn' ? 'বাংলা' : currentLanguage === 'zh' ? '简体中文' : 'اردو'}
+                  {currentLanguage === 'en' ? 'English' : currentLanguage === 'hi' ? 'हिन्दी' : currentLanguage === 'bn' ? 'বাংলা' : currentLanguage === 'zh' ? '简体中文' : currentLanguage === 'ur' ? 'اردو' : 'Tiếng Việt'}
                 </span>
               </button>
 
@@ -176,7 +180,7 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
                   <Globe className="w-3 h-3" />
                 </div>
                 <span className="text-brand-cream text-[11px] font-mono">
-                  {currentLanguage === 'en' ? 'EN' : currentLanguage === 'hi' ? 'HI' : currentLanguage === 'bn' ? 'BN' : currentLanguage === 'zh' ? 'ZH' : 'UR'}
+                  {currentLanguage === 'en' ? 'EN' : currentLanguage === 'hi' ? 'HI' : currentLanguage === 'bn' ? 'BN' : currentLanguage === 'zh' ? 'ZH' : currentLanguage === 'ur' ? 'UR' : 'VI'}
                 </span>
               </button>
 

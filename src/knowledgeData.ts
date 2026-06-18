@@ -27,6 +27,8 @@ import { Language } from './types';
 import { hindiKnowledgeTranslations } from './hindiKnowledgeData';
 import { chineseKnowledgeTranslations } from './chineseKnowledgeData';
 import { urduKnowledgeTranslations } from './urduKnowledgeData';
+import { vietnameseKnowledgeTranslations } from './vietnameseKnowledgeData';
+import { ukrainianKnowledgeTranslations } from './ukrainianKnowledgeData';
 
 export interface KeyConcept {
   heading: string;
@@ -1004,9 +1006,9 @@ export const knowledgeArticles: KnowledgeArticle[] = [
     color: "text-indigo-500",
     icon: Coins,
     overview: "The Data Marketplace serves as the exchange hub connecting robotics hosts with machine modeling firms. Standardized schemas segment transactions into Network-Owned data pools and Customer-Owned channels securely.",
-    bengaliOverview: "ডেটা মার্কেটপ্লেস হলো এক্সচেঞ্জ প্ল্যাটফর্ম যা রোবট বহরের মালিকদের সাথে এআই মডেলার কোম্পানির সংযোগ ঘটায়। স্ট্যান্ডার্ড নিয়মের অধীনে ট্রানজ্যাকশনগুলোকে নেটওয়ার্ক-মালিকানাধীন এবং কাস্টমার-মালিকানাধীন পদ্ধতিতে বিভক্ত করা হয়।",
-    mainExplanation: "Premium robotics training trajectories are expensive to build. The PrismaX marketplace provides two transactional methods. Customer-Owned data remains completely private to a single payer, transacted secure on floating fee metrics. Network-Owned data can be acquired by anyone; access to this common library burns $PIX tokens, creating consistent deflationary pressure back to the ecosystem while rewarding the original data providers.",
-    bengaliMainExplanation: "ভিডিও ও মোটরের ট্র্যাজেক্টরি ডেটার প্রচুর চাহিদা রয়েছে। প্রিজম্যাক্স মার্কেটপ্লেসের দুটি প্রধান ফিচার আছে। কাস্টমার-মালিকানাধীন ডেটা কেবল ক্রেতার কাছেই গোপন থাকে এবং ট্রানজ্যাকশন ফি দিয়ে কেনা যায়। অপজিট দিকে নেটওয়ার্ক-মালিকানাধীন ডাটা সকলের জন্য উম্মুক্ত করা হয়, যা কিনতে গেলে $PIX টোকেন পুড়িয়ে দেওয়া হয়। এতে নেটওয়ার্ক সরবরাহ কমে গিয়ে টোকেনের মান বৃদ্ধি পায় আর ডেটা সংগ্রহাকারী পান দীর্ঘমেয়াদী রয়্যালটি।",
+    bengaliOverview: "ডেটা মার্কেটপ্লেস হলো এক্সচেঞ্জ প্ল্যাটফর্ম যা রোবট বহরের মালিকদের সাথে এআই মডেলার কোম্পানির সংযোগ ঘটায়। স্ট্যান্ডার্ড নিয়মের অধীনে ট্রানজ্যাকশনগুলোকে মূলত দুই ভাগে ভাগ করা হয়। এক দিকে নেটওয়ার্ক-মালিকানাধীন ডাটা সকলের জন্য উম্মুক্ত করা হয়, যা কিনতে গেলে $PIX টোকেন পুড়িয়ে দেওয়া হয়। এতে নেটওয়ার্ক সরবরাহ কমে গিয়ে টোকেনের মান বৃদ্ধি পায় আর ডেটা সংগ্রহাকারী পান দীর্ঘমেয়াদী রয়্যালটি।",
+    mainExplanation: "The PrismaX Data Marketplace operates via blockchain smart contracts. AI research firms list detailed demands for specific object manipulation trajectories (such as cable plugging, hardware sorting). Actively deployed robot operators accept these specifications, capture high-frequency physical loops, and publish the verified data for instant automated $PIX payments.",
+    bengaliMainExplanation: "পলিসি-মেকার বা এআই মডেল রিসার্চ ফার্মগুলো যখন কোনো নির্দিষ্ট জটিল কাজের ভিডিও বা হিউম্যান ট্র্যাজেক্টরি চায়, তখন তারা এই বাজারে বিজ্ঞপ্তি প্রকাশ করে। যেমন: নির্ভুল সকেট প্লাগিং বা ক্ষুদ্র পার্টস এসেম্বলিং। বিশ্বজুড়ে ছড়িয়ে থাকা হিউম্যানয়েড রোবট অপারেটররা এই কাজের রিকোয়েস্ট গ্রহণ করে বাস্তব ডিভাইসে সম্পন্ন করেন। সফল আপলোডের পর তারা স্মার্ট চুক্তির মাধ্যমে সরাসরি $PIX ওয়ালেট রয়্যালটি সুবিধা ভোগ করেন।",
     keyConcepts: [
       {
         heading: "Token-Burn Common Library",
@@ -1522,11 +1524,11 @@ export const knowledgeArticles: KnowledgeArticle[] = [
 
 export const getLocalizedCategory = (category: string, lang: Language): string => {
   const translationsMap: Record<string, string> = {
-    'Introduction & Core': lang === 'bn' ? 'মূল প্রযুক্তি এবং পরিচিতি' : lang === 'hi' ? 'मुख्य तकनीक और परिचय' : lang === 'zh' ? '核心技术与介绍' : lang === 'ur' ? 'بنیادی ٹیکنالوجی اور تعارف' : 'Introduction & Core',
-    'Robot Control & Operations': lang === 'bn' ? 'নিয়ন্ত্রণ ও অপারেশন' : lang === 'hi' ? 'नियंत्रण और संचालन' : lang === 'zh' ? '控制与操作' : lang === 'ur' ? 'کنٹرول اور آپریشنز' : 'Robot Control & Operations',
-    'Network & Economics': lang === 'bn' ? 'নেটওয়ার্ক ও ইকোনমি' : lang === 'hi' ? 'नेटवर्क और अर्थव्यवस्था' : lang === 'zh' ? '网络与经济' : lang === 'ur' ? 'نیٹ ورک اور معیشت' : 'Network & Economics',
-    'Evaluations & Analytics': lang === 'bn' ? 'মূল্যায়ন ও কোয়ালিটি' : lang === 'hi' ? 'विश्लेषण और गुणवत्ता' : lang === 'zh' ? '评估与分析' : lang === 'ur' ? 'تجزیات اور معیار' : 'Evaluations & Analytics',
-    'Future & Roadmap': lang === 'bn' ? 'ভবিষ্যত ও রোডম্যাপ' : lang === 'hi' ? 'भविष्य और रोडमैप' : lang === 'zh' ? '前景与路线图' : lang === 'ur' ? 'مستقبل اور روڈ میپ' : 'Future & Roadmap'
+    'Introduction & Core': lang === 'bn' ? 'মূল প্রযুক্তি এবং পরিচিতি' : lang === 'hi' ? 'मुख्य तकनीक और परिचय' : lang === 'zh' ? '核心技术与介绍' : lang === 'ur' ? 'بنیادی ٹیکنالوجی اور تعارف' : lang === 'vi' ? 'Công nghệ lõi & Giới thiệu' : 'Introduction & Core',
+    'Robot Control & Operations': lang === 'bn' ? 'নিয়ন্ত্রণ ও অপারেশন' : lang === 'hi' ? 'नियंत्रण और संचालन' : lang === 'zh' ? '控制与操作' : lang === 'ur' ? 'کنٹرول اور آپریشنز' : lang === 'vi' ? 'Điều khiển & Vận hành' : 'Robot Control & Operations',
+    'Network & Economics': lang === 'bn' ? 'নেটওয়ার্ক ও ইকোনমি' : lang === 'hi' ? 'नेटवर्क और अर्थव्यवस्था' : lang === 'zh' ? '网络与经济' : lang === 'ur' ? 'نیٹ ورک اور معیشت' : lang === 'vi' ? 'Mạng lưới & Kinh tế' : 'Network & Economics',
+    'Evaluations & Analytics': lang === 'bn' ? 'মূল্যায়ন ও কোয়ালিটি' : lang === 'hi' ? 'विश्लेषण और गुणवत्ता' : lang === 'zh' ? '评估与分析' : lang === 'ur' ? 'تجزیات اور معیار' : lang === 'vi' ? 'Phân tích & Đánh giá' : 'Evaluations & Analytics',
+    'Future & Roadmap': lang === 'bn' ? 'ভবিষ্যত ও রোডম্যাপ' : lang === 'hi' ? 'भविष्य और रोडमैप' : lang === 'zh' ? '前景与路线图' : lang === 'ur' ? 'مستقبل اور روڈ میپ' : lang === 'vi' ? 'Tương lai & Thông số' : 'Future & Roadmap'
   };
   return translationsMap[category] || category;
 };
@@ -1534,6 +1536,74 @@ export const getLocalizedCategory = (category: string, lang: Language): string =
 export const getArticleById = (id: string, currentLanguage: Language) => {
   const article = knowledgeArticles.find(a => a.id === id);
   if (!article) return null;
+
+  if (currentLanguage === 'uk') {
+    const ukTrans = ukrainianKnowledgeTranslations[id];
+    if (ukTrans) {
+      return {
+        id: article.id,
+        title: ukTrans.title,
+        subtitle: ukTrans.subtitle,
+        overview: ukTrans.overview,
+        mainExplanation: ukTrans.mainExplanation,
+        keyConcepts: article.keyConcepts.map((c, idx) => ({
+          heading: ukTrans.keyConcepts[idx]?.heading || c.heading,
+          text: ukTrans.keyConcepts[idx]?.text || c.text
+        })),
+        visualExplanation: {
+          desc: ukTrans.visualDesc || article.visualExplanation.desc,
+          code: article.visualExplanation.code
+        },
+        relatedTopics: article.relatedTopicIds.map(rid => {
+          const matchedUk = ukrainianKnowledgeTranslations[rid];
+          if (matchedUk) return matchedUk.title;
+          const matched = knowledgeArticles.find(item => item.id === rid);
+          return matched ? matched.title : rid;
+        }),
+        relatedTopicIds: article.relatedTopicIds,
+        previousTopicId: article.previousTopicId,
+        nextTopicId: article.nextTopicId,
+        category: getLocalizedCategory(article.category, currentLanguage),
+        badge: article.badge,
+        color: article.color,
+        icon: article.icon
+      };
+    }
+  }
+
+  if (currentLanguage === 'vi') {
+    const viTrans = vietnameseKnowledgeTranslations[id];
+    if (viTrans) {
+      return {
+        id: article.id,
+        title: viTrans.title,
+        subtitle: viTrans.subtitle,
+        overview: viTrans.overview,
+        mainExplanation: viTrans.mainExplanation,
+        keyConcepts: article.keyConcepts.map((c, idx) => ({
+          heading: viTrans.keyConcepts[idx]?.heading || c.heading,
+          text: viTrans.keyConcepts[idx]?.text || c.text
+        })),
+        visualExplanation: {
+          desc: viTrans.visualDesc || article.visualExplanation.desc,
+          code: article.visualExplanation.code
+        },
+        relatedTopics: article.relatedTopicIds.map(rid => {
+          const matchedVi = vietnameseKnowledgeTranslations[rid];
+          if (matchedVi) return matchedVi.title;
+          const matched = knowledgeArticles.find(item => item.id === rid);
+          return matched ? matched.title : rid;
+        }),
+        relatedTopicIds: article.relatedTopicIds,
+        previousTopicId: article.previousTopicId,
+        nextTopicId: article.nextTopicId,
+        category: getLocalizedCategory(article.category, currentLanguage),
+        badge: article.badge,
+        color: article.color,
+        icon: article.icon
+      };
+    }
+  }
 
   if (currentLanguage === 'hi') {
     const hiTrans = hindiKnowledgeTranslations[id];

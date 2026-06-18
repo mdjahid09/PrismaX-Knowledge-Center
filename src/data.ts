@@ -542,7 +542,7 @@ export const translations: Record<Language, Translation> = {
     selectNode: "ہارڈویئر نوڈ منتخب کریں",
     queueInLine: "قطار میں: {count} افراد",
     enterNodeCode: "نوڈ رسائی کوڈ درج کریں",
-    enterNodeCodeDesc: "اجازت کے مطابق مطلوبہ کوڈ درج کریں۔ یہ ایک مائع باہمی فیڈ بیک لوپ قائم کرتا ہے۔",
+    enterNodeCodeDesc: "اجازت کے مطابق مطلوبہ کوڈ درج کریں۔ یہ ایک مائع باہمی فیڈ بیک لوپ قائم करता ہے۔",
     validateNodeAccess: "نوڈ رسائی کی تصدیق کریں",
     cooperativeSub: "باہمی سبسکرپشن",
     membershipNetwork: "ایمپلیفائر ممبرشپ نیٹ ورک",
@@ -556,6 +556,228 @@ export const translations: Record<Language, Translation> = {
     scrollToTop: "اوپر جائیں",
     systemSpecs: "سسٹم کی خصوصیات",
     readFramework: "فریم ورک پڑھیں"
+  },
+  vi: {
+    navHome: "Trang chủ",
+    navFleet: "Đội ngũ robot",
+    navSimulation: "Vận hành từ xa",
+    navDocs: "Tài liệu",
+    navTelemetry: "Phòng thí nghiệm dữ liệu",
+    langName: "Tiếng Việt",
+    byLine: "PRISMAX • ĐỘNG CƠ AI VẬT LÝ",
+    
+    heroTitle: "Phân lớp dịch vụ AI Vật lý",
+    heroSubtitle: "Kết nối liền mạch giữa robot, dữ liệu và trí tuệ nhân tạo.",
+    heroDesc: "PrismaX thu hẹp khoảng cách giữa các mô hình kỹ thuật số và máy móc vật lý thực tế. Mạng lưới của chúng tôi mang lại khả năng vận hành từ xa có độ trễ cực thấp, các vòng lặp học tập liên tục và trí tuệ vật lý đa nền tảng phần cứng cho thế hệ robot hình người và các đội ngũ chuyên nghiệp tiếp theo.",
+    btnLearnMore: "Tìm hiểu thêm",
+    btnExplore: "Khám phá đội ngũ",
+    btnOperate: "Vận hành robot thực tế",
+    
+    topicTitle: "Kiến trúc hệ thống",
+    topicSubtitle: "Khám phá các chiều hướng cốt lõi của mạng lưới vật lý PrismaX.",
+    topics: {
+      whatIsPrismax: {
+        title: "PrismaX là gì",
+        desc: "Tìm hiểu về PrismaX, sứ mệnh, công nghệ và vai trò của dự án trong tương lai của AI Vật lý."
+      },
+      physicalAI: {
+        title: "AI Vật lý",
+        desc: "Tìm hiểu cách trí tuệ nhân tạo vượt ra khỏi giới hạn phần mềm để đi vào máy móc và hệ thống robot thực tế."
+      },
+      teleoperation: {
+        title: "Vận hành từ xa",
+        desc: "Khám phá hệ thống vận hành robot độ trễ thấp, kiểm soát từ xa và trí tuệ tương tác xúc giác của con người."
+      },
+      dataLayer: {
+        title: "Lớp dữ liệu",
+        desc: "Tìm hiểu cách dữ liệu robot được thu thập, xử lý và chuyển đổi thành trí tuệ huấn luyện."
+      },
+      intelligenceLayer: {
+        title: "Lớp trí tuệ",
+        desc: "Khám phá cách các mô hình, hệ thống tư duy và trí tuệ máy móc vận hành các hệ thống AI vật lý."
+      },
+      systemArchitecture: {
+        title: "Kiến trúc hệ thống",
+        desc: "Xem toàn bộ hệ sinh thái PrismaX bao gồm robot, người vận hành, dữ liệu và trí tuệ nhân tạo."
+      }
+    },
+    
+    fleetTitle: "Triển khai đội ngũ robot",
+    fleetSubtitle: "Chào mừng! Gặp gỡ đội ngũ robot được tuyển chọn để hỗ trợ bạn.",
+    fleetDesc: "PrismaX cung cấp giải pháp kết nối API cấp thấp đồng bộ cho các thiết bị robot hàng đầu. Các tác nhân này chủ động thực hiện công việc thủ công tại không gian làm việc để thu nạp các tập dữ liệu quỹ đạo chuyển động được mã hóa thành thẻ token vào mô hình trí tuệ toàn cầu.",
+    taglineFleet: "Hệ thống tương thích",
+
+    ctrlTitle: "Trung tâm điều khiển Robot",
+    ctrlSubtitle: "Thực hiện vận hành từ xa song phương độ trễ thấp với thiết bị phần cứng thực tế qua mạng lưới PrismaX.",
+    ctrlStatus: "Trạng thái",
+    ctrlAngleX: "Góc khớp X (Đế)",
+    ctrlAngleY: "Góc khớp Y (Khuỷu tay)",
+    ctrlGrip: "Bộ kẹp cơ cấu chấp hành",
+    ctrlLatency: "Độ trễ mạng",
+    ctrlSignal: "Cường độ tín hiệu",
+    ctrlBattery: "Nhiệt độ hệ thống",
+    ctrlConnect: "Thiết lập liên kết vận hành",
+    ctrlDisconnect: "Ngắt kết nối",
+    ctrlActive: "PHÁT TRỰC TUYẾN",
+    ctrlReserved: "ĐÃ ĐẶT CHỖ",
+    ctrlQueue: "Hàng đợi vận hành",
+    ctrlSimulateAction: "Thực hiện hành trình",
+
+    membershipTitle: "Gia nhập Cộng đồng Amplifier",
+    membershipSubtitle: "Gia nhập cộng đồng Amplifier của chúng tôi để thúc đẩy phát triển trí tuệ robot và tăng tốc áp dụng công nghệ.",
+    membershipBenefit1: "Truy cập từ xa và mô phỏng đội ngũ robot cao cấp liên tục",
+    membershipBenefit2: "Gia tăng tốc độ tích lũy token $PRISMA (Hệ số nhân tốc độ 3x)",
+    paymentMethod: "Chọn loại tiền thanh toán",
+    paymentMethodDesc: "Vui lòng chọn phương thức thanh toán. Đây là thanh toán một lần.",
+    membershipBtn: "Trở thành thành viên Amplifier ngay",
+    membershipSuccess: "Cảm ơn bạn đã gia nhập với tư cách Thành viên Amplifier! Thông tin truy cập đã được gửi tới khóa không gian làm việc của bạn.",
+
+    docsTitle: "Cơ sở tri thức",
+    docsSubtitle: "Tài nguyên kỹ thuật toàn diện cho các nhà phát triển, nhà nghiên cứu trí tuệ máy và đơn vị vận hành phần cứng.",
+    docsSearchPlaceholder: "Tìm kiếm giao thức, sơ đồ URDF, tích hợp API...",
+    docsBack: "Quay lại trang chủ",
+    teleopActiveTag: "ĐANG TRONG TRẠNG THÁI VẬN HÀNH TẠI CHỖ CHỦ ĐỘNG",
+    btnViewSpecs: "THƯ VIỆN",
+    btnLaunchCtrl: "KÍCH HOẠT TRUNG TÂM ĐIỀU KHIỂN",
+    knowledgeHubTitle: "TRUNG TÂM TRI THỨC PRISMAX",
+    readArticle: "ĐỌC BÀI VIẾT",
+    contentSoon: "Nội dung sắp ra mắt.",
+    overview: "TỔNG QUAN",
+    coreSpecConcepts: "CÁC KHÁI NIỆM THÔNG SỐ CỐT LÕI",
+    visualExpl: "SƠ ĐỒ TRỰC QUAN & THIẾT KẾ VẬT LÝ",
+    relatedEcosystem: "CÁC PHÂN HỆ HỆ SINH THÁI LIÊN QUAN",
+    done: "HOÀN THÀNH",
+    socialTitle: "Kênh xã hội PrismaX",
+    sweepingWorkspace: "DỌN DẸP KHÔNG GIAN LÀM VIỆC",
+    labControls: "ĐIỀU KHIỂN PHÒNG THÍ NGHIỆM",
+    selectNode: "CHỌN NÚT PHẦN CỨNG",
+    queueInLine: "HÀNG ĐỢI: {count} ĐANG ĐỢI",
+    enterNodeCode: "Nhập mã truy cập nút",
+    enterNodeCodeDesc: "Nhập các tham số chính tương ứng với mã ủy quyền để thiết lập phản hồi song phương có độ trễ thấp.",
+    validateNodeAccess: "XÁC MINH TRUY CẬP NÚT",
+    cooperativeSub: "ĐĂNG KÝ HỢP TÁC",
+    membershipNetwork: "Mạng lưới thành viên Amplifier",
+    linkActivated: "Kích hoạt liên kết Amplifier thành công",
+    memberLabel: "Thành viên Amplifier",
+    cooperativeLevel: "CẤP ĐỘ HỢP TÁC I",
+    totalInvestment: "TỔNG ĐẦU TƯ",
+    oneTimePayment: "thanh toán một lần",
+    coreSubsystem: "Hệ thống phụ cốt lõi",
+    regionLanguage: "Khu vực & Ngôn ngữ",
+    scrollToTop: "CUỘN LÊN ĐẦU",
+    systemSpecs: "THÔNG SỐ HỆ THỐNG",
+    readFramework: "ĐỌC KHUNG PHÁT TRIỂN"
+  },
+  uk: {
+    navHome: "Головна",
+    navFleet: "Флот роботів",
+    navSimulation: "Телеоперація",
+    navDocs: "Документація",
+    navTelemetry: "Лабораторії даних",
+    langName: "Українська",
+    byLine: "PRISMAX • ДВИГУН ФІЗИЧНОГО ШІ",
+    
+    heroTitle: "Сервісний рівень для фізичного ШІ",
+    heroSubtitle: "Безшовне з'єднання роботів, даних та інтелекту.",
+    heroDesc: "PrismaX долає розрив між цифровими моделями та реальними фізичними машинами. Наша мережа відкриває телеоперацію з низькою затримкою, цикли безперервного навчання та крос-апаратний фізичний інтелект для наступного покоління гуманоїдних та спеціалізованих флотів.",
+    btnLearnMore: "Дізнатися більше",
+    btnExplore: "Дослідити флот",
+    btnOperate: "Керувати реальними роботами",
+    
+    topicTitle: "Системна архітектура",
+    topicSubtitle: "Досліджуйте ключові виміри фізичної мережі PrismaX.",
+    topics: {
+      whatIsPrismax: {
+        title: "Що таке PrismaX",
+        desc: "Дізнайтеся про PrismaX, її місію, технології та роль у майбутньому фізичного ШІ."
+      },
+      physicalAI: {
+        title: "Фізичний ШІ",
+        desc: "Зрозумійте, як штучний інтелект виходить за межі програмного забезпечення в реальні машини та робототехніку."
+      },
+      teleoperation: {
+        title: "Телеоперація",
+        desc: "Досліджуйте керування роботами з низькою затримкою, дистанційні системи та сенсорний зворотний зв’язок за участю людини."
+      },
+      dataLayer: {
+        title: "Рівень даних",
+        desc: "Дізнайтеся, як збираються, обробляються та перетворюються на інтелект навчання дані робототехніки."
+      },
+      intelligenceLayer: {
+        title: "Рівень інтелекту",
+        desc: "Дізнайтеся, як моделі, системи міркувань та машинний інтелект керують системами фізичного ШІ."
+      },
+      systemArchitecture: {
+        title: "Системна архітектура",
+        desc: "Перегляньте повну екосистему PrismaX, включаючи роботів, операторів, дані та інтелект."
+      }
+    },
+    
+    fleetTitle: "Розгортання флоту",
+    fleetSubtitle: "Ласкаво просимо! Зустрічайте наш флот роботів, обраних для допомоги вам.",
+    fleetDesc: "PrismaX надає єдине низькорівневе підключення API для провідного робототехнічного обладнання. Ці агенти активно виконують ручні завдання в робочих зонах, одночасно безпечно завантажуючи токенізовані набори траєкторій до нашої глобальної моделі інтелекту.",
+    taglineFleet: "Сумісні системи",
+
+    ctrlTitle: "Центр керування роботами",
+    ctrlSubtitle: "Виконуйте двосторонню телеоперацію з низькою затримкою на активному фізичному обладнанні через мережу PrismaX.",
+    ctrlStatus: "Статус",
+    ctrlAngleX: "Кут суглоба X (Основа)",
+    ctrlAngleY: "Кут суглоба Y (Лікоть)",
+    ctrlGrip: "Хват робочого органу",
+    ctrlLatency: "Затримка мережі",
+    ctrlSignal: "Сила сигналу",
+    ctrlBattery: "Темп. системи",
+    ctrlConnect: "Встановити зв'язок",
+    ctrlDisconnect: "Розірвати зв'язок",
+    ctrlActive: "АКТИВНИЙ СТРІМ",
+    ctrlReserved: "ЗАРЕЗЕРВОВАНО",
+    ctrlQueue: "Черга операторів",
+    ctrlSimulateAction: "Виконати крок завдання",
+
+    membershipTitle: "Приєднуйтесь до спільноти Amplifier",
+    membershipSubtitle: "Приєднуйтесь до нашої спільноти Amplifier, щоб розвивати інтелект роботів та прискорювати впровадження технологій разом.",
+    membershipBenefit1: "Безперервний преміум-доступ до флоту роботів та симуляцій",
+    membershipBenefit2: "Прискорене накопичення токенів $PRISMA (множник швидкості 3x)",
+    paymentMethod: "Виберіть валюту оплати",
+    paymentMethodDesc: "Будь ласка, виберіть спосіб оплати. Це одноразовий платіж.",
+    membershipBtn: "Стати учасником Amplifier зараз",
+    membershipSuccess: "Дякуємо за приєднання як учасник Amplifier! Дані доступу були надіслані до вашого робочого простору.",
+
+    docsTitle: "База знань",
+    docsSubtitle: "Вичерпні технічні ресурси для розробників, дослідників машинного інтелекту та власників обладнання.",
+    docsSearchPlaceholder: "Пошук протоколів, схем URDF, інтеграцій API...",
+    docsBack: "Назад на головну",
+    teleopActiveTag: "ЗАРАЗ В АКТИВНОМУ РЕЖИМІ ТЕЛЕОПЕРАЦІЇ",
+    btnViewSpecs: "БІБЛІОТЕКА",
+    btnLaunchCtrl: "ЗАПУСТИТИ ЦЕНТР КЕРУВАННЯ",
+    knowledgeHubTitle: "ЦЕНТР ЗНАНЬ PRISMAX",
+    readArticle: "ЧИТАТИ СТАТТЮ",
+    contentSoon: "Вміст з'явиться найближчим часом.",
+    overview: "ОГЛЯД",
+    coreSpecConcepts: "ОСНОВНІ КОНЦЕПЦІЇ СПЕЦИФІКАЦІЇ",
+    visualExpl: "ВІЗУАЛЬНЕ ПОЯСНЕННЯ ТА СХЕМА",
+    relatedEcosystem: "ПОВ'ЯЗАНІ МОДУЛІ ЕКОСИСТЕМИ",
+    done: "ГОТОВО",
+    socialTitle: "Соціальні мережі PrismaX",
+    sweepingWorkspace: "ОЧИЩЕННЯ РОБОЧОЇ ЗОНИ",
+    labControls: "ЛАБОРАТОРНІ ОРГАНИ КЕРУВАННЯ",
+    selectNode: "ВИБРАТИ АПАРАТНИЙ ВУЗОЛ",
+    queueInLine: "ЧЕРГА: {count} У ЧЕРЗІ",
+    enterNodeCode: "Введіть код доступу до вузла",
+    enterNodeCodeDesc: "Введіть ключові параметри, що відповідають ключам авторизації. Авторизовані токени доступу встановлюють двосторонній зворотний зв’язок із низькою затримкою.",
+    validateNodeAccess: "ПЕРЕВІРИТИ ДОСТУП ДО ВУЗЛА",
+    cooperativeSub: "КООПЕРАТИВНА ПІДПИСКА",
+    membershipNetwork: "Мережа членства Amplifier",
+    linkActivated: "Посилання Amplifier активовано",
+    memberLabel: "Учасник Amplifier",
+    cooperativeLevel: "КООПЕРАТИВНИЙ РІВЕНЬ I",
+    totalInvestment: "ЗАГАЛЬНІ ІНВЕСТИЦІЇ",
+    oneTimePayment: "одноразовий платіж",
+    coreSubsystem: "Основна підсистема",
+    regionLanguage: "Регіон та мова",
+    scrollToTop: "ПРОКРУТИТИ ВГОРУ",
+    systemSpecs: "ТЕХНІЧНІ СПЕЦИФІКАЦІЇ",
+    readFramework: "ЧИТАТИ ФРЕЙМВОРК"
   }
 };
 
@@ -574,7 +796,11 @@ export const robotsData: Robot[] = [
     chineseDescription: "极其轻量、高敏捷的人形机器人，专为社交互动和敏捷移动任务开发。基于23个自由度的高精度电机框架运行。",
     chineseTags: ["宣传展示", "向导导览", "会议支持"],
     urduDescription: "سماجی روابط اور چست نقل و حرکت کے کاموں کے لیے ڈیزائن کیا گیا انتہائی چست، ہاف لائٹ ہیومنائیڈ روبوٹ۔ 23-DOF اعلیٰ درستگی والے موٹر فریم ورک پر کام کرتا ہے۔",
-    urduTags: ["اشتہارات", "ٹور گائیڈ", "کانفرنسز"]
+    urduTags: ["اشتہارات", "ٹور گائیڈ", "کانفرنسز"],
+    vietnameseDescription: "Robot humanoid nhẹ và cực kỳ linh hoạt được thiết kế cho tương tác xã hội và các nhiệm vụ di chuyển nhanh nhẹn. Hoạt động trên hệ thống khung động cơ 23 độ tự do tinh chỉnh cao.",
+    vietnameseTags: ["Quảng cáo", "Hướng dẫn viên", "Hội nghị"],
+    ukrainianDescription: "Надзвичайно замінний, ультралегкий гуманоїд, призначений для соціальної взаємодії та завдань зі швидкого переміщення. Працює на базі високоточного моторного каркасу з 23 ступенями свободи.",
+    ukrainianTags: ["Реклама", "Екскурсовод", "Конференції"]
   },
   {
     id: "walker",
@@ -590,7 +816,11 @@ export const robotsData: Robot[] = [
     chineseDescription: "全尺寸商业服务人形机器人，完美融合触觉负载抓握、复杂路面稳定步态以及高级自主导航避障技术。",
     chineseTags: ["餐饮服务", "轻型仓储", "景点向导", "广告投放", "步动学研究"],
     urduDescription: "صنعتی رینج کا ہیومنائیڈ روبوٹ جس میں ٹچ حساس لوڈ ہینڈلنگ، ناہموار ہموار راستوں پر مستحکم توازن اور خود مختار نیویگیشن شامل ہے۔",
-    urduTags: ["فوڈ سروس", "ہلکا گودام", "ٹور گائیڈ", "اشتہارات", "لوکوموشن ریسرچ"]
+    urduTags: ["فوڈ سروس", "ہلکا گودام", "ٹور گائیڈ", "اشتہارات", "لوکوموشن ریسرچ"],
+    vietnameseDescription: "Robot humanoid dịch vụ toàn diện tích hợp bộ kẹp xúc giác xử lý tải trọng tốt, khả năng giữ thăng bằng tuyệt vời trên địa hình gồ ghề và hệ thống định vị tự trị thông minh.",
+    vietnameseTags: ["Dịch vụ ăn uống", "Kho vận nhẹ", "Hướng dẫn viên", "Quảng cáo", "Nghiên cứu vận động"],
+    ukrainianDescription: "Повнорозмірний сервісний гуманоїд з інтегрованими системами тактильного поводження з вантажем, стабільного пересування по нерівній поверхні та інтелектуальної автономної навігації.",
+    ukrainianTags: ["Обслуговування", "Легкі склади", "Екскурсовод", "Реклама", "Дослідження руху"]
   },
   {
     id: "reachy2",
@@ -606,7 +836,11 @@ export const robotsData: Robot[] = [
     chineseDescription: "尖端双腕上躯干机器人平台，配备高保真深度相机，最适于示教模拟和高精准工业组装科研任务。",
     chineseTags: ["精巧操作研究", "轻型手工装配"],
     urduDescription: "بہترین قسم کا ڈوئل آرم روبوٹک پلیٹ فارم جو ہائی فیڈلیٹی کیمرے سے لیس ہے، جو مظاہرے کے ذریعے سیکھنے اور باریک اسمبلی کے کاموں کے لیے بہترین ہے۔",
-    urduTags: ["مینیپولیشن ریسرچ", "ہلکے دستی کام"]
+    urduTags: ["مینیپولیشن ریسرچ", "ہلکے دستی کام"],
+    vietnameseDescription: "Nền tảng hai tay tiên tiến thế hệ mới được trang bị hệ thống camera độ trung thực cao, lý tưởng cho mô hình học máy từ mô phỏng trực quan và lắp ráp sản phẩm chi tiết độ chính xác cao.",
+    vietnameseTags: ["Nghiên cứu thao tác", "Nhiệm vụ thủ công nhẹ"],
+    ukrainianDescription: "Сучасна дворука платформа, оснащена камерами високої точності, що ідеально підходить для навчання на демонстраціях та високодеталізованих робіт зі збирання.",
+    ukrainianTags: ["Дослідження маніпуляцій", "Легкі ручні завдання"]
   },
   {
     id: "alex",
@@ -622,7 +856,11 @@ export const robotsData: Robot[] = [
     chineseDescription: "工业级重载半身机器人，配备高负荷伺服模组执行器，擅于应对高强度且高度敏感的力控环境作业。",
     chineseTags: ["力控算法研究", "设备巡检维护", "先进工厂制造"],
     urduDescription: "اعلیٰ ٹارک ایکچوایٹرز کے ساتھ صنعتی صلاحیت کا حامل ہیومنائیڈ روبوٹ، جسے سخت اور پیچیدہ قوت کے حساس کاموں کو انجام دینے کے لیے ڈیزائن کیا گیا ہے۔",
-    urduTags: ["مینیپولیشن ریسرچ", "دیکھ بھال", "مینوفیکچرنگ"]
+    urduTags: ["مینیپولیشن ریسرچ", "دیکھ بھال", "مینوفیکچرنگ"],
+    vietnameseDescription: "Robot humanoid bán thân ngành công nghiệp với bộ truyền động mô-men xoắn đỉnh cao bền bỉ, được thiết kế để thực hiện các nhiệm vụ phức tạp đòi hỏi độ nhạy lực kéo cơ nhiệt mạnh mẽ.",
+    vietnameseTags: ["Nghiên cứu thao tác", "Bảo trì", "Sản xuất"],
+    ukrainianDescription: "Промисловий гуманоїд верхньої частини тулуба з актуаторами високого пікового крутного моменту, розроблений для виконання складних операцій, чутливих до сили.",
+    ukrainianTags: ["Дослідження маніпуляцій", "Обслуговування", "Виробництво"]
   },
   {
     id: "mirokai",
@@ -638,7 +876,11 @@ export const robotsData: Robot[] = [
     chineseDescription: "高度艺术化、极富情绪表达的陪伴伴侣机器人。搭载创新的滚动球体自平衡动力学机制，实现诊疗和接待工作中的无缝协助。",
     chineseTags: ["情感陪伴", "大型会客", "高端接待"],
     urduDescription: "غیر معمولی طور پر تاثرات ظاہر کرنے والا ساتھی روبوٹ جس میں انتہائی جدید متحرک سفیر بیلنس میکانزم ہے، جو کلینیکل یا کارپوریٹ امداد کے لیے بہترین ہے۔",
-    urduTags: ["رفاقت", "کانفرنسز", "مہمان نوازی"]
+    urduTags: ["رفاقت", "کانفرنسز", "مہمان نوازی"],
+    vietnameseDescription: "Robot đồng hành có mức độ biểu cảm ấn tượng sở hữu hệ cân bằng động lực học bánh cầu lăn độc đáo mới lạ, được tối ưu cho các dịch vụ hỗ trợ không ma sát trong bệnh viện hoặc doanh nghiệp.",
+    vietnameseTags: ["Người đồng hành", "Hội nghị", "Hiếu khách"],
+    ukrainianDescription: "Стилізований, надзвичайно експресивний робот-компаньйон з інноваційною кінематикою балансування на коліній кулі, призначений для безперешкодної медичної або корпоративної допомоги.",
+    ukrainianTags: ["Супровід", "Конференції", "Гостинність"]
   },
   {
     id: "go2w",
@@ -654,7 +896,11 @@ export const robotsData: Robot[] = [
     chineseDescription: "全地形轮腿混合足形机器犬，配备高精度 3D 激光雷达扫描，在崎岖的工业车间或楼梯斜坡展露强健越障性能。",
     chineseTags: ["步态运动学研究", "户外广告展示", "高险自主巡检"],
     urduDescription: "تمام خطوں کے لیے موزوں ہائبرڈ وہیلڈ ڈاگ روبوٹ جس میں 3D LiDAR میپنگ شامل ہے، جو صنعتی کاریڈورز اور اونچی ڈھلوانوں پر لاجواب توازن کا مظاہرہ کرتا ہے۔",
-    urduTags: ["لوکوموشن ریسرچ", "اشتہارات", "معائنہ"]
+    urduTags: ["لوکوموشن ریسرچ", "اشتہارات", "معائنہ"],
+    vietnameseDescription: "Chú chó robot lai bánh-chân đa địa hình được trang bị hệ thống LiDAR 3D lập bản đồ không gian, mang lại khả năng di chuyển linh động mạnh mẽ qua các sườn dốc cao và hành lang nhà xưởng gồ ghề.",
+    vietnameseTags: ["Nghiên cứu vận động", "Quảng cáo", "Tuần tra giám sát"],
+    ukrainianDescription: "Універсальний гібридний колісно-крокуючий робот-собака, оснащений 3D LiDAR картографуванням, що демонструє чудову стійкість на крутих схилах та нерівних промислових коридорах.",
+    ukrainianTags: ["Дослідження руху", "Реклама", "Інспекція"]
   }
 ];
 
@@ -663,6 +909,8 @@ export const roboticArms: RoboticArm[] = [
     id: "arm_black",
     name: "Training Arm Black",
     description: "Join the queue to practice your skills. Open to Amplifiers and Innovators.",
+    vietnameseDescription: "Tham gia hàng đợi để luyện tập các kỹ năng vận hành của bạn. Mở cho thành viên Amplifier và Innovators.",
+    ukrainianDescription: "Приєднуйтеся до черги, щоб потренувати свої навички. Відкрито для учасників Amplifier та Innovators.",
     bengaliDescription: "আপনার দক্ষতা অনুশীলন করতে সারিবদ্ধ দলে যোগ দিন। এমপ্লিফায়ার এবং ইনোভেটরদের জন্য উন্মুক্ত।",
     hindiDescription: "अपनी स्किल्स का अभ्यास करने के लिए कतार में शामिल हों। एम्पलीफायर्स और इनोवेटर्स के लिए खुला है।",
     chineseDescription: "加入排队来练习您的操作技能。对生态增幅代表和创新者开放。",
@@ -675,6 +923,7 @@ export const roboticArms: RoboticArm[] = [
     id: "arm_gold",
     name: "Training Arm Gold",
     description: "Join the queue to practice your skills. Open to Amplifiers and Innovators.",
+    vietnameseDescription: "Tham gia hàng đợi để luyện tập các kỹ năng vận hành của bạn. Mở cho thành viên Amplifier và Innovators.",
     bengaliDescription: "আপনার দক্ষতা অনুশীলন করতে সারিবদ্ধ দলে যোগ দিন। এমপ্লিফায়ার এবং ইনোভেটরদের জন্য উন্মুক্ত।",
     hindiDescription: "अपनी स्किल्स का अभ्यास करने के लिए कतार में शामिल हों। एम्पलीफायर्स और इनोवेटर्स के लिए खुला है।",
     chineseDescription: "加入排队来练习您的操作技能。对生态增幅代表和创新者开放。",
@@ -687,6 +936,8 @@ export const roboticArms: RoboticArm[] = [
     id: "arm_arena",
     name: "Arena Arm",
     description: "Designed for high-volume sessions. Open to first-time users and Innovators.",
+    vietnameseDescription: "Được thiết kế cho các phiên đào tạo cường độ cao. Mở cho người dùng lần đầu và Innovators.",
+    ukrainianDescription: "Призначено для високоінтенсивних сесій. Відкрито для початківців та Innovators.",
     bengaliDescription: "উচ্চ-মাত্রার সেশনের জন্য ডিজাইন করা হয়েছে। প্রথমবার ব্যবহারকারী এবং ইনোভেটরদের জন্য উন্মুক্ত।",
     hindiDescription: "उच्च-मात्रा वाले सत्रों के लिए डिज़ाइन किया गया। पहली बार उपयोगकर्ता और इनोवेटर्स के लिए खुला है।",
     chineseDescription: "专为高负载、多用户并发演练设计。对初次体验者和创新者开放。",
@@ -699,6 +950,8 @@ export const roboticArms: RoboticArm[] = [
     id: "arm_private",
     name: "Private Arm",
     description: "Reserved for VIPs, partners, and special activations. Access requires a code and may vary by event.",
+    vietnameseDescription: "Bảo lưu cho đối tác VIP và các hoạt động chuyên dụng đặc biệt. Yêu cầu nhập mã truy cập để thực hiện liên kết.",
+    ukrainianDescription: "Зарезервовано для VIP-персон, партнерів та спеціальних активностей. Для доступу потрібен код, який може змінюватися залежно від події.",
     bengaliDescription: "ভিআইপি, অংশীদার এবং বিশেষ অ্যাক্টিভেশনের জন্য সংরক্ষিত। অ্যাক্সেসের জন্য কোড প্রয়োজন এবং অনুষ্ঠানভেদে পরিবর্তিত হতে পারে।",
     hindiDescription: "वीआईपी, भागीदारों और विशेष गतिविधियों के लिए आरक्षित। एक्सेस के लिए कोड की आवश्यकता होती है और इवेंट के अनुसार भिन्न हो सकता है।",
     chineseDescription: "VIP 保留独占、战略合作伙伴与特定演练场次专用。需要专属数字授权码接入。",
@@ -714,6 +967,15 @@ export const documentationArticles: DocArticle[] = [
   {
     slug: "getting-started",
     category: "Introduction",
+    vietnameseCategory: "Giới thiệu",
+    vietnameseTitle: "Tổng quan về PrismaX & Bắt đầu nhanh",
+    vietnameseSummary: "Giới thiệu về mạng lưới kết nối vật lý phi tập trung PrismaX và các điểm cuối API.",
+    vietnameseContent: [
+      "PrismaX hoạt động như một lớp firmware trừu tượng kết nối giữa các thực thể mô hình đám mây và bộ điều khiển máy thực tế. Bằng việc tiêu chuẩn hóa các bản ghi đo lường vật lý từ xa (telemetry), chúng tôi giải quyết các biến đổi cơ học thành các mô hình kỹ thuật số song sinh (digital twins) có thể dự đoán được.",
+      "Việc tích hợp nhanh chóng được vận hành thông qua các cấu hình URDF tiêu chuẩn kết hợp với tác nhân máy khách (client agent) được bản địa hóa của chúng tôi. Chạy tệp nhị phân máy chủ cục bộ sẽ kết nối trực tiếp các khớp máy của bạn.",
+      "Việc điều khiển cấu hình khớp hoàn toàn tuân theo các giá trị radian được bình thường hóa trên các phân loại robot hai chân, bốn chân và cánh tay công nghiệp, loại bỏ các vấn đề mở rộng tỷ lệ truyền động cơ học theo thương hiệu cục bộ.",
+      "Hệ thống của chúng tôi hoạt động tự nhiên với các luồng truyền dữ liệu UDP độ trễ thấp để giữ cho việc đồng bộ hóa đo lường từ xa song phương dưới 30 mili giây trên các kết nối cáp quang tiêu chuẩn."
+    ],
     bengaliCategory: "উপক্রমণিকা",
     hindiCategory: "परिचय",
     chineseCategory: "白皮书引言",
@@ -762,6 +1024,15 @@ export const documentationArticles: DocArticle[] = [
   {
     slug: "teleop-protocol",
     category: "Protocols",
+    vietnameseCategory: "Giao thức",
+    vietnameseTitle: "Vận hành xúc giác và video dưới 50ms",
+    vietnameseSummary: "Phân tích kỹ thuật cốt lõi của giao thức truyền dữ liệu trực tiếp song phương được tối ưu hóa cho điều khiển từ xa và thu thập hành động.",
+    vietnameseContent: [
+      "Để cho phép con người can thiệp an toàn không có độ trễ, PrismaX phân chia các gói tin đo lường thành các trạng thái cốt lõi hoạt động và các vùng cảm giác ngoại vi. Các góc cấu trúc cốt lõi được ưu tiên trước trên các luồng lập lịch thời gian thực.",
+      "Các luồng truyền video sử dụng định dạng WebRTC được tối ưu hóa tích hợp các lớp phủ tọa độ không gian thô. Điều này ánh xạ trực tiếp tọa độ haptic lên các pixel camera để người vận hành có nhận thức xúc giác trong các không gian làm việc chật hẹp.",
+      "Nếu độ trễ tăng đột biến vượt quá 120 mili giây, vòng lặp điều khiển cục bộ sẽ kích hoạt tính năng giảm tốc an toàn tự động, ổn định giới hạn mô-men xoắn của robot ngay lập tức cho đến khi kết nối được thiết lập lại.",
+      "Lớp bảo vệ này đảm bảo rằng hoạt động từ xa của con người không gây ra rủi ro hư hỏng cấu trúc cho phần cứng, ngay cả khi thực hiện các thao tác công nghiệp có độ chính xác cao."
+    ],
     bengaliCategory: "প্রোটোকল সমূহ",
     hindiCategory: "प्रोटोकॉल",
     chineseCategory: "网络通信协议",
@@ -810,6 +1081,15 @@ export const documentationArticles: DocArticle[] = [
   {
     slug: "physical-ai-integration",
     category: "AI Integration",
+    vietnameseCategory: "Tích hợp AI",
+    vietnameseTitle: "Kết nối các Mô hình Hành động Lớn (LAM)",
+    vietnameseSummary: "Cách định tuyến trực tiếp dữ liệu quỹ đạo chuyển động được mã hóa thành thẻ tới các tầng mô hình transformer nền tảng để cho phép lập luận không gian.",
+    vietnameseContent: [
+      "Mỗi quỹ đạo chuyển động được thực hiện trong quá trình con người vận hành từ xa đều được mã hóa thành các vectơ không gian - hành động. Chúng đại diện cho vận tốc vị trí tuyệt đối kết hợp với các khung cảnh ngữ cảnh từ mảng camera cục bộ.",
+      "Các mã hóa này được truyền trực tiếp vào các vòng lặp học tập transformer liên tục. Các mô hình máy phân tích các thử nghiệm vật lý và nâng cao xác suất thành công trong không gian của chúng một cách tự trị qua hàng ngàn kỷ nguyên huấn luyện trên đám mây.",
+      "Các nhà phát triển có thể truy vấn điểm số tự tin của mô hình hiện tại đối với các không gian làm việc đang hoạt động thông qua điểm cuối API `/v1/spatial/reason` thống nhất, nhận về thời gian điều chỉnh mô-men xoắn động cơ mục tiêu theo thời gian thực.",
+      "Quá trình này hoàn thành vòng lặp huấn luyện máy vật lý một cách hiệu quả, tiến triển từ mô phỏng minh họa của con người đến khả năng vận hành tự trị mượt mà."
+    ],
     bengaliCategory: "এআই ইন্টিগ্রেশন",
     hindiCategory: "এআই একীকরণ",
     chineseCategory: "具身智能集成",

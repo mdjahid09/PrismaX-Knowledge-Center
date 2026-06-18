@@ -11,12 +11,14 @@ interface FleetProps {
 export default function RobotFleet({ currentLanguage, onSelectRobot }: FleetProps) {
   // Select translation
   const t = {
-    title: currentLanguage === 'bn' ? 'রোবট বহর মোতায়েন' : currentLanguage === 'hi' ? 'रोबोट बेड़े की तैनाती' : 'Robot Deployment',
-    subtitle: currentLanguage === 'bn' ? 'স্বাগতম! আপনাকে সাহায্য করার জন্য নির্বাচিত আমাদের রোবট বহর দেখে নিন...' : currentLanguage === 'hi' ? 'स्वागत है! आपकी सहायता के लिए चुने गए हमारे रोबोट बेड़े से मिलें...' : 'Welcome! Meet our fleet of robots selected to help you...',
+    title: currentLanguage === 'bn' ? 'রোবট বহর মোতায়েন' : currentLanguage === 'hi' ? 'रोबोट बेड़े की तैनाती' : currentLanguage === 'vi' ? 'Triển khai Đội ngũ Robot' : 'Robot Deployment',
+    subtitle: currentLanguage === 'bn' ? 'স্বাগতম! আপনাকে সাহায্য করার জন্য নির্বাচিত আমাদের রোবট বহর দেখে নিন...' : currentLanguage === 'hi' ? 'स्वागत है! आपकी सहायता के लिए चुने गए हमारे रोबोट बेड़े से मिलें...' : currentLanguage === 'vi' ? 'Chào mừng! Gặp gỡ đội ngũ robot của chúng tôi được lựa chọn để giúp bạn...' : 'Welcome! Meet our fleet of robots selected to help you...',
     desc: currentLanguage === 'bn' 
       ? 'প্রিজম্যাক্স বিভিন্ন ব্র্যান্ডের রোবটিক ডিভাইসে জটিল কোড ব্যবহারের ঝামেলা দূর করে। এই অত্যাধুনিক ফিজিক্যাল রোবট সমূহ সরাসরি ট্রেনিং মডেলে গতিবিধি পাঠাতে সম্পূর্ণভাবে সক্ষম।'
       : currentLanguage === 'hi'
       ? 'PrismaX बहु-विक्रेता हार्डवेयर अमूर्तता प्रदान करता है। ये उन्नत भौतिक एजेंट स्थानिक निर्देशांकों में हैप्टिक टेलीमेट्री अनुक्रम प्रसारित करने के लिए पूरी तरह से प्रमाणित हैं।'
+      : currentLanguage === 'vi'
+      ? 'PrismaX cung cấp khả năng trừu tượng hóa phần cứng đa nhà cung cấp liền mạch. Các tác nhân vật lý tiên tiến này được chứng nhận đầy đủ để truyền chuỗi đo lường xúc giác trực tiếp đến các tọa độ không gian tuyệt đối.'
       : 'PrismaX delivers seamless multi-vendor hardware abstraction. These advanced physical agents are fully certified to transmit haptic telemetry sequences directly to absolute spatial coordinates.',
     manufacturers: currentLanguage === 'bn' ? 'প্রস্তুতকারক' : currentLanguage === 'hi' ? 'निर्माता' : 'MANUFACTURER',
     hardware: currentLanguage === 'bn' ? 'হার্ডওয়্যার' : currentLanguage === 'hi' ? 'हार्डवेयर' : 'HARDWARE',
@@ -150,7 +152,7 @@ export default function RobotFleet({ currentLanguage, onSelectRobot }: FleetProp
           </div>
           <div className="lg:col-span-4 lg:text-right">
             <span className="text-xs font-mono text-brand-cream/40 bg-brand-black/50 border border-brand-cream/5 px-3 py-1.5 rounded-full inline-block">
-              {translations[currentLanguage].taglineFleet} • {robotsData.length} {currentLanguage === 'bn' ? 'অনলাইন' : currentLanguage === 'hi' ? 'ऑनलाइन' : currentLanguage === 'ur' ? 'آن لائن' : 'ONLINE'}
+              {translations[currentLanguage].taglineFleet} • {robotsData.length} {currentLanguage === 'bn' ? 'অনলাইন' : currentLanguage === 'hi' ? 'ऑनलाइन' : currentLanguage === 'ur' ? 'آن لائن' : currentLanguage === 'vi' ? 'TRỰC TUYẾN' : 'ONLINE'}
             </span>
           </div>
         </div>
@@ -166,6 +168,8 @@ export default function RobotFleet({ currentLanguage, onSelectRobot }: FleetProp
               ? robot.chineseTags 
               : currentLanguage === 'ur' && robot.urduTags 
               ? robot.urduTags 
+              : currentLanguage === 'vi' && robot.vietnameseTags
+              ? robot.vietnameseTags
               : robot.tags;
             const desc = currentLanguage === 'bn' 
               ? robot.bengaliDescription 
@@ -175,6 +179,8 @@ export default function RobotFleet({ currentLanguage, onSelectRobot }: FleetProp
               ? robot.chineseDescription 
               : currentLanguage === 'ur' && robot.urduDescription 
               ? robot.urduDescription 
+              : currentLanguage === 'vi' && robot.vietnameseDescription
+              ? robot.vietnameseDescription
               : robot.description;
             return (
               <div

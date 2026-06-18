@@ -194,7 +194,7 @@ export default function App() {
                     onClick={() => handleNavigate('teleoperating')}
                     className="w-full sm:w-auto px-8 py-3 rounded-md border border-brand-cream/20 hover:border-brand-accent/40 bg-brand-black/50 hover:bg-brand-black/90 text-brand-cream hover:text-brand-white font-medium text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
                   >
-                    {language === 'en' ? 'Teleoperation' : language === 'hi' ? 'टेलीऑपरेशन' : language === 'zh' ? '遥操作' : language === 'ur' ? 'ٹیلی آپریشن' : 'টেলিঅপারেশন'}
+                    {language === 'en' ? 'Teleoperation' : language === 'hi' ? 'टेलीऑपरेशन' : language === 'zh' ? '遥操作' : language === 'ur' ? 'ٹیلی آپریشن' : language === 'vi' ? 'Vận hành từ xa' : 'টেলিঅপারেশন'}
                   </button>
                 </div>
 
@@ -213,35 +213,46 @@ export default function App() {
             
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-mono tracking-[0.4em] uppercase text-brand-accent text-glow">
-                {language === 'en' ? 'PRISMAX KNOWLEDGE LIBRARY' : language === 'hi' ? 'प्रिजमैکس नॉलेज लाइब्रेरी' : language === 'zh' ? 'PRISMAX 技术知识库' : language === 'ur' ? 'PRISMAX نالج لائبریری' : 'প্রিজম্যাক্স নলেজ লাইব্রেরি'}
+                {language === 'uk' ? 'БІБЛІОТЕКА ЗНАНЬ PRISMAX' : language === 'en' ? 'PRISMAX KNOWLEDGE LIBRARY' : language === 'hi' ? 'प्रिजमैکس नॉलेज लाइब्रेरी' : language === 'zh' ? 'PRISMAX 技术知识库' : language === 'ur' ? 'PRISMAX نالج لائبریری' : 'প্রिजम্যাক্স নলেজ লাইব্রেরি'}
               </span>
               <h2 className="text-3xl md:text-5xl font-serif text-brand-cream tracking-tight uppercase leading-tight mt-3">
-                {language === 'en' ? 'Ecosystem Specifications' : language === 'hi' ? 'पारिस्थितिकी तंत्र विनिर्देश' : language === 'zh' ? '系统生态规格说明书' : language === 'ur' ? 'ایکو سسٹم کی وضاحتیں' : 'সমগ্র ইকোসিস্টেম বিবরণী'}
+                {language === 'uk' ? 'Специфікації екосистеми' : language === 'en' ? 'Ecosystem Specifications' : language === 'hi' ? 'पारिस्थितिकी तंत्र विनिर्देश' : language === 'zh' ? '系统生态规格说明书' : language === 'ur' ? 'ایکو سسٹم کی وضاحتیں' : language === 'vi' ? 'Thông số hệ sinh thái' : 'সমগ্র ইকোসিস্টেম বিবরণী'}
               </h2>
               <p className="text-sm font-sans font-light text-brand-cream/65 mt-3 leading-relaxed">
-                {language === 'en' 
+                {language === 'uk'
+                  ? 'Досліджуйте наш повний каталог фізичного інтелекту PrismaX, повністю синтезований з офіційних документів штучного інтелекту, токенів траєкторій телеоперацій та телеметрії координації флоту.'
+                  : language === 'en' 
                   ? 'Explore our complete PrismaX physical intelligence catalog, fully synthesized from Core AI whitepapers, teleoperation Trajectory tokens, and fleet coordination telemetry.'
                   : language === 'hi'
                   ? 'हमारे पूर्ण प्रिजमैक्स भौतिक बुद्धिमत्ता कैटलॉग का अन्वेषण करें, जो मुख्य एआई श्वेतपत्रों, टेलीऑपरेशन प्रक्षेपवक्र टोकن और बेड़े समन्वय टेलीमेट्री से पूरी तरह से संश्लेषित है।'
                   : language === 'zh'
                   ? '探索我们完整的 PrismaX 具身物理智能知识库，完全由核心 AI 白皮书、遥操作轨迹 Token 以及机器人机队协同遥测数据汇编而成。'
                   : language === 'ur'
-                  ? 'ہمارے مکمل PrismaX جسمانی ذہانت کے انسائیکلوپیڈیا کو دریافت کریں، جو بنیادی AI وائٹ پیپرز، ٹیلی آپریشن ٹریکٹری ٹوکنز، اور اور روبوٹک بیڑے کی کوآرڈینیشن ٹیلی میٹری سے مکمل طور پر تیار کیا گیا ہے۔'
-                  : 'কোর এআই হোয়াইটপেপার, টেলিঅপারেশন ট্র্যাজেক্টরি টোকেন এবং রোবোটিক বহরের টেলিমেট্রি থেকে সংগৃহীত আমাদের সম্পূর্ণ প্রিজম্যাক্স ফিজিক্যাল ইন্টেলিজেন্স ক্যাটালগ এক্সপ্লোর করুন।'}
+                  ? 'ہمارے مکمل PrismaX جسمانی ذہانت کے انسائیکلوپیڈیا کو دریافت کریں، جو بنیادی AI وائٹ پیپرز، ٹیلی آپریشن ٹریکٹری ٹוکنز، اور اور روبوٹک بیڑے کی کوآرڈینیشن ٹیلی میٹری سے مکمل طور پر تیار کیا گیا ہے۔'
+                  : language === 'vi' ? 'Khám phá danh sách đầy đủ công nghệ AI Vật lý của PrismaX, được tổng hợp toàn diện từ các bài viết khoa học cốt lõi, token quỹ đạo vận hành và dữ liệu viễn thám kết hợp.' : 'কোর এআই হোয়াইটপেপার, টেলিঅপারেশন ট্র্যাজেক্টরি টোকেন এবং রোবোটিক বহরের টেলিমেট্রি থেকে সংগৃহীত আমাদের সম্পূর্ণ প্রিজম্যাক্স ফিজিক্যাল ইন্টেলিজেন্স ক্যাটালগ এক্সপ্লোর করুন।'}
               </p>
             </div>
 
             {/* Category Filter and Search Bar */}
             <div className="mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 p-4 rounded-xl border border-brand-cream/10 bg-brand-black/40 backdrop-blur-md shadow-xl shadow-black/10 dark:shadow-black/40">
               {/* Category Pills */}
+              {/*
+                  { id: 'All', en: 'All', bn: 'সব', hi: 'सभी', zh: '全部', ur: 'سب', vi: 'Tất cả', uk: 'Все' },
+                  { id: 'Introduction & Core', en: 'Core Tech & Intro', bn: 'মূল প্রযুক্তি এবং পরিচিতি', hi: 'मुख्य तकनीक और परिचय', zh: '核心技术与介绍', ur: 'بنیادی ٹیکنالوجی اور تعارف', vi: 'Công nghệ lõi & Giới thiệu', uk: 'Основна техніка та вступ' },
+                  { id: 'Robot Control & Operations', en: 'Control & Operations', bn: 'নিয়ন্ত্রণ ও অপারেশন', hi: 'नियंत्रण और संचालन', zh: '控制与操作', ur: 'کنٹرول اور آپریشنز', vi: 'Điều khiển & Vận hành', uk: 'Управління та операції' },
+                  { id: 'Network & Economics', en: 'Network & Economy', bn: 'নেটওয়ার্ক ও ইকোনমি', hi: 'नेटवर्क और अर्थव्यवस्था', zh: '网络与经济', ur: 'نیٹ ورک اور معیشत', vi: 'Mạng lưới & Kinh tế', uk: 'Мережа та економіка' },
+                  { id: 'Evaluations & Analytics', en: 'Analytics & Quality', bn: 'মূল্যায়ন ও কোয়ালিটি', hi: 'विश्लेषण और गुणवत्ता', zh: '评估与分析', ur: 'تجزیات اور معیار', vi: 'Phân tích & Đánh giá', uk: 'Аналітика та якість' },
+                  { id: 'Future & Roadmap', en: 'Future & Specs', bn: 'ভবিষ্যত ও রোডম্যাপ', hi: 'भविष्य और रोडमैप', zh: '前景与路线图', ur: 'مستقبل اور روڈ میپ', vi: 'Tương lai & Thông số', uk: 'Майбутнє та специфікації' }
+               */}
+              {/* Category Pills */}
               <div className="flex flex-wrap items-center gap-2">
                 {[
-                  { id: 'All', en: 'All', bn: 'সব', hi: 'सभी', zh: '全部', ur: 'سب' },
-                  { id: 'Introduction & Core', en: 'Core Tech & Intro', bn: 'মূল প্রযুক্তি এবং পরিচিতি', hi: 'मुख्य तकनीक और परिचय', zh: '核心技术与介绍', ur: 'بنیادی ٹیکنالوجی اور تعارف' },
-                  { id: 'Robot Control & Operations', en: 'Control & Operations', bn: 'নিয়ন্ত্রণ ও অপারেশন', hi: 'नियंत्रण और संचालन', zh: '控制与操作', ur: 'کنٹرول اور آپریشنز' },
-                  { id: 'Network & Economics', en: 'Network & Economy', bn: 'নেটওয়ার্ক ও ইকোনমি', hi: 'नेटवर्क और अर्थव्यवस्था', zh: '网络与经济', ur: 'نیٹ ورک اور معیشت' },
-                  { id: 'Evaluations & Analytics', en: 'Analytics & Quality', bn: 'মূল্যায়ন ও কোয়ালিটি', hi: 'विश्लेषण और गुणवत्ता', zh: '评估与分析', ur: 'تجزیات اور معیار' },
-                  { id: 'Future & Roadmap', en: 'Future & Specs', bn: 'ভবিষ্যত ও রোডম্যাপ', hi: 'भविष्य और रोडमैप', zh: '前景与路线图', ur: 'مستقبل اور روڈ میپ' }
+                  { id: 'All', en: 'All', bn: 'সব', hi: 'सभी', zh: '全部', ur: 'سب', vi: 'Tất cả', uk: 'Все' },
+                  { id: 'Introduction & Core', en: 'Core Tech & Intro', bn: 'মূল প্রযুক্তি এবং পরিচিতি', hi: 'मुख्य तकनीक और परिचय', zh: '核心技术与介绍', ur: 'بنیادی ٹیکنالوجی اور تعارف', vi: 'Công nghệ lõi & Giới thiệu', uk: 'Основна техніка та вступ' },
+                  { id: 'Robot Control & Operations', en: 'Control & Operations', bn: 'নিয়ন্ত্রণ ও অপারেশন', hi: 'नियंत्रण और संचालन', zh: '控制与操作', ur: 'کنٹرول اور آپریشنز', vi: 'Điều khiển & Vận hành', uk: 'Управління та операції' },
+                  { id: 'Network & Economics', en: 'Network & Economy', bn: 'নেটওয়ার্ক ও ইকোনমি', hi: 'नेटवर्क और अर्थव्यवस्था', zh: '网络与经济', ur: 'نیٹ ورک اور معیشت', vi: 'Mạng lưới & Kinh tế', uk: 'Мережа та економіка' },
+                  { id: 'Evaluations & Analytics', en: 'Analytics & Quality', bn: 'মূল্যায়ন ও কোয়ালিটি', hi: 'विश्लेषण और गुणवत्ता', zh: '评估与分析', ur: 'تجزیات اور معیار', vi: 'Phân tích & Đánh giá', uk: 'Аналітика та якість' },
+                  { id: 'Future & Roadmap', en: 'Future & Specs', bn: 'ভবিষ্যত ও রোডম্যাপ', hi: 'भविष्य और रोडमैप', zh: '前景与路线图', ur: 'مستقبل اور روڈ میپ', vi: 'Tương lai & Thông số', uk: 'Майбутнє та специфікації' }
                 ].map((cat) => {
                   const isActive = selectedCategory === cat.id;
                   return (
@@ -250,11 +261,11 @@ export default function App() {
                       onClick={() => setSelectedCategory(cat.id)}
                       className={`px-3 py-1.5 rounded-lg text-[10px] font-mono uppercase tracking-wider transition-all cursor-pointer border ${
                         isActive
-                          ? 'bg-brand-accent border-brand-accent text-brand-black font-semibold shadow-[0_0_15px_rgba(197,168,128,0.25)]'
-                          : 'bg-brand-black/60 border-brand-cream/10 text-brand-cream/70 hover:text-brand-white hover:border-brand-cream/20'
+                           ? 'bg-brand-accent border-brand-accent text-brand-black font-semibold shadow-[0_0_15px_rgba(197,168,128,0.25)]'
+                           : 'bg-brand-black/60 border-brand-cream/10 text-brand-cream/70 hover:text-brand-white hover:border-brand-cream/20'
                       }`}
                     >
-                      {language === 'en' ? cat.en : language === 'hi' ? cat.hi : language === 'zh' ? cat.zh : language === 'ur' ? cat.ur : cat.bn}
+                      {language === 'uk' ? cat.uk : language === 'en' ? cat.en : language === 'hi' ? cat.hi : language === 'zh' ? cat.zh : language === 'ur' ? cat.ur : language === 'vi' ? cat.vi : cat.bn}
                     </button>
                   );
                 })}
@@ -267,7 +278,7 @@ export default function App() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder={language === 'en' ? 'Search specified articles...' : language === 'hi' ? 'लेख खोजें...' : language === 'zh' ? '搜索技术文档...' : language === 'ur' ? 'مخصوص مضامین تلاش کریں...' : 'নিবন্ধ অনুসন্ধান করুন...'}
+                  placeholder={language === 'uk' ? 'Шукати зазначені статті...' : language === 'en' ? 'Search specified articles...' : language === 'hi' ? 'लेख खोजें...' : language === 'zh' ? '搜索技术文档...' : language === 'ur' ? 'مخصوص مضامین تلاش کریں...' : language === 'vi' ? 'Tìm kiếm tài liệu kỹ thuật...' : 'নিবন্ধ অনুসন্ধান করুন...'}
                   className="w-full pl-9 pr-4 py-2 rounded-lg bg-brand-black/70 border border-brand-cream/10 focus:border-brand-accent/50 focus:outline-none text-xs font-mono text-brand-cream placeholder-brand-cream/30 transition-all shadow-inner"
                 />
                 {searchQuery && (
@@ -317,10 +328,12 @@ export default function App() {
                   <div className="py-20 p-8 rounded-2xl border border-brand-cream/10 bg-brand-black/30 backdrop-blur-md text-center max-w-md mx-auto">
                     <BookOpen className="w-12 h-12 text-brand-accent/40 mx-auto mb-4 animate-pulse" />
                     <h3 className="text-lg font-serif text-brand-white font-medium">
-                      {language === 'en' ? 'No Articles Found' : language === 'hi' ? 'कोई लेख नहीं मिला' : language === 'zh' ? '未找到相关文章' : language === 'ur' ? 'کوئی مضمون نہیں ملا' : 'কোন নিবন্ধ পাওয়া যায়নি'}
+                      {language === 'uk' ? 'Не знайдено статей' : language === 'en' ? 'No Articles Found' : language === 'hi' ? 'कोई लेख नहीं मिला' : language === 'zh' ? '未找到相关文章' : language === 'ur' ? 'کوئی مضمون نہیں ملا' : language === 'vi' ? 'Không tìm thấy bài viết nào' : 'কোন নিবন্ধ পাওয়া যায়নি'}
                     </h3>
                     <p className="text-xs text-brand-cream/60 mt-2 leading-relaxed">
-                      {language === 'en'
+                      {language === 'uk'
+                        ? 'Спробуйте змінити ключові слова для пошуку або фільтри, щоб знайти відповідні технічні розділи.'
+                        : language === 'en'
                         ? 'Try modifying your search keywords or switching filters to find relevant technical sections.'
                         : language === 'hi'
                         ? 'प्रासंगिक तकनीकी अनुभाग खोजने के लिए अपने खोज कीवर्ड बदलने या फ़िल्ٹر बदलने का प्रयास करें।'
@@ -328,13 +341,13 @@ export default function App() {
                         ? '尝试修改您的搜索关键词或切换过滤器，以查找相关的技术章节。'
                         : language === 'ur'
                         ? 'متعلقہ تکنیکی ابواب تلاش کرنے کے لیے تلاش کے مطلوبہ الفاظ کو تبدیل کرنے یا فلٹرز کو تبدیل کرنے کی کوشش کریں۔'
-                        : 'অন্যান্য কীওয়ার্ড চেষ্টা করুন বা সার্চ ফিল্টার পরিবর্তন করুন।'}
+                        : language === 'vi' ? 'Thử thay đổi từ khóa tìm kiếm của bạn hoặc đổi bộ lọc khác để tìm những phần kỹ thuật tương ứng.' : 'অন্যান্য কীওয়ার্ড চেষ্টা করুন বা সার্চ ফিল্টার পরিবর্তন করুন।'}
                     </p>
                     <button
                       onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
                       className="mt-6 px-4 py-2 rounded border border-brand-accent/20 hover:border-brand-accent text-brand-accent font-mono text-[10px] uppercase transition-colors cursor-pointer"
                     >
-                      {language === 'en' ? 'Reset Filters' : language === 'hi' ? 'फ़िल्टर रीसेट करें' : language === 'zh' ? '重置过滤器' : language === 'ur' ? 'فلٹرز ری سیٹ کریں' : 'ফিল্টার রিসেট করুন'}
+                      {language === 'uk' ? 'Скинути фільтри' : language === 'en' ? 'Reset Filters' : language === 'hi' ? 'फ़िल्टर रीसेट करें' : language === 'zh' ? '重置过滤器' : language === 'ur' ? 'فلٹرز ری سیٹ کریں' : language === 'vi' ? 'Đặt lại bộ lọc' : 'ফিল্টার রিসেট করুন'}
                     </button>
                   </div>
                 );
@@ -364,7 +377,7 @@ export default function App() {
                                 <IconComponent className="w-4 h-4" />
                               </div>
                               <span className="text-[9px] font-mono text-brand-cream/30 uppercase tracking-widest">
-                                {language === 'bn' ? `নিবন্ধ ${index + 1}` : language === 'hi' ? `लेख ${index + 1}` : language === 'zh' ? `文章 ${index + 1}` : language === 'ur' ? `مضمون ${index + 1}` : `ARTICLE ${index + 1}`}
+                                {language === 'uk' ? `СТАТТЯ ${index + 1}` : language === 'bn' ? `নিবন্ধ ${index + 1}` : language === 'hi' ? `लेख ${index + 1}` : language === 'zh' ? `文章 ${index + 1}` : language === 'ur' ? `مضمون ${index + 1}` : language === 'vi' ? `BÀI VIẾT ${index + 1}` : `ARTICLE ${index + 1}`}
                               </span>
                             </div>
                             <div>
@@ -380,7 +393,7 @@ export default function App() {
                             </p>
                           </div>
                           <div className="mt-4 pt-3 border-t border-brand-cream/5 flex items-center justify-between text-[10px] font-mono text-brand-cream/40 group-hover:text-brand-accent transition-colors">
-                            <span>{language === 'en' ? 'READ FULL SPECIFICATION' : language === 'hi' ? 'विशेष विवरण पढ़ें' : language === 'zh' ? '阅读完整规格说明' : language === 'ur' ? 'مکمل تفصیلات پڑھیں' : 'বিস্তারিত বিবরণ পড়ুন'}</span>
+                            <span>{language === 'uk' ? 'ЧИТАТИ ПОВНУ СПЕЦИФІКАЦІЮ' : language === 'en' ? 'READ FULL SPECIFICATION' : language === 'hi' ? 'विशेष विवरण पढ़ें' : language === 'zh' ? '阅读完整规格说明' : language === 'ur' ? 'مکمل تفصیلات پڑھیں' : language === 'vi' ? 'ĐỌC THÔNG SỐ CHI TIẾT' : 'বিস্তারিত বিবরণ পড়ুন'}</span>
                             <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1.5 transition-transform" />
                           </div>
                         </div>
@@ -409,10 +422,12 @@ export default function App() {
 
             <div className="space-y-3">
               <h2 className="text-3xl sm:text-4xl font-serif text-brand-cream tracking-tight uppercase leading-tight">
-                {language === 'en' ? 'Become a Teleoperator' : language === 'hi' ? 'एक टेलीऑपरेटर बनें' : language === 'zh' ? '成为遥操作员' : language === 'ur' ? 'ٹیلی آپریٹر بنیں' : 'টেলিঅপারেটর হোন'}
+                {language === 'uk' ? 'Стати телеоператором' : language === 'en' ? 'Become a Teleoperator' : language === 'hi' ? 'एक टेलीऑपरेटर बनें' : language === 'zh' ? '成为遥操作员' : language === 'ur' ? 'ٹیلی آپریٹر بنیں' : language === 'vi' ? 'Trở thành Chuyên viên Vận hành' : 'টেলিঅপারেটর হোন'}
               </h2>
               <p className="text-xs sm:text-sm font-sans font-light text-brand-cream/80 max-w-xl leading-relaxed mx-auto text-center">
-                {language === 'en' 
+                {language === 'uk'
+                  ? 'Отримуйте доступ до реальних гуманоїдних флотів та координуйте двосторонні телеопераційні вузли з низькою затримкою по всьому світу прямо зі своєї робочої станції.'
+                  : language === 'en' 
                   ? 'Access real humanoid fleets and coordinate low-latency bilateral teleoperation nodes across the globe directly from your workstation.'
                   : language === 'hi'
                   ? 'अपने वर्कस्टेशन से सीधे दुनिया भर में वास्तविक ह्यूमनॉइड बेड़े तक पहुंचें और कम-विलंबता द्विपक्षीय टेलीऑपरेशन नोड्स का समन्वय करें।'
@@ -420,7 +435,7 @@ export default function App() {
                   ? '自您的工作站，直接安全地实时操作全球实体人型机器人机队，体验超低延迟双向触觉控制与在轨演练。'
                   : language === 'ur'
                   ? 'اپنے ورک اسٹیشن سے براہ راست دنیا بھر میں حقیقی ہیومنائیڈ بیڑے تک رسائی حاصل کریں اور کم تاخیر والے دو طرفہ ٹیلی آپریشن نوڈس کو مربوط کریں۔'
-                  : 'বিশ্বজুড়ে ছড়িয়ে থাকা বাস্তব হিউম্যানয়েড বহর এবং অতি-স্বল্প লেটেন্সির টেলিঅপারেশন নোড সরাসরি আপনার ওয়ার্কস্টেশন থেকে পরিচালনা করুন।'}
+                  : language === 'vi' ? 'Truy cập trực tiếp vào các đội ngũ robot humanoid thực tế và điều hành các nút vận hành song phương độ trễ thấp trên toàn cầu ngay từ máy trạm của bạn.' : 'বিশ্বজুড়ে ছড়িয়ে থাকা বাস্তব হিউম্যানয়েড বহর এবং অতি-স্বল্প লেটেন্সির টেলিঅপারেশন নোড সরাসরি আপনার ওয়ার্কস্টেশন থেকে পরিচালনা করুন।'}
               </p>
             </div>
             
@@ -442,7 +457,7 @@ export default function App() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-10 py-4 h-12 rounded-md bg-brand-accent text-brand-black font-semibold text-xs tracking-wider uppercase hover:bg-brand-accent/90 hover:shadow-[0_0_20px_rgba(197,168,128,0.4)] transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg font-mono"
               >
-                {language === 'en' ? 'Get Started' : language === 'hi' ? 'शुरू करें' : language === 'zh' ? '立即开始' : language === 'ur' ? 'شروع کریں' : 'शुरू করুন'}
+                {language === 'uk' ? 'Розпочати' : language === 'en' ? 'Get Started' : language === 'hi' ? 'शुरू करें' : language === 'zh' ? '立即开始' : language === 'vi' ? 'Bắt đầu ngay' : language === 'ur' ? 'شروع کریں' : 'शुरू করুন'}
                 <ArrowRight className="w-3.5 h-3.5 ml-2" />
               </a>
             </div>
@@ -484,7 +499,7 @@ export default function App() {
               {/* Overview */}
               <div className="space-y-2">
                 <span className="text-[10px] font-mono text-brand-accent uppercase block tracking-wider">
-                  {language === 'en' ? '1. INTRODUCTION' : language === 'hi' ? '1. परिचय और अवलोकन' : language === 'zh' ? '1. 简介与概述' : language === 'ur' ? '1. تعارف اور جائزہ' : '১. পরিচিতি ও ওভারভিউ'}
+                  {language === 'uk' ? '1. ВСТУП' : language === 'en' ? '1. INTRODUCTION' : language === 'hi' ? '1. परिचय और अवलोकन' : language === 'zh' ? '1. 简介与概述' : language === 'ur' ? '1. تعارف اور جائزہ' : language === 'vi' ? '1. GIỚI THIỆU' : '১. পরিচিতি ও ওভারভিউ'}
                 </span>
                 <p className="text-sm font-sans font-light text-brand-cream/90 leading-relaxed bg-brand-black/45 p-4 rounded-lg border border-brand-cream/5">
                   {activeTopicDetails.overview}
@@ -495,7 +510,7 @@ export default function App() {
               {activeTopicDetails.mainExplanation && (
                 <div className="space-y-2 pt-2">
                   <span className="text-[10px] font-mono text-brand-accent uppercase block tracking-wider">
-                    {language === 'en' ? '2. IN-DEPTH TECHNICAL ANALYSIS' : language === 'hi' ? '2. विस्तृत तकनीकी सारांश' : language === 'zh' ? '2. 深度技术解析' : language === 'ur' ? '2. تفصیلی تکنیکی تجزیہ' : '২. বিস্তারিত কারিগরি সারসংক্ষেপ'}
+                    {language === 'uk' ? '2. ГЛИБОКИЙ ТЕХНІЧНИЙ АНАЛІЗ' : language === 'en' ? '2. IN-DEPTH TECHNICAL ANALYSIS' : language === 'hi' ? '2. विस्तृत तकनीकी सारांश' : language === 'zh' ? '2. 深度技术解析' : language === 'ur' ? '2. تفصیلی تکنیکی تجزیہ' : language === 'vi' ? '2. PHÂN TÍCH KỸ THUẬT CHUYÊN SÂU' : '২. বিস্তারিত কারিগরি সারসংক্ষেপ'}
                   </span>
                   <p className="text-sm font-sans font-light text-brand-cream/80 stroke-brand-cream/20 leading-relaxed whitespace-pre-wrap bg-brand-black/30 p-4 rounded-lg border border-brand-cream/5">
                     {activeTopicDetails.mainExplanation}
@@ -507,7 +522,7 @@ export default function App() {
               {activeTopicDetails.keyConcepts && activeTopicDetails.keyConcepts.length > 0 && (
                 <div className="space-y-3 pt-2">
                   <span className="text-[10px] font-mono text-brand-accent uppercase block tracking-wider">
-                    {language === 'en' ? '3. CORE SPECIFICATION CONCEPTS' : language === 'hi' ? '3. मुख्य अवधारणाएँ' : language === 'zh' ? '3. 核心规格要点' : language === 'ur' ? '3. بنیادی تصریح کے تصورات' : '৩. প্রধান ধারণাসমূহ'}
+                    {language === 'uk' ? '3. ОСНОВНІ КОНЦЕПЦІЇ СПЕЦИФІКАЦІЇ' : language === 'en' ? '3. CORE SPECIFICATION CONCEPTS' : language === 'hi' ? '3. मुख्य अवधारणाएँ' : language === 'zh' ? '3. 核心规格要点' : language === 'vi' ? '3. KHÁI NIỆM THÔNG SỐ CỐT LÕI' : language === 'ur' ? '3. بنیادی تصریح کے تصورات' : '৩. প্রধান ধারণাসমূহ'}
                   </span>
                   <div className="grid grid-cols-1 gap-3">
                     {activeTopicDetails.keyConcepts.map((concept: any, idx: number) => (
@@ -528,7 +543,7 @@ export default function App() {
               {activeTopicDetails.visualExplanation && (
                 <div className="space-y-3 pt-2">
                   <span className="text-[10px] font-mono text-brand-accent uppercase block tracking-wider">
-                    {language === 'en' ? '4. CONCEPTUAL ANALYSIS & EXPLANATION' : language === 'hi' ? '4. वैचारिक विश्लेषण और विस्तृत स्पष्टीकरण' : language === 'zh' ? '4. 原理机制分析与图解说明' : language === 'ur' ? '4. تصوراتی تجزیہ اور وضاحت' : '৪. বিশদ বিশ্লেষণ এবং ধারণাগত ব্যাখ্যা'}
+                    {language === 'uk' ? '4. КОНЦЕПТУАЛЬНИЙ АНАЛІЗ ТА ПОЯСНЕННЯ' : language === 'en' ? '4. CONCEPTUAL ANALYSIS & EXPLANATION' : language === 'hi' ? '4. वैचारिक विश्लेषण और विस्तृत स्पष्टीकरण' : language === 'zh' ? '4. 原理机制分析与图解说明' : language === 'ur' ? '4. تصوراتی تجزیہ اور وضاحت' : language === 'vi' ? '4. PHÂN TÍCH & GIẢI THÍCH KHÁI NIỆM' : '৪. বিশদ বিশ্লেষণ এবং ধারণাগত ব্যাখ্যা'}
                   </span>
                   <div className="p-4 rounded-lg bg-brand-black/30 border border-brand-cream/5">
                     <p className="text-sm font-sans font-light text-brand-cream/80 leading-relaxed">
@@ -542,7 +557,7 @@ export default function App() {
               {activeTopicDetails.relatedTopics && activeTopicDetails.relatedTopicIds && activeTopicDetails.relatedTopicIds.length > 0 && (
                 <div className="space-y-2 pt-4 border-t border-brand-cream/10">
                   <span className="text-[9px] font-mono text-brand-cream/40 uppercase block tracking-wider">
-                    {language === 'en' ? 'RELATED ECOSYSTEM MODULES' : language === 'hi' ? 'संबंधित पारिस्थितिकी तंत्र मॉड्यूल' : language === 'zh' ? '相关生态子系统模块' : language === 'ur' ? 'متعلقہ ماحولیاتی نظام کے ماڈیولز' : 'অন্যান্য সহযোগী বিষয়সমূহ'}
+                    {language === 'uk' ? 'ПОВ’ЯЗАНІ МОДУЛІ ЕКОСИСТЕМИ' : language === 'en' ? 'RELATED ECOSYSTEM MODULES' : language === 'hi' ? 'संबंधित पारिस्थितिकी तंत्र मॉड्यूल' : language === 'zh' ? '相关生态子系统模块' : language === 'ur' ? 'متعلقہ ماحولیاتی نظام کے ماڈیولز' : language === 'vi' ? 'CÁC PHÂN HỆ HỆ SINH THÁI LIÊN QUAN' : 'অন্যান্য সহযোগী বিষয়সমূহ'}
                   </span>
                   <div className="flex flex-wrap gap-2">
                     {activeTopicDetails.relatedTopicIds.map((rid: string, idx: number) => {
@@ -574,7 +589,7 @@ export default function App() {
                       className="flex-1 p-3 rounded-lg bg-brand-black/45 hover:bg-brand-black/70 border border-brand-cream/10 hover:border-brand-accent/30 text-left transition-all duration-300 group cursor-pointer"
                     >
                       <span className="text-[9px] font-mono text-brand-cream/40 group-hover:text-brand-accent uppercase block mb-1">
-                        &larr; {language === 'en' ? 'PREVIOUS TOPIC' : language === 'hi' ? 'पिछला विषय' : language === 'zh' ? '上一章节' : language === 'ur' ? 'پچھلا عنوان' : 'পূর্ববর্তী বিষয়'}
+                        &larr; {language === 'uk' ? 'ПОПЕРЕДНЯ ТЕМА' : language === 'en' ? 'PREVIOUS TOPIC' : language === 'hi' ? 'पिछला विषय' : language === 'zh' ? '上一章节' : language === 'ur' ? 'پچھلا عنوان' : language === 'vi' ? 'CHỦ ĐỀ TRƯỚC' : 'পূর্ববর্তী বিষয়'}
                       </span>
                       <span className="text-xs font-serif text-brand-white font-medium line-clamp-1">
                         {getArticleById(activeTopicDetails.previousTopicId, language)?.title}
@@ -593,7 +608,7 @@ export default function App() {
                       className="flex-1 p-3 rounded-lg bg-brand-black/45 hover:bg-brand-black/70 border border-brand-cream/10 hover:border-brand-accent/30 text-right transition-all duration-300 group cursor-pointer"
                     >
                       <span className="text-[9px] font-mono text-brand-cream/40 group-hover:text-brand-accent uppercase block mb-1">
-                        {language === 'en' ? 'NEXT TOPIC' : language === 'hi' ? 'अगला विषय' : language === 'zh' ? '下一章节' : language === 'ur' ? 'اگلا عنوان' : 'পরবর্তী বিষয়'} &rarr;
+                        {language === 'uk' ? 'НАСТУПНА ТЕМА' : language === 'en' ? 'NEXT TOPIC' : language === 'hi' ? 'अगला विषय' : language === 'zh' ? '下一章节' : language === 'ur' ? 'اگلا عنوان' : language === 'vi' ? 'CHỦ ĐỀ TIẾP THEO' : 'পরবর্তী বিষয়'} &rarr;
                       </span>
                       <span className="text-xs font-serif text-brand-white font-medium line-clamp-1">
                         {getArticleById(activeTopicDetails.nextTopicId, language)?.title}
@@ -613,7 +628,7 @@ export default function App() {
                 onClick={() => setSelectedTopic(null)}
                 className="text-brand-accent hover:text-brand-white transition-colors tracking-widest uppercase text-[10px] font-bold py-1 px-4 border border-brand-accent/20 hover:border-brand-accent rounded cursor-pointer"
               >
-                {language === 'en' ? 'DONE' : language === 'hi' ? 'संपन्न' : language === 'zh' ? '完成' : language === 'ur' ? 'مکمل' : 'সম্পন্ন'}
+                {language === 'uk' ? 'ГОТОВО' : language === 'en' ? 'DONE' : language === 'hi' ? 'संपन्न' : language === 'zh' ? '完成' : language === 'ur' ? 'مکمل' : language === 'vi' ? 'HOÀN THÀNH' : 'সম্পন্ন'}
               </button>
             </div>
 
