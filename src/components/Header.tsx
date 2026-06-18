@@ -27,7 +27,8 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
     { code: 'zh', name: '简体中文' },
     { code: 'ur', name: 'اردو' },
     { code: 'vi', name: 'Tiếng Việt' },
-    { code: 'uk', name: 'Українська' }
+    { code: 'uk', name: 'Українська' },
+    { code: 'in', name: 'Bahasa Indonesia' }
   ];
 
   const getLibraryLabel = (lang: Language): string => {
@@ -38,6 +39,7 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
       case 'ur': return 'لائبریری';
       case 'vi': return 'Thư viện';
       case 'uk': return 'Бібліотека';
+      case 'in': return 'Perpustakaan';
       default: return 'Library';
     }
   };
@@ -65,7 +67,7 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
           <div className="flex-shrink-0 cursor-pointer flex items-center h-full space-x-0" onClick={() => handleNavClick('home')}>
             <Logo size="sm" theme={theme} className="mr-0 pr-0" />
             <span className="font-sans text-xs sm:text-sm md:text-base font-semibold tracking-wider text-brand-cream hover:text-brand-white transition-colors duration-300 whitespace-nowrap self-center pt-0.5 -ml-1.5 sm:-ml-2">
-              {currentLanguage === 'bn' ? 'নলেজ সেন্টার' : currentLanguage === 'hi' ? 'ज्ञान केंद्र' : currentLanguage === 'zh' ? '技术知识库' : currentLanguage === 'ur' ? 'نالج سینٹر' : currentLanguage === 'vi' ? 'trung tâm tri thức' : currentLanguage === 'uk' ? 'центр знань' : 'knowledge center'}
+              {currentLanguage === 'bn' ? 'নলেজ সেন্টার' : currentLanguage === 'hi' ? 'ज्ञान केंद्र' : currentLanguage === 'zh' ? '技术知识库' : currentLanguage === 'ur' ? 'نالج سینٹر' : currentLanguage === 'vi' ? 'trung tâm tri thức' : currentLanguage === 'uk' ? 'центр знань' : currentLanguage === 'in' ? 'pusat pengetahuan' : 'knowledge center'}
             </span>
           </div>
 
@@ -151,7 +153,7 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
                             setDesktopDropdownOpen(false);
                           }}
                           id={`lang-select-${lang.code}`}
-                          className={`w-full text-left px-3 py-2 rounded-lg text-xs font-mono tracking-wide transition-all cursor-pointer ${
+                          className={`w-full text-left px-3 py-2 rounded-lg text-xs font-sans tracking-wide transition-all cursor-pointer ${
                             isSelected
                               ? 'text-brand-black bg-brand-accent font-semibold'
                               : 'text-brand-cream/70 hover:text-brand-white hover:bg-brand-white/5'
@@ -200,7 +202,7 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
                             setLanguage(lang.code);
                             setMobileDropdownOpen(false);
                           }}
-                          className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-mono tracking-wide transition-all cursor-pointer ${
+                          className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-sans tracking-wide transition-all cursor-pointer ${
                             isSelected
                               ? 'text-brand-black bg-brand-accent font-semibold'
                               : 'text-brand-cream/70 hover:text-brand-white hover:bg-brand-white/5'

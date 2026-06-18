@@ -1,4 +1,4 @@
-export type Language = 'en' | 'bn' | 'hi' | 'zh' | 'ur' | 'vi' | 'uk';
+export type Language = 'en' | 'bn' | 'hi' | 'zh' | 'ur' | 'vi' | 'uk' | 'in';
 
 export interface Translation {
   // Navigation & General
@@ -122,6 +122,8 @@ export interface Robot {
   vietnameseTags?: string[];
   ukrainianDescription?: string;
   ukrainianTags?: string[];
+  indonesianDescription?: string;
+  indonesianTags?: string[];
 }
 
 export interface RoboticArm {
@@ -134,6 +136,7 @@ export interface RoboticArm {
   urduDescription?: string;
   vietnameseDescription?: string;
   ukrainianDescription?: string;
+  indonesianDescription?: string;
   status: 'online' | 'active' | 'reserved';
   queueLength: number;
   bgHex: string;
@@ -149,6 +152,7 @@ export interface DocArticle {
   urduCategory?: string;
   vietnameseCategory?: string;
   ukrainianCategory?: string;
+  indonesianCategory?: string;
   title: string;
   bengaliTitle: string;
   hindiTitle: string;
@@ -156,6 +160,7 @@ export interface DocArticle {
   urduTitle?: string;
   vietnameseTitle?: string;
   ukrainianTitle?: string;
+  indonesianTitle?: string;
   summary: string;
   bengaliSummary: string;
   hindiSummary: string;
@@ -163,6 +168,7 @@ export interface DocArticle {
   urduSummary?: string;
   vietnameseSummary?: string;
   ukrainianSummary?: string;
+  indonesianSummary?: string;
   content: string[];
   bengaliContent: string[];
   hindiContent: string[];
@@ -170,4 +176,5 @@ export interface DocArticle {
   urduContent?: string[];
   vietnameseContent?: string[];
   ukrainianContent?: string[];
+  indonesianContent?: string[];
 }

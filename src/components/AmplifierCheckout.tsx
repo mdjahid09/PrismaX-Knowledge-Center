@@ -92,7 +92,7 @@ export default function AmplifierCheckout({ currentLanguage }: CheckoutProps) {
                   <div className="pt-4 border-t border-brand-cream/5 flex items-center space-x-3 text-xs font-mono text-brand-cream/40">
                     <ShieldCheck className="w-4 h-4 text-brand-accent" />
                     <span>
-                      {currentLanguage === 'en' ? 'SECURE DIRECT CONTRACTS' : currentLanguage === 'hi' ? 'सुरक्षित सीधे अनुबंध' : 'সুরক্ষিত সরাসরি চুক্তি'}
+                      {currentLanguage === 'en' ? 'SECURE DIRECT CONTRACTS' : currentLanguage === 'hi' ? 'सुरक्षित सीधे अनुबंध' : currentLanguage === 'in' ? 'KONTRAK LANGSUNG AMAN' : 'সুরক্ষিত সরাসরি চুক্তি'}
                     </span>
                   </div>
                 </div>
@@ -163,7 +163,7 @@ export default function AmplifierCheckout({ currentLanguage }: CheckoutProps) {
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
                           <span>
-                            {currentLanguage === 'en' ? 'ACTIVATING CONTRACT...' : currentLanguage === 'hi' ? 'अनुबंध सक्रिय किया जा रहा है...' : 'চুক্তি সক্রিয় করা হচ্ছে...'}
+                            {currentLanguage === 'en' ? 'ACTIVATING CONTRACT...' : currentLanguage === 'hi' ? 'अनुबंध सक्रिय किया जा रहा है...' : currentLanguage === 'in' ? 'MENGAKTIFKAN KONTRAK...' : 'চুক্তি সক্রিয় করা হচ্ছে...'}
                           </span>
                         </>
                       ) : (

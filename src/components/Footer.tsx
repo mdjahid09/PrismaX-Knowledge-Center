@@ -59,7 +59,7 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
               </li>
               <li>
                 <button onClick={() => handleNavClick('about')} className="hover:text-brand-white transition-colors cursor-pointer text-left">
-                  {currentLanguage === 'bn' ? 'লাইব্রেরি' : currentLanguage === 'hi' ? 'लाइब्रेरी' : currentLanguage === 'zh' ? '图书馆' : currentLanguage === 'ur' ? 'لائبریری' : 'Library'}
+                  {currentLanguage === 'bn' ? 'লাইব্রেরি' : currentLanguage === 'hi' ? 'लाइब्रेरी' : currentLanguage === 'zh' ? '图书馆' : currentLanguage === 'ur' ? 'لائبریری' : currentLanguage === 'in' ? 'Perpustakaan' : 'Library'}
                 </button>
               </li>
               <li>
@@ -83,7 +83,7 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
                 >
                   <Globe className="w-4 h-4 text-brand-accent" />
                   <span className="flex-1">
-                    {currentLanguage === 'en' ? 'English (EN)' : currentLanguage === 'hi' ? 'हिन्दी (HI)' : currentLanguage === 'bn' ? 'বাংলা (BN)' : currentLanguage === 'zh' ? '简体中文 (ZH)' : currentLanguage === 'ur' ? 'اردو (UR)' : currentLanguage === 'vi' ? 'Tiếng Việt (VI)' : 'Українська (UK)'}
+                    {currentLanguage === 'en' ? 'English (EN)' : currentLanguage === 'hi' ? 'हिन्दी (HI)' : currentLanguage === 'bn' ? 'বাংলা (BN)' : currentLanguage === 'zh' ? '简体中文 (ZH)' : currentLanguage === 'ur' ? 'اردو (UR)' : currentLanguage === 'vi' ? 'Tiếng Việt (VI)' : currentLanguage === 'in' ? 'Bahasa Indonesia (IN)' : 'Українська (UK)'}
                   </span>
                   <span className="text-[10px] font-mono text-brand-cream/40 bg-brand-black px-1.5 py-0.5 rounded">
                     {currentLanguage.toUpperCase()}
@@ -97,7 +97,7 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
                       onClick={() => setDropdownOpen(false)}
                     />
                     <div className="absolute left-0 bottom-full mb-2 w-full rounded-xl border border-brand-cream/15 bg-brand-black/95 backdrop-blur-xl p-1.5 shadow-2xl z-50 animate-fade-in flex flex-col space-y-1">
-                      {(['en', 'bn', 'hi', 'zh', 'ur', 'vi', 'uk'] as const).map((lang) => {
+                      {(['en', 'bn', 'hi', 'zh', 'ur', 'vi', 'uk', 'in'] as const).map((lang) => {
                         const isSelected = currentLanguage === lang;
                         const labels: Record<Language, string> = {
                           en: 'English (EN)',
@@ -106,7 +106,8 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
                           zh: '简体中文 (ZH)',
                           ur: 'اردو (UR)',
                           vi: 'Tiếng Việt (VI)',
-                           uk: 'Українська (UK)'
+                          uk: 'Українська (UK)',
+                          in: 'Bahasa Indonesia (IN)'
                         };
                         return (
                           <button
@@ -115,7 +116,7 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
                               setLanguage(lang);
                               setDropdownOpen(false);
                             }}
-                            className={`w-full text-left px-3 py-2 rounded-lg text-xs font-mono tracking-wide transition-all cursor-pointer ${
+                            className={`w-full text-left px-3 py-2 rounded-lg text-xs font-sans tracking-wide transition-all cursor-pointer ${
                               isSelected
                                 ? 'text-brand-black bg-brand-accent font-semibold'
                                 : 'text-brand-cream/70 hover:text-brand-white hover:bg-brand-white/5'

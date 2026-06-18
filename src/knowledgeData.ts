@@ -29,6 +29,7 @@ import { chineseKnowledgeTranslations } from './chineseKnowledgeData';
 import { urduKnowledgeTranslations } from './urduKnowledgeData';
 import { vietnameseKnowledgeTranslations } from './vietnameseKnowledgeData';
 import { ukrainianKnowledgeTranslations } from './ukrainianKnowledgeData';
+import { indonesianKnowledgeTranslations } from './indonesianKnowledgeData';
 
 export interface KeyConcept {
   heading: string;
@@ -1524,11 +1525,11 @@ export const knowledgeArticles: KnowledgeArticle[] = [
 
 export const getLocalizedCategory = (category: string, lang: Language): string => {
   const translationsMap: Record<string, string> = {
-    'Introduction & Core': lang === 'bn' ? 'মূল প্রযুক্তি এবং পরিচিতি' : lang === 'hi' ? 'मुख्य तकनीक और परिचय' : lang === 'zh' ? '核心技术与介绍' : lang === 'ur' ? 'بنیادی ٹیکنالوجی اور تعارف' : lang === 'vi' ? 'Công nghệ lõi & Giới thiệu' : 'Introduction & Core',
-    'Robot Control & Operations': lang === 'bn' ? 'নিয়ন্ত্রণ ও অপারেশন' : lang === 'hi' ? 'नियंत्रण और संचालन' : lang === 'zh' ? '控制与操作' : lang === 'ur' ? 'کنٹرول اور آپریشنز' : lang === 'vi' ? 'Điều khiển & Vận hành' : 'Robot Control & Operations',
-    'Network & Economics': lang === 'bn' ? 'নেটওয়ার্ক ও ইকোনমি' : lang === 'hi' ? 'नेटवर्क और अर्थव्यवस्था' : lang === 'zh' ? '网络与经济' : lang === 'ur' ? 'نیٹ ورک اور معیشت' : lang === 'vi' ? 'Mạng lưới & Kinh tế' : 'Network & Economics',
-    'Evaluations & Analytics': lang === 'bn' ? 'মূল্যায়ন ও কোয়ালিটি' : lang === 'hi' ? 'विश्लेषण और गुणवत्ता' : lang === 'zh' ? '评估与分析' : lang === 'ur' ? 'تجزیات اور معیار' : lang === 'vi' ? 'Phân tích & Đánh giá' : 'Evaluations & Analytics',
-    'Future & Roadmap': lang === 'bn' ? 'ভবিষ্যত ও রোডম্যাপ' : lang === 'hi' ? 'भविष्य और रोडमैप' : lang === 'zh' ? '前景与路线图' : lang === 'ur' ? 'مستقبل اور روڈ میپ' : lang === 'vi' ? 'Tương lai & Thông số' : 'Future & Roadmap'
+    'Introduction & Core': lang === 'bn' ? 'মূল প্রযুক্তি এবং পরিচিতি' : lang === 'hi' ? 'मुख्य तकनीक और परिचय' : lang === 'zh' ? '核心技术与介绍' : lang === 'ur' ? 'بنیادی ٹیکنالوجی اور تعارف' : lang === 'vi' ? 'Công nghệ lõi & Giới thiệu' : lang === 'uk' ? 'Вступ та Основи' : lang === 'in' ? 'Teknologi Inti & Pengantar' : 'Introduction & Core',
+    'Robot Control & Operations': lang === 'bn' ? 'নিয়ন্ত্রণ ও অপারেশন' : lang === 'hi' ? 'নিয়ন্ত্রণ এবং পরিচালনা' : lang === 'zh' ? '控制与操作' : lang === 'ur' ? 'کنٹرول اور آپریشنز' : lang === 'vi' ? 'Control & Operations' : lang === 'uk' ? 'Керування та Операції' : lang === 'in' ? 'Kontrol & Operasi' : 'Robot Control & Operations',
+    'Network & Economics': lang === 'bn' ? 'নেটওয়ার্ক ও ইকোনমি' : lang === 'hi' ? 'नेटवर्क और अर्थव्यवस्था' : lang === 'zh' ? '网络与经济' : lang === 'ur' ? 'نیٹ ورک اور معیشت' : lang === 'vi' ? 'Mạng lưới & Kinh tế' : lang === 'uk' ? 'Мережа та Економіка' : lang === 'in' ? 'Jaringan & Ekonomi' : 'Network & Economics',
+    'Evaluations & Analytics': lang === 'bn' ? 'মূল্যায়ন ও কোয়ালিটি' : lang === 'hi' ? 'विश्लेषण और गुणवत्ता' : lang === 'zh' ? '评估与分析' : lang === 'ur' ? 'تجزیات اور معیار' : lang === 'vi' ? 'Phân tích & Đánh giá' : lang === 'uk' ? 'Оцінка та Аналітика' : lang === 'in' ? 'Analisis & Kualitas' : 'Evaluations & Analytics',
+    'Future & Roadmap': lang === 'bn' ? 'ভবিষ্যত ও রোডম্যাপ' : lang === 'hi' ? 'भविष्य और रोडमैप' : lang === 'zh' ? '前景与路线图' : lang === 'ur' ? 'مستقبل اور روڈ میپ' : lang === 'vi' ? 'Tương lai & Thông số' : lang === 'uk' ? 'Майбутнє та Дорожня карта' : lang === 'in' ? 'Masa Depan & Spesifikasi' : 'Future & Roadmap'
   };
   return translationsMap[category] || category;
 };
@@ -1536,6 +1537,40 @@ export const getLocalizedCategory = (category: string, lang: Language): string =
 export const getArticleById = (id: string, currentLanguage: Language) => {
   const article = knowledgeArticles.find(a => a.id === id);
   if (!article) return null;
+
+  if (currentLanguage === 'in') {
+    const inTrans = indonesianKnowledgeTranslations[id];
+    if (inTrans) {
+      return {
+        id: article.id,
+        title: inTrans.title,
+        subtitle: inTrans.subtitle,
+        overview: inTrans.overview,
+        mainExplanation: inTrans.mainExplanation,
+        keyConcepts: article.keyConcepts.map((c, idx) => ({
+          heading: inTrans.keyConcepts[idx]?.heading || c.heading,
+          text: inTrans.keyConcepts[idx]?.text || c.text
+        })),
+        visualExplanation: {
+          desc: inTrans.visualDesc || article.visualExplanation.desc,
+          code: article.visualExplanation.code
+        },
+        relatedTopics: article.relatedTopicIds.map(rid => {
+          const matchedIn = indonesianKnowledgeTranslations[rid];
+          if (matchedIn) return matchedIn.title;
+          const matched = knowledgeArticles.find(item => item.id === rid);
+          return matched ? matched.title : rid;
+        }),
+        relatedTopicIds: article.relatedTopicIds,
+        previousTopicId: article.previousTopicId,
+        nextTopicId: article.nextTopicId,
+        category: getLocalizedCategory(article.category, currentLanguage),
+        badge: article.badge,
+        color: article.color,
+        icon: article.icon
+      };
+    }
+  }
 
   if (currentLanguage === 'uk') {
     const ukTrans = ukrainianKnowledgeTranslations[id];

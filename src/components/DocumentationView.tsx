@@ -26,6 +26,10 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
       ? (article.urduTitle || article.title) 
       : currentLanguage === 'vi'
       ? (article.vietnameseTitle || article.title)
+      : currentLanguage === 'uk'
+      ? (article.ukrainianTitle || article.title)
+      : currentLanguage === 'in'
+      ? (article.indonesianTitle || article.title)
       : article.title;
 
     const summaryVal = currentLanguage === 'bn' 
@@ -38,6 +42,10 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
       ? (article.urduSummary || article.summary) 
       : currentLanguage === 'vi'
       ? (article.vietnameseSummary || article.summary)
+      : currentLanguage === 'uk'
+      ? (article.ukrainianSummary || article.summary)
+      : currentLanguage === 'in'
+      ? (article.indonesianSummary || article.summary)
       : article.summary;
 
     const catVal = currentLanguage === 'bn' 
@@ -50,6 +58,10 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
       ? (article.urduCategory || article.category) 
       : currentLanguage === 'vi'
       ? (article.vietnameseCategory || article.category)
+      : currentLanguage === 'uk'
+      ? (article.ukrainianCategory || article.category)
+      : currentLanguage === 'in'
+      ? (article.indonesianCategory || article.category)
       : article.category;
 
     const title = titleVal.toLowerCase();
@@ -132,6 +144,12 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
                       ? article.chineseCategory 
                       : currentLanguage === 'ur' 
                       ? (article.urduCategory || article.category) 
+                      : currentLanguage === 'vi'
+                      ? (article.vietnameseCategory || article.category)
+                      : currentLanguage === 'uk'
+                      ? (article.ukrainianCategory || article.category)
+                      : currentLanguage === 'in'
+                      ? (article.indonesianCategory || article.category)
                       : article.category;
 
                     const title = currentLanguage === 'bn' 
@@ -142,6 +160,12 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
                       ? article.chineseTitle 
                       : currentLanguage === 'ur' 
                       ? (article.urduTitle || article.title) 
+                      : currentLanguage === 'vi'
+                      ? (article.vietnameseTitle || article.title)
+                      : currentLanguage === 'uk'
+                      ? (article.ukrainianTitle || article.title)
+                      : currentLanguage === 'in'
+                      ? (article.indonesianTitle || article.title)
                       : article.title;
 
                     return (
@@ -215,6 +239,10 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
                       ? (activeArticle.urduCategory || activeArticle.category) 
                       : currentLanguage === 'vi'
                       ? (activeArticle.vietnameseCategory || activeArticle.category)
+                      : currentLanguage === 'uk'
+                      ? (activeArticle.ukrainianCategory || activeArticle.category)
+                      : currentLanguage === 'in'
+                      ? (activeArticle.indonesianCategory || activeArticle.category)
                       : activeArticle.category}
                   </span>
                   <span>/</span>
@@ -233,6 +261,10 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
                     ? (activeArticle.urduTitle || activeArticle.title) 
                     : currentLanguage === 'vi'
                     ? (activeArticle.vietnameseTitle || activeArticle.title)
+                    : currentLanguage === 'uk'
+                    ? (activeArticle.ukrainianTitle || activeArticle.title)
+                    : currentLanguage === 'in'
+                    ? (activeArticle.indonesianTitle || activeArticle.title)
                     : activeArticle.title}
                 </h2>
 
@@ -248,6 +280,10 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
                     ? (activeArticle.urduSummary || activeArticle.summary) 
                     : currentLanguage === 'vi'
                     ? (activeArticle.vietnameseSummary || activeArticle.summary)
+                    : currentLanguage === 'uk'
+                    ? (activeArticle.ukrainianSummary || activeArticle.summary)
+                    : currentLanguage === 'in'
+                    ? (activeArticle.indonesianSummary || activeArticle.summary)
                     : activeArticle.summary}
                 </p>
 
@@ -263,6 +299,10 @@ export default function DocumentationView({ currentLanguage, onClose }: Document
                     ? (activeArticle.urduContent || activeArticle.content) 
                     : currentLanguage === 'vi'
                     ? (activeArticle.vietnameseContent || activeArticle.content)
+                    : currentLanguage === 'uk'
+                    ? (activeArticle.ukrainianContent || activeArticle.content)
+                    : currentLanguage === 'in'
+                    ? (activeArticle.indonesianContent || activeArticle.content)
                     : activeArticle.content).map((para, idx) => (
                     <p key={idx} className="indent-2 select-text">
                       {para}

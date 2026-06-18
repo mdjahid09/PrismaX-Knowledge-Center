@@ -5,7 +5,7 @@ import AmplifierCheckout from './components/AmplifierCheckout';
 import { translations } from './data';
 import { Language } from './types';
 import { X, Target, Code, Cpu, Sparkles, Terminal, Layers, ArrowDown, FastForward, BrainCircuit, HardDrive, Network, Activity, ArrowRight, Youtube, Search, BookOpen, Globe } from 'lucide-react';
-import { knowledgeArticles, getArticleById } from './knowledgeData';
+import { knowledgeArticles, getArticleById, getLocalizedCategory } from './knowledgeData';
 
 // Minimalist, high-contrast, monochrome, beautiful outline brand icons
 const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -213,59 +213,49 @@ export default function App() {
             
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-mono tracking-[0.4em] uppercase text-brand-accent text-glow">
-                {language === 'uk' ? 'БІБЛІОТЕКА ЗНАНЬ PRISMAX' : language === 'en' ? 'PRISMAX KNOWLEDGE LIBRARY' : language === 'hi' ? 'प्रिजमैکس नॉलेज लाइब्रेरी' : language === 'zh' ? 'PRISMAX 技术知识库' : language === 'ur' ? 'PRISMAX نالج لائبریری' : 'প্রिजम্যাক্স নলেজ লাইব্রেরি'}
+                {language === 'uk' ? 'БІБЛІОТЕКА ЗНАНЬ PRISMAX' : language === 'en' ? 'PRISMAX KNOWLEDGE LIBRARY' : language === 'vi' ? 'THƯ VIỆN KIẾN THỨC PRISMAX' : language === 'in' ? 'PERPUSTAKAAN PENGETAHUAN PRISMAX' : language === 'hi' ? 'प्रिजमैکس नॉलेज लाइब्रेरी' : language === 'zh' ? 'PRISMAX 技术知识库' : language === 'ur' ? 'PRISMAX نالج لائبریری' : 'প্রिजम্যাক্স নলেজ লাইব্রেরি'}
               </span>
               <h2 className="text-3xl md:text-5xl font-serif text-brand-cream tracking-tight uppercase leading-tight mt-3">
-                {language === 'uk' ? 'Специфікації екосистеми' : language === 'en' ? 'Ecosystem Specifications' : language === 'hi' ? 'पारिस्थितिकी तंत्र विनिर्देश' : language === 'zh' ? '系统生态规格说明书' : language === 'ur' ? 'ایکو سسٹم کی وضاحتیں' : language === 'vi' ? 'Thông số hệ sinh thái' : 'সমগ্র ইকোসিস্টেম বিবরণী'}
+                {language === 'uk' ? 'Специфікації екосистеми' : language === 'en' ? 'Ecosystem Specifications' : language === 'vi' ? 'Thông số hệ sinh thái' : language === 'in' ? 'Spesifikasi Ekosistem' : language === 'hi' ? 'पारिस्थितिकी तंत्र विनिर्देश' : language === 'zh' ? '系统生态规格说明书' : language === 'ur' ? 'ایکو سسٹم کی وضاحتیں' : 'সমগ্র ইকোসিস্টেম বিবরণী'}
               </h2>
-              <p className="text-sm font-sans font-light text-brand-cream/65 mt-3 leading-relaxed">
+                            <p className="text-sm font-sans font-light text-brand-cream/65 mt-3 leading-relaxed">
                 {language === 'uk'
                   ? 'Досліджуйте наш повний каталог фізичного інтелекту PrismaX, повністю синтезований з офіційних документів штучного інтелекту, токенів траєкторій телеоперацій та телеметрії координації флоту.'
                   : language === 'en' 
                   ? 'Explore our complete PrismaX physical intelligence catalog, fully synthesized from Core AI whitepapers, teleoperation Trajectory tokens, and fleet coordination telemetry.'
+                  : language === 'vi'
+                  ? 'Khám phá danh sách đầy đủ công nghệ AI Vật lý của PrismaX, được tổng hợp toàn diện từ các bài viết khoa học cốt lõi, token quỹ đạo vận hành và dữ liệu viễn thám kết hợp.'
+                  : language === 'in'
+                  ? 'Jelajahi seluruh katalog kecerdasan fisik PrismaX kami, yang sepenuhnya disintesis dari whitepaper AI Utama, token lintasan teleoperasi, dan telemetri koordinasi armada.'
                   : language === 'hi'
-                  ? 'हमारे पूर्ण प्रिजमैक्स भौतिक बुद्धिमत्ता कैटलॉग का अन्वेषण करें, जो मुख्य एआई श्वेतपत्रों, टेलीऑपरेशन प्रक्षेपवक्र टोकن और बेड़े समन्वय टेलीमेट्री से पूरी तरह से संश्लेषित है।'
+                  ? 'हमारे पूर्ण प्रिजमैक्स भौतिक बुद्धिमत्ता कैटलॉग का अन्वेषण करें, जो मुख्य एआई श्वेतपत्रों, टेलीऑपरेशन प्रक्षेपवक्र टोकन और बेड़े समन्वय टेलीमेट्री से पूरी तरह से संश्लेषित है।'
                   : language === 'zh'
-                  ? '探索我们完整的 PrismaX 具身物理智能知识库，完全由核心 AI 白皮书、遥操作轨迹 Token 以及机器人机队协同遥测数据汇编而成。'
+                  ? '探索我们完整的 PrismaX 物理智能产品目录，该目录完美融合了核心 AI 白皮书、遥操作轨迹令牌以及群控协同遥测数据。'
                   : language === 'ur'
-                  ? 'ہمارے مکمل PrismaX جسمانی ذہانت کے انسائیکلوپیڈیا کو دریافت کریں، جو بنیادی AI وائٹ پیپرز، ٹیلی آپریشن ٹریکٹری ٹוکنز، اور اور روبوٹک بیڑے کی کوآرڈینیشن ٹیلی میٹری سے مکمل طور پر تیار کیا گیا ہے۔'
-                  : language === 'vi' ? 'Khám phá danh sách đầy đủ công nghệ AI Vật lý của PrismaX, được tổng hợp toàn diện từ các bài viết khoa học cốt lõi, token quỹ đạo vận hành và dữ liệu viễn thám kết hợp.' : 'কোর এআই হোয়াইটপেপার, টেলিঅপারেশন ট্র্যাজেক্টরি টোকেন এবং রোবোটিক বহরের টেলিমেট্রি থেকে সংগৃহীত আমাদের সম্পূর্ণ প্রিজম্যাক্স ফিজিক্যাল ইন্টেলিজেন্স ক্যাটালগ এক্সপ্লোর করুন।'}
+                  ? 'ہمارے مکمل PrismaX فزیکل انٹیلیجنس کیٹلاگ کو دریافت کریں، جو کور AI وائٹ پیپرز، ٹیلی آپریشن ٹریکٹری ٹوکنز، اور فلیٹ کوآرڈینیشن ٹیلی میٹری سے مکمل طور پر تیار کیا گیا ہے۔'
+                  : 'আমাদের সম্পূর্ণ PrismaX ফিজিক্যাল ইন্টেলিজেন্স ক্যাটালগ অন্বেষণ করুন, যা কোর AI হোয়াইটপেপার, দূরবর্তী অপারেশন ট্র্যাজেক্টরি টোকেন এবং বহর সমন্বয় টেলিমেট্রি থেকে সম্পূর্ণরূপে সংশ্লেষিত।'}
               </p>
             </div>
 
-            {/* Category Filter and Search Bar */}
-            <div className="mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 p-4 rounded-xl border border-brand-cream/10 bg-brand-black/40 backdrop-blur-md shadow-xl shadow-black/10 dark:shadow-black/40">
+            <div className="flex flex-col lg:flex-row gap-6 justify-between items-start lg:items-center mb-10 w-full animate-fadeIn" id="knowledge-filters-row">
               {/* Category Pills */}
-              {/*
-                  { id: 'All', en: 'All', bn: 'সব', hi: 'सभी', zh: '全部', ur: 'سب', vi: 'Tất cả', uk: 'Все' },
-                  { id: 'Introduction & Core', en: 'Core Tech & Intro', bn: 'মূল প্রযুক্তি এবং পরিচিতি', hi: 'मुख्य तकनीक और परिचय', zh: '核心技术与介绍', ur: 'بنیادی ٹیکنالوجی اور تعارف', vi: 'Công nghệ lõi & Giới thiệu', uk: 'Основна техніка та вступ' },
-                  { id: 'Robot Control & Operations', en: 'Control & Operations', bn: 'নিয়ন্ত্রণ ও অপারেশন', hi: 'नियंत्रण और संचालन', zh: '控制与操作', ur: 'کنٹرول اور آپریشنز', vi: 'Điều khiển & Vận hành', uk: 'Управління та операції' },
-                  { id: 'Network & Economics', en: 'Network & Economy', bn: 'নেটওয়ার্ক ও ইকোনমি', hi: 'नेटवर्क और अर्थव्यवस्था', zh: '网络与经济', ur: 'نیٹ ورک اور معیشत', vi: 'Mạng lưới & Kinh tế', uk: 'Мережа та економіка' },
-                  { id: 'Evaluations & Analytics', en: 'Analytics & Quality', bn: 'মূল্যায়ন ও কোয়ালিটি', hi: 'विश्लेषण और गुणवत्ता', zh: '评估与分析', ur: 'تجزیات اور معیار', vi: 'Phân tích & Đánh giá', uk: 'Аналітика та якість' },
-                  { id: 'Future & Roadmap', en: 'Future & Specs', bn: 'ভবিষ্যত ও রোডম্যাপ', hi: 'भविष्य और रोडमैप', zh: '前景与路线图', ur: 'مستقبل اور روڈ میپ', vi: 'Tương lai & Thông số', uk: 'Майбутнє та специфікації' }
-               */}
-              {/* Category Pills */}
-              <div className="flex flex-wrap items-center gap-2">
-                {[
-                  { id: 'All', en: 'All', bn: 'সব', hi: 'सभी', zh: '全部', ur: 'سب', vi: 'Tất cả', uk: 'Все' },
-                  { id: 'Introduction & Core', en: 'Core Tech & Intro', bn: 'মূল প্রযুক্তি এবং পরিচিতি', hi: 'मुख्य तकनीक और परिचय', zh: '核心技术与介绍', ur: 'بنیادی ٹیکنالوجی اور تعارف', vi: 'Công nghệ lõi & Giới thiệu', uk: 'Основна техніка та вступ' },
-                  { id: 'Robot Control & Operations', en: 'Control & Operations', bn: 'নিয়ন্ত্রণ ও অপারেশন', hi: 'नियंत्रण और संचालन', zh: '控制与操作', ur: 'کنٹرول اور آپریشنز', vi: 'Điều khiển & Vận hành', uk: 'Управління та операції' },
-                  { id: 'Network & Economics', en: 'Network & Economy', bn: 'নেটওয়ার্ক ও ইকোনমি', hi: 'नेटवर्क और अर्थव्यवस्था', zh: '网络与经济', ur: 'نیٹ ورک اور معیشت', vi: 'Mạng lưới & Kinh tế', uk: 'Мережа та економіка' },
-                  { id: 'Evaluations & Analytics', en: 'Analytics & Quality', bn: 'মূল্যায়ন ও কোয়ালিটি', hi: 'विश्लेषण और गुणवत्ता', zh: '评估与分析', ur: 'تجزیات اور معیار', vi: 'Phân tích & Đánh giá', uk: 'Аналітика та якість' },
-                  { id: 'Future & Roadmap', en: 'Future & Specs', bn: 'ভবিষ্যত ও রোডম্যাপ', hi: 'भविष्य और रोडमैप', zh: '前景与路线图', ur: 'مستقبل اور روڈ میپ', vi: 'Tương lai & Thông số', uk: 'Майбутнє та специфікації' }
-                ].map((cat) => {
-                  const isActive = selectedCategory === cat.id;
+              <div className="flex flex-wrap gap-2.5 max-w-full lg:max-w-[70%]">
+                {['All', 'Introduction & Core', 'Robot Control & Operations', 'Network & Economics', 'Evaluations & Analytics', 'Future & Roadmap'].map((catId) => {
+                  const isActive = selectedCategory === catId;
+                  const label = catId === 'All'
+                    ? (language === 'uk' ? 'Усі' : language === 'en' ? 'All' : language === 'hi' ? 'सभी' : language === 'zh' ? '全部' : language === 'ur' ? 'تمام' : language === 'vi' ? 'Tất cả' : language === 'in' ? 'Semua' : 'সব')
+                    : getLocalizedCategory(catId, language);
                   return (
                     <button
-                      key={cat.id}
-                      onClick={() => setSelectedCategory(cat.id)}
-                      className={`px-3 py-1.5 rounded-lg text-[10px] font-mono uppercase tracking-wider transition-all cursor-pointer border ${
+                      key={catId}
+                      onClick={() => setSelectedCategory(catId)}
+                      className={`px-3 py-1.5 rounded-lg text-[10px] font-sans uppercase tracking-wider transition-all cursor-pointer border ${
                         isActive
                            ? 'bg-brand-accent border-brand-accent text-brand-black font-semibold shadow-[0_0_15px_rgba(197,168,128,0.25)]'
                            : 'bg-brand-black/60 border-brand-cream/10 text-brand-cream/70 hover:text-brand-white hover:border-brand-cream/20'
                       }`}
                     >
-                      {language === 'uk' ? cat.uk : language === 'en' ? cat.en : language === 'hi' ? cat.hi : language === 'zh' ? cat.zh : language === 'ur' ? cat.ur : language === 'vi' ? cat.vi : cat.bn}
+                      {label}
                     </button>
                   );
                 })}
@@ -422,7 +412,7 @@ export default function App() {
 
             <div className="space-y-3">
               <h2 className="text-3xl sm:text-4xl font-serif text-brand-cream tracking-tight uppercase leading-tight">
-                {language === 'uk' ? 'Стати телеоператором' : language === 'en' ? 'Become a Teleoperator' : language === 'hi' ? 'एक टेलीऑपरेटर बनें' : language === 'zh' ? '成为遥操作员' : language === 'ur' ? 'ٹیلی آپریٹر بنیں' : language === 'vi' ? 'Trở thành Chuyên viên Vận hành' : 'টেলিঅপারেটর হোন'}
+                {language === 'uk' ? 'Стати телеоператором' : language === 'en' ? 'Become a Teleoperator' : language === 'hi' ? 'एक टेलीऑपरेटर बनें' : language === 'zh' ? '成为遥操作员' : language === 'ur' ? 'ٹیلی آپریٹر بنیں' : language === 'vi' ? 'Trở thành Chuyên viên Vận hành' : language === 'in' ? 'Menjadi Operator Jarak Jauh' : 'টেলিঅপারেটর হোন'}
               </h2>
               <p className="text-xs sm:text-sm font-sans font-light text-brand-cream/80 max-w-xl leading-relaxed mx-auto text-center">
                 {language === 'uk'
@@ -432,10 +422,12 @@ export default function App() {
                   : language === 'hi'
                   ? 'अपने वर्कस्टेशन से सीधे दुनिया भर में वास्तविक ह्यूमनॉइड बेड़े तक पहुंचें और कम-विलंबता द्विपक्षीय टेलीऑपरेशन नोड्स का समन्वय करें।'
                   : language === 'zh'
-                  ? '自您的工作站，直接安全地实时操作全球实体人型机器人机队，体验超低延迟双向触觉控制与在轨演练。'
+                  ? '自您的工作站，直接安全地实时操作全球实体人型机器人机队，体验超低延迟双向触觉控制 Secrets 训练。'
                   : language === 'ur'
                   ? 'اپنے ورک اسٹیشن سے براہ راست دنیا بھر میں حقیقی ہیومنائیڈ بیڑے تک رسائی حاصل کریں اور کم تاخیر والے دو طرفہ ٹیلی آپریشن نوڈس کو مربوط کریں۔'
-                  : language === 'vi' ? 'Truy cập trực tiếp vào các đội ngũ robot humanoid thực tế và điều hành các nút vận hành song phương độ trễ thấp trên toàn cầu ngay từ máy trạm của bạn.' : 'বিশ্বজুড়ে ছড়িয়ে থাকা বাস্তব হিউম্যানয়েড বহর এবং অতি-স্বল্প লেটেন্সির টেলিঅপারেশন নোড সরাসরি আপনার ওয়ার্কস্টেশন থেকে পরিচালনা করুন।'}
+                  : language === 'vi' ? 'Truy cập trực tiếp vào các đội ngũ robot humanoid thực tế và điều hành các nút vận hành song phương độ trễ thấp trên toàn cầu ngay từ máy trạm của bạn.' 
+                  : language === 'in' ? 'Akses armada humanoid nyata dan koordinasikan node teleoperasi bilateral latensi rendah di seluruh dunia langsung dari workstation Anda.'
+                  : 'বিশ্বজুড়ে ছড়িয়ে থাকা বাস্তব হিউম্যানয়েড বহর এবং অতি-স্বল্প লেটেন্সির টেলিঅপারেশন নোড সরাসরি আপনার ওয়ার্কস্টেশন থেকে পরিচালনা করুন।'}
               </p>
             </div>
             
@@ -455,9 +447,9 @@ export default function App() {
                 href="https://app.prismax.ai/fleet"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-10 py-4 h-12 rounded-md bg-brand-accent text-brand-black font-semibold text-xs tracking-wider uppercase hover:bg-brand-accent/90 hover:shadow-[0_0_20px_rgba(197,168,128,0.4)] transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg font-mono"
+                className="inline-flex items-center justify-center px-10 py-4 h-12 rounded-md bg-brand-accent text-brand-black font-semibold text-xs tracking-wider uppercase hover:bg-brand-accent/90 hover:shadow-[0_0_20px_rgba(197,168,128,0.4)] transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg font-sans"
               >
-                {language === 'uk' ? 'Розпочати' : language === 'en' ? 'Get Started' : language === 'hi' ? 'शुरू करें' : language === 'zh' ? '立即开始' : language === 'vi' ? 'Bắt đầu ngay' : language === 'ur' ? 'شروع کریں' : 'शुरू করুন'}
+                {language === 'uk' ? 'Розпочати' : language === 'en' ? 'Get Started' : language === 'hi' ? 'शुरू करें' : language === 'zh' ? '立即开始' : language === 'vi' ? 'Bắt đầu ngay' : language === 'in' ? 'Mulai Sekarang' : language === 'ur' ? 'शروع کریں' : 'শুরু করুন'}
                 <ArrowRight className="w-3.5 h-3.5 ml-2" />
               </a>
             </div>

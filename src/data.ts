@@ -778,6 +778,117 @@ export const translations: Record<Language, Translation> = {
     scrollToTop: "ПРОКРУТИТИ ВГОРУ",
     systemSpecs: "ТЕХНІЧНІ СПЕЦИФІКАЦІЇ",
     readFramework: "ЧИТАТИ ФРЕЙМВОРК"
+  },
+  in: {
+    navHome: "Beranda",
+    navFleet: "Armada Robot",
+    navSimulation: "Teleoperasi",
+    navDocs: "Dokumentasi",
+    navTelemetry: "Lab Data",
+    langName: "Bahasa Indonesia",
+    byLine: "PRISMAX • MESIN AI FISIK",
+    
+    heroTitle: "Lapisan Layanan untuk AI Fisik",
+    heroSubtitle: "Menghubungkan robot, data, dan kecerdasan secara mulus.",
+    heroDesc: "PrismaX menjembatani kesenjangan antara model digital dan mesin fisik dunia nyata. Jaringan kami membuka teleoperasi latensi rendah, loop pembelajaran berkelanjutan, dan kecerdasan fisik lintas perangkat keras untuk generasi robot humanoid dan armada khusus berikutnya.",
+    btnLearnMore: "Pelajari Lebih Lanjut",
+    btnExplore: "Jelajahi Armada",
+    btnOperate: "Operasikan Robot Nyata",
+    
+    topicTitle: "Arsitektur Sistem",
+    topicSubtitle: "Jelajahi dimensi inti dari jaringan fisik PrismaX.",
+    topics: {
+      whatIsPrismax: {
+        title: "Apakah itu PrismaX",
+        desc: "Pelajari tentang PrismaX, misi, teknologi, dan perannya dalam masa depan AI Fisik."
+      },
+      physicalAI: {
+        title: "AI Fisik",
+        desc: "Pahami bagaimana kecerdasan bergerak melampaui perangkat lunak menuju mesin nyata dan robotika."
+      },
+      teleoperation: {
+        title: "Teleoperasi",
+        desc: "Jelajahi operasi robot latensi rendah, sistem kontrol jarak jauh, dan kecerdasan haptic keterlibatan manusia."
+      },
+      dataLayer: {
+        title: "Lapisan Data",
+        desc: "Pelajari bagaimana data robotika dikumpulkan, diproses, dan diubah menjadi kecerdasan pembelajaran."
+      },
+      intelligenceLayer: {
+        title: "Lapisan Kecerdasan",
+        desc: "Temukan bagaimana model, sistem penalaran, dan kecerdasan mesin menggerakkan sistem AI fisik."
+      },
+      systemArchitecture: {
+        title: "Arsitektur Sistem",
+        desc: "Lihat ekosistem lengkap PrismaX termasuk robot, operator, data, dan kecerdasan."
+      }
+    },
+    
+    fleetTitle: "Penyebaran Armada",
+    fleetSubtitle: "Selamat datang! Temui armada robot pilihan kami yang siap membantu Anda.",
+    fleetDesc: "PrismaX menyediakan status koneksi API tingkat rendah yang terpadu untuk perangkat keras robotika terkemuka. Agen-agen ini secara aktif menjalankan tugas ruang kerja manual sekaligus mengirimkan set trajektori yang ditokenisasi dengan aman ke dalam model kecerdasan global kami.",
+    taglineFleet: "Sistem yang Kompatibel",
+
+    ctrlTitle: "Pusat Kontrol Robot",
+    ctrlSubtitle: "Jalankan teleoperasi bilateral latensi rendah dengan perangkat keras fisik aktif melalui jaringan PrismaX.",
+    ctrlStatus: "Status",
+    ctrlAngleX: "Sudut Sendi X (Alas)",
+    ctrlAngleY: "Sudut Sendi Y (Siku)",
+    ctrlGrip: "Cengkeraman Efektor Akhir",
+    ctrlLatency: "Latensi Jaringan",
+    ctrlSignal: "Kekuatan Sinyal",
+    ctrlBattery: "Suhu Sistem",
+    ctrlConnect: "Hubungkan Jaringan Teleop",
+    ctrlDisconnect: "Putuskan Jaringan Teleop",
+    ctrlActive: "ALIRAN AKTIF",
+    ctrlReserved: "DIRESERVASI",
+    ctrlQueue: "Antrean Operator",
+    ctrlSimulateAction: "Jalankan Langkah Tugas",
+
+    membershipTitle: "Bergabung dengan Komunitas Amplifier",
+    membershipSubtitle: "Bergabunglah dengan komunitas Amplifier kami untuk memajukan kecerdasan robotika dan mendorong adopsi yang lebih cepat bersama-sama.",
+    membershipBenefit1: "Akses jarak jauh armada robot premium berkelanjutan & simulasi",
+    membershipBenefit2: "Akumulasi token $PRISMA yang ditingkatkan (pengali kecepatan 3x)",
+    paymentMethod: "Pilih Mata Uang Pembayaran",
+    paymentMethodDesc: "Silakan pilih metode pembayaran. Ini adalah pembayaran satu kali.",
+    membershipBtn: "Menjadi Anggota Amplifier Sekarang",
+    membershipSuccess: "Terima kasih telah bergabung sebagai Anggota Amplifier! Kredensial akses telah dikirim ke kunci ruang kerja Anda.",
+
+    docsTitle: "Basis Pengetahuan",
+    docsSubtitle: "Sumber daya teknis komprehensif untuk pengembang, peneliti kecerdasan mesin, dan host perangkat keras.",
+    docsSearchPlaceholder: "Cari protokol, skema URDF, integrasi API...",
+    docsBack: "Kembali ke Beranda",
+    teleopActiveTag: "SEKARANG DALAM PENYEBARAN TELEOPERASI AKTIF",
+    btnViewSpecs: "PERPUSTAKAAN",
+    btnLaunchCtrl: "LUNCURKAN PUSAT KONTROL",
+    knowledgeHubTitle: "PUSAT PENGETAHUAN PRISMAX",
+    readArticle: "BACA ARTIKEL",
+    contentSoon: "Konten akan segera hadir.",
+    overview: "IKHTISAR",
+    coreSpecConcepts: "KONSEP SPESIFIKASI INTI",
+    visualExpl: "PENJELASAN VISUAL & SKEMATIK",
+    relatedEcosystem: "MODUL EKOSISTEM TERKAIT",
+    done: "SELESAI",
+    socialTitle: "Sosial PrismaX",
+    sweepingWorkspace: "MEMBERSIHKAN RUANG KERJA",
+    labControls: "KONTROL LABORATORIUM",
+    selectNode: "PILIH NODE PERANGKAT KERAS",
+    queueInLine: "ANTREAN: {count} DALAM ANTREAN",
+    enterNodeCode: "Masukkan Kode Akses Node",
+    enterNodeCodeDesc: "Masukkan parameter kunci yang cocok dengan kunci otorisasi. Token akses resmi akan membuat lingkaran umpan balik bilateral latensi rendah.",
+    validateNodeAccess: "VALIDASI AKSES NODE",
+    cooperativeSub: "LANGGANAN KOOPERATIF",
+    membershipNetwork: "Jaringan Anggota Amplifier",
+    linkActivated: "Tautan Amplifier Diaktifkan",
+    memberLabel: "Anggota Amplifier",
+    cooperativeLevel: "TINGKAT KOOPERATIF I",
+    totalInvestment: "TOTAL INVESTASI",
+    oneTimePayment: "pembayaran satu kali",
+    coreSubsystem: "Sub-sistem Inti",
+    regionLanguage: "Wilayah & Bahasa",
+    scrollToTop: "GULIR KE ATAS",
+    systemSpecs: "SPESIFIKASI SISTEM",
+    readFramework: "BACA FRAMEWORK"
   }
 };
 

@@ -1,6 +1,26 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script id="fetch-writable-fix">
+      (function() {
+        try {
+          var originalFetch = window.fetch;
+          var curFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return curFetch;
+            },
+            set: function(val) {
+              curFetch = val;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          console.warn("Failed to inject window.fetch writable wrapper:", e);
+        }
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PrismaX Knowledge Center</title>
