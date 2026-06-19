@@ -44,18 +44,29 @@ export default function Header({ currentLanguage, setLanguage, activeSection, on
     }
   };
 
+  const getSocialLabel = (lang: Language): string => {
+    switch (lang) {
+      case 'bn': return 'সোশ্যাল';
+      case 'hi': return 'सोशल';
+      case 'zh': return '社交';
+      case 'ur': return 'سوشل';
+      case 'vi': return 'Mạng xã hội';
+      case 'uk': return 'Соцмережі';
+      case 'in': return 'Sosial';
+      default: return 'Social';
+    }
+  };
+
   const menuItems = [
     { id: 'home', label: t.navHome },
     { id: 'about', label: getLibraryLabel(currentLanguage) },
-    { id: 'teleoperating', label: t.navSimulation }
+    { id: 'teleoperating', label: t.navSimulation },
+    { id: 'social', label: getSocialLabel(currentLanguage) }
   ];
 
   const handleNavClick = (sectionId: string) => {
     onNavigate(sectionId);
     setMobileMenuOpen(false);
-    
-    // Scroll window to top when clicking navigation items
-    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   return (

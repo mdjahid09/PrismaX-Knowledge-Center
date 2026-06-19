@@ -30,7 +30,8 @@ export const vietnameseKnowledgeTranslations: Record<string, VietnameseArticleTr
     mainExplanation: "AI Vật lý vận hành trực tiếp trong thực tế vật lý. Trí tuệ không chỉ giới hạn ở văn bản hoặc điểm ảnh, mà nó ảnh hưởng đến thế giới thông qua các định luật không gian, thời gian và lực tiếp xúc. PrismaX là hệ thống phát triển thống nhất cho AI Vật lý, cung cấp khả năng mở rộng không giới hạn cho huấn luyện robot.",
     keyConcepts: [
       { heading: "Hành động hiện thân (Embodied Action)", text: "Kết hợp chủ động hệ thống AI với thế giới thực thông qua di chuyển và tương tác xúc giác với môi trường vật lý." },
-      { heading: "Vòng khép kín cảm giác thời gian thực (Real-Time Loop)", text: "Chuyển dịch ngay lập tức dữ liệu đầu vào của cảm biến thành hành động điều khiển để liên tục nhận phản hồi thích ứng từ môi trường." }
+      { heading: "Vòng khép kín cảm giác thời gian thực (Real-Time Loop)", text: "Chuyển dịch ngay lập tức dữ liệu đầu vào của cảm biến thành hành động điều khiển để liên tục nhận phản hồi thích ứng từ môi trường." },
+      { heading: "Đồng huấn luyện liên tục", text: "Mỗi phiên vận hành từ xa của con người tạo ra các mã quỹ đạo giúp cải thiện liên tục mô hình nền tảng." }
     ],
     visualDesc: "Tác nhân AI tương tác liên tục và duy trì cân bằng với môi trường vật lý để đảm bảo sự ổn định của hệ thống."
   },
@@ -42,7 +43,8 @@ export const vietnameseKnowledgeTranslations: Record<string, VietnameseArticleTr
     mainExplanation: "PrismaX cung cấp phản hồi lực xúc giác qua các đường truyền dữ liệu UDP độ trễ cực thấp. Nhà vận hành từ xa có thể cảm nhận trực tiếp lực cản và mô-men xoắn mà robot nhận thấy ở các đầu kẹp khớp nối. Điều này cho phép điều khiển chính xác lực hoạt động và ghi lại quỹ đạo thành dữ liệu huấn luyện chất lượng cao.",
     keyConcepts: [
       { heading: "Phản hồi xúc giác song phương", text: "Truyền ngay lập tức lực cản và xúc giác của robot trở lại thiết bị điều khiển từ xa của người vận hành." },
-      { heading: "Truyền dữ liệu độ trễ cực thấp", text: "Tối ưu hóa thời gian truyền tín hiệu một chiều xuống dưới 50ms thông qua đường truyền UDP được tăng cấp cấu trúc." }
+      { heading: "Truyền dữ liệu độ trễ cực thấp", text: "Tối ưu hóa thời gian truyền tín hiệu một chiều xuống dưới 50ms thông qua đường truyền UDP được tăng cấp cấu trúc." },
+      { heading: "Hệ thống phanh giảm tốc an toàn", text: "Tự động áp dụng các bộ đệm giảm chấn hiệu chỉnh nếu độ trễ mạng tăng đột biến vượt quá 120ms để bảo vệ phần cứng." }
     ],
     visualDesc: "Đường truyền song phương đồng bộ hóa góc độ và lực tác động tần số cao giữa bàn điều khiển của nhà vận hành và thiết bị robot từ xa."
   },
@@ -54,7 +56,8 @@ export const vietnameseKnowledgeTranslations: Record<string, VietnameseArticleTr
     mainExplanation: "Hệ thống chia nhỏ các chuỗi chuyển động liên tục của robot thành các Token quỹ đạo thời gian cực nhỏ. Nó đồng bộ hóa hoàn hảo góc khớp khớp, mô-men xoắn, máy ảnh trực quan và đầu vào cảm biến khác trên thang đo mili-giây. Các khung dữ liệu nén có độ chính xác cao giúp việc nạp vào pipeline huấn luyện AI cực kỳ dễ dàng.",
     keyConcepts: [
       { heading: "Phân tích Token quỹ đạo", text: "Chuyển đổi chuỗi tư thế không gian phức tạp thành các luồng vectơ nhỏ hơn phù hợp để mạng thần kinh đọc hiểu." },
-      { heading: "Đồng bộ hóa sai lệch thời gian trực quan", text: "Giữ sai lệch thời gian giữa luồng video máy ảnh, áp lực cơ cấu chấp hành và dữ liệu lái khung gầm ở mức tối thiểu dưới một vài nano-giây." }
+      { heading: "Đồng bộ hóa sai lệch thời gian trực quan", text: "Giữ sai lệch thời gian giữa luồng video máy ảnh, áp lực cơ cấu chấp hành và dữ liệu lái khung gầm ở mức tối thiểu dưới một vài nano-giây." },
+      { heading: "Nén dữ liệu không hao hao", text: "Tối ưu hóa dung lượng lưu trữ bộ đệm cạnh để đảm bảo các phản hồi lực tinh tế và độ rung khớp nối được giữ nguyên hoàn hảo." }
     ],
     visualDesc: "Sự hội tụ logic và nén gói của nhiều luồng dữ liệu cảm biến đầu vào và máy ảnh trực quan vào một tệp huấn luyện duy nhất."
   },
@@ -63,10 +66,11 @@ export const vietnameseKnowledgeTranslations: Record<string, VietnameseArticleTr
     subtitle: "LARGE_ACTION_MODEL_LAM_ENGINE",
     category: "Introduction & Core",
     overview: "Động cơ ra quyết định mô hình hành động lớn trung tâm chỉ đạo các hành vi của robot, suy luận không gian và lập kế hoạch chuyển động.",
-    mainExplanation: "Lớp trí tuệ đại diện cho bộ não thuật toán cốt lõi của mạng lưới PrismaX. Thay vì chỉ phản ứng thụ động, nó dự đoán chính xác các quỹ đạo chuyển động ba chiều tiếp theo dựa trên dữ liệu không gian trực quan hiện tại. Được điều khiển bởi Mô hình Hành động Lớn (LAM), nó có thể đưa ra các kế hoạch hành động an toàn độc lập trong các môi trường chưa từng gặp.",
+    mainExplanation: "Lớp trí tuệ đại diện cho bộ não thuật toán cốt lõi của mạng lưới PrismaX. Thay vì chỉ phản ứng thụ động, nó dự đoán chính xác các quỹ đạo chuyển động ba chiều tiếp theo dựa trên dữ liệu không gian trực quan hiện tại. Được điều khiển bởi Mô hình Hành động Lớn (LAM), nó có thể đưa ra các kế hoạch hành động an sau độc lập trong các môi trường chưa từng gặp.",
     keyConcepts: [
       { heading: "Mô hình Hành động Lớn (LAM)", text: "Kết hợp dữ liệu lịch sử quỹ đạo nhằm dự đoán chính xác vectơ điều khiển quỹ đạo khớp khớp thế hệ tiếp theo." },
-      { heading: "Cơ chế sửa lỗi thích ứng", text: "Ngay lập tức thực hiện sửa đổi đầu ra trực tuyến khi phát hiện lệch vật lý hoặc cản trở không mong muốn để bảo vệ phần cứng." }
+      { heading: "Cơ chế sửa lỗi thích ứng", text: "Ngay lập tức thực hiện sửa đổi đầu ra trực tuyến khi phát hiện lệch vật lý hoặc cản trở không mong muốn để bảo vệ phần cứng." },
+      { heading: "Suy luận vòng lặp xúc giác", text: "Tự động điều chỉnh tốc độ khớp kẹp và mô-men xoắn dựa trên lực cản ma sát và trọng lượng vật thể được cảm nhận trong thời gian thực." }
     ],
     visualDesc: "Hệ thống AI xử lý dữ liệu trực quan thời gian thực và lực phản hồi để đưa ra quỹ đạo khớp nối mượt mà nhất."
   },
@@ -77,8 +81,9 @@ export const vietnameseKnowledgeTranslations: Record<string, VietnameseArticleTr
     overview: "Hệ sinh thái tự thích ứng tuần hoàn kết nối chặt chẽ các robot thực tế, chuyên gia con người từ xa, kho lưu trữ dữ liệu và trí thông minh đám mây.",
     mainExplanation: "Kiến trúc này minh họa cách PrismaX hoạt động dựa trên nguyên lý vòng phản hồi khép kín. Nhà vận hành thực hiện điều chỉnh từ xa, lớp dữ liệu ghi lại hành trình đó thành Tokens, mạng lưới đám mây áp dụng dữ liệu để cập nhật mô hình học máy, và phiên bản mô hình mới được OTA cập nhật xuống để tăng năng lực hoạt động cho robot phần cứng.",
     keyConcepts: [
-      { heading: "Tiến hóa vòng khép kín", text: "Liên kết liền mạch đầu ra cơ khí vật lý với việc điều chỉnh siêu tham số để nhanh chóng hội tụ và tự tối ưu hóa." },
-      { heading: "Phân phối phi tập trung đa điểm", text: "Phát tán dữ liệu và triển khai nút mạng toàn cầu giúp hệ thống đạt độ ổn định cao, tránh điểm lỗi trung tâm." }
+      { heading: "Tiến hóa vòng khép kín", text: "Liên kết liền mạch đầu ra cơ khí vật lý with việc điều chỉnh siêu tham số để nhanh chóng hội tụ và tự tối ưu hóa." },
+      { heading: "Phân phối phi tập trung đa điểm", text: "Phát tán dữ liệu và triển khai nút mạng toàn cầu giúp hệ thống đạt độ ổn định cao, tránh điểm lỗi trung tâm." },
+      { heading: "Bộ giải quyết không phụ thuộc phần cứng", text: "Chuyển đổi hướng dẫn làm việc trong không gian phẳng (tọa độ URDF) thành dữ liệu dịch chuyển chính xác cho bất kỳ cấu trúc hai chân hay bốn chân nào." }
     ],
     visualDesc: "Sơ đồ thể hiện chu trình tuần hoàn dữ liệu và điều khiển liên tục giữa nhà vận hành, đám mây AI, lưu trữ lạnh và robot cơ khí."
   },

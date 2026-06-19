@@ -27,10 +27,11 @@ export const chineseKnowledgeTranslations: Record<string, ChineseArticleTranslat
     subtitle: "EMBODIED_INTELLIGENCE_MODEL",
     category: "Introduction & Core",
     overview: "与纯软件和数字聊天系统不同，物理人工智能（Physical AI）代表了控制真实物理资产的神经网络模型，这些模型在三维空间中不断学习运动定律。",
-    mainExplanation: "物理 AI 直接在物理现实中运行。智能不仅限于文本或像素，它通过空间、时间和接触力的规律来影响物理现实。PrismaX 是物理 AI 的统一开发系统，为机器人训练提供了无限的扩展空间。",
+    mainExplanation: "物理 AI 直接在物理现实中运行。智能不仅限于文本或像素，它通过空间、时间和接触力的规律来影响物理现实。PrismaX 是物理 AI 的统一开发 system，为机器人训练提供了无限的扩展空间。",
     keyConcepts: [
       { heading: "具身行动 (Embodied Action)", text: "通过与物理环境的移动和触觉互动，使 AI 系统与真实世界主动耦合。" },
-      { heading: "实时感官闭环 (Real-Time Loop)", text: "将传感器输入即时转化为运动控制，从而不断获取环境的负反馈调节。" }
+      { heading: "实时感官闭环 (Real-Time Loop)", text: "将传感器输入即时转化为运动控制，从而不断获取环境的负 feedback 调节。" },
+      { heading: "持续协同训练", text: "每一次人类遥操作演习都会产生轨迹令牌，从而持续优化和增强全局大模型心智。" }
     ],
     visualDesc: "AI 代理通过与物理环境不断反馈和平衡，维持设备稳定的控制系统界面。"
   },
@@ -42,7 +43,8 @@ export const chineseKnowledgeTranslations: Record<string, ChineseArticleTranslat
     mainExplanation: "PrismaX 通过超低延迟的 UDP 数据隧道提供触觉力反馈。远程操作员可直接感知到机器人末端执行器感受到的阻力与扭矩。这使人类操作员能够精确掌控工作力度，并将该操作轨迹完整记录为高质量训练数据集。",
     keyConcepts: [
       { heading: "双向触觉力反馈", text: "将机器人的阻力和触觉力即时传回至操作员的远程控制手柄，实现人机协同感知。" },
-      { heading: "极低延迟传输", text: "通过安全且深度优化的 UDP 隧道，将单向信号传输耗时管理在 50毫秒 以内。" }
+      { heading: "极低延迟传输", text: "通过安全且深度优化的 UDP 隧道，将单向信号传输耗时管理在 50毫秒 以内。" },
+      { heading: "减速阻尼安全防御", text: "当网络通信时延突增并超过 120 毫秒黄金阈值时，自动触发纠偏阻尼缓冲，以全方位维护真机硬件安全。" }
     ],
     visualDesc: "操作员控制台与远端物理机器人之间，进行高频力度与角度同步的双向通信隧道。"
   },
@@ -54,7 +56,8 @@ export const chineseKnowledgeTranslations: Record<string, ChineseArticleTranslat
     mainExplanation: "该系统将机器人的连续动作序列切分为极小的时间步轨迹 Token。它将多路传感器、视觉相机、夹爪扭矩和关节角度在毫秒级尺度上完美同步与对齐。生成的高紧凑型数据帧能极其便利地输入主流黑盒网络或 Transformer 进行具身培训。",
     keyConcepts: [
       { heading: "时间步 Token 解析", text: "将复杂的空间姿态序列转化为适合神经网络读取和处理的小粒度矢量流数据。" },
-      { heading: "多路高精准时差校准", text: "将视轨摄像流、执行器压力与底盘差速时差漂移维持在纳秒级，确立数据保真度。" }
+      { heading: "多路高精准时差校准", text: "将视轨摄像流、执行器压力与底盘差速时差漂移维持在纳秒级，确立数据保真度。" },
+      { heading: "高保真无损压缩", text: "深度优化边缘缓存设备存储，全方位确保任何细微力反馈、震动细节及力度特征都被完美保留。" }
     ],
     visualDesc: "多种传感器输入流、惯导和视觉编码统一融合处理并压缩封装为训练文件的逻辑展示。"
   },
@@ -66,7 +69,8 @@ export const chineseKnowledgeTranslations: Record<string, ChineseArticleTranslat
     mainExplanation: "智能层是 PrismaX 的核心算法大脑。它不满足于被动响应，而是能根据当前的感官输入对未来的三维运动轨迹进行精确预测。搭载专用大动作模型（LAM），使其能够在从未接触过的非结构化环境中自行做出安全合理的动作规划。",
     keyConcepts: [
       { heading: "大动作模型 (LAM)", text: "融合历史轨迹自监督特征，直接针对下一个物理时间步输出高精度的关节角控制向量。" },
-      { heading: "自适应修正机制", text: "当动作遭遇不可抗物理偏差或卡阻时，立刻在线修正输出以避免关节损坏并完成目标。" }
+      { heading: "自适应修正机制", text: "当动作遭遇不可抗物理偏差或卡阻时，立刻在线修正输出以避免关节损坏并完成目标。" },
+      { heading: "触觉闭环推理", text: "完全依据机械关节感受到的物体阻力、摩擦力以及动态重力特征，毫秒级自调节和匹配转速与夹爪握力矩。" }
     ],
     visualDesc: "多模态神经网络分析实时视觉镜头和接触力矢量，自主生成最平滑执行轨迹的神经网络渲染。"
   },
@@ -75,10 +79,11 @@ export const chineseKnowledgeTranslations: Record<string, ChineseArticleTranslat
     subtitle: "PRISMAX_CIRCULAR_FEEDBACK_ECOSYSTEM",
     category: "Introduction & Core",
     overview: "由实体机器人、在线人类专家、数据存储池和云端分布式智能心智整合构成的螺旋演进生态体系。",
-    mainExplanation: "此架构代表了 PrismaX 闭环反馈生态的精髓。遥操作员操控机器人避障，数据层高精准捕捉操作数据，云端算力节点基于新轨迹训练模型更新脑区，新版本模型通过 OTA 升级再次赋能硬件。从而构建出完全自主闭环的具身进化循环。",
+    mainExplanation: "此架构代表了 PrismaX 闭环反馈生态 of 精髓。遥操作员操控机器人避障，数据层高精准捕捉操作数据，云端算力节点基于新轨迹训练模型更新脑区，新版本模型通过 OTA 升级再次赋能硬件。从而构建出完全自主闭环的具身进化循环。",
     keyConcepts: [
       { heading: "闭环反馈演进", text: "将物理机械输出与训练参数调整无缝挂钩，以形成能够快速收敛和自我优化的长效机制。" },
-      { heading: "去中心化多活发布", text: "在不受制于任何中央单点服务器的前提下，实现全球海量节点数据的分布式多点存储和共识分发。" }
+      { heading: "去中心化多活发布", text: "在不受制于任何中央单点服务器的前提下，实现全球海量节点数据的分布式多点存储和共识分发。" },
+      { heading: "跨设备通用动力学求解", text: "将高度统一的空间三维动力学规范（如 URDF 坐标）毫秒级编译转化成任意人形双足或四足设备的关节指令。" }
     ],
     visualDesc: "操作员、云端 AI 算力中心、高速冷存储池与物理机械手关节之间不断流转的闭环总线。"
   },

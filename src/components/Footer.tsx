@@ -16,7 +16,6 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
 
   const handleNavClick = (sectionId: string) => {
     onNavigate(sectionId);
-    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const currentYear = new Date().getFullYear();
@@ -63,8 +62,13 @@ export default function Footer({ currentLanguage, setLanguage, onNavigate }: Foo
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNavClick('control-center')} className="hover:text-brand-white transition-colors cursor-pointer text-left">
+                <button onClick={() => handleNavClick('teleoperating')} className="hover:text-brand-white transition-colors cursor-pointer text-left">
                   {t.navSimulation}
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNavClick('social')} className="hover:text-brand-white transition-colors cursor-pointer text-left">
+                  {currentLanguage === 'bn' ? 'সোশ্যাল' : currentLanguage === 'hi' ? 'सोशल' : currentLanguage === 'zh' ? '社交' : currentLanguage === 'ur' ? 'سوشل' : currentLanguage === 'vi' ? 'Xã hội' : currentLanguage === 'uk' ? 'Соцмережі' : currentLanguage === 'in' ? 'Sosial' : 'Social'}
                 </button>
               </li>
             </ul>

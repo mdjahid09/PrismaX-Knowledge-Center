@@ -99,8 +99,50 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const sections = [
+      { id: 'home', elementId: 'hero' },
+      { id: 'about', elementId: 'about-page' },
+      { id: 'teleoperating', elementId: 'teleoperating-page' },
+      { id: 'social', elementId: 'prismas-social' }
+    ];
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-30% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const section = sections.find(s => s.elementId === entry.target.id);
+          if (section) {
+            setActiveSection(section.id);
+          }
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(({ elementId }) => {
+      const el = document.getElementById(elementId);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   const handleNavigate = (sectionId: string) => {
     setActiveSection(sectionId);
+    const targetId = sectionId === 'home' ? 'hero' : sectionId === 'about' ? 'about-page' : sectionId === 'teleoperating' ? 'teleoperating-page' : sectionId === 'social' ? 'prismas-social' : null;
+    if (targetId) {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
   };
 
   const activeTopicDetails = selectedTopic ? getArticleById(selectedTopic, language) : null;
@@ -121,9 +163,8 @@ export default function App() {
         setTheme={setTheme}
       />
 
-      {activeSection === 'home' && (
-        <>
-          <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden" id="hero">
+      {/* Home Section */}
+      <section className="relative min-h-[55vh] flex items-center justify-center overflow-hidden scroll-mt-20" id="hero">
           {/* Ambient background graphic with overlays to maintain perfect text contrast */}
           <div className="absolute inset-0 z-0">
             <img 
@@ -203,11 +244,9 @@ export default function App() {
 
           </div>
         </section>
-        </>
-      )}
 
-      {activeSection === 'about' && (
-        <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-brand-dark-bg animate-fadeIn" id="about-page">
+      {/* Library Section */}
+      <section className="pt-10 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-brand-dark-bg animate-fadeIn scroll-mt-20" id="about-page">
           <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[linear-gradient(rgba(223,216,208,0.1)_1px,transparent_1px)] bg-[size:30px_30px]"></div>
           <div className="max-w-7xl mx-auto relative z-10 w-full">
             
@@ -397,10 +436,9 @@ export default function App() {
 
           </div>
         </section>
-      )}
 
-      {activeSection === 'teleoperating' && (
-        <section className="py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center relative overflow-hidden min-h-[85vh] bg-brand-dark-bg" id="teleoperating-page">
+      {/* Teleoperating Section */}
+      <section className="pt-6 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center relative overflow-hidden min-h-[55vh] bg-brand-dark-bg scroll-mt-20" id="teleoperating-page">
           {/* Neon/radial halo */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-accent/8 rounded-full blur-[120px] pointer-events-none animate-pulse-glow"></div>
           
@@ -459,7 +497,6 @@ export default function App() {
 
           </div>
         </section>
-      )}
 
       {/* ==================================================================== */}
       {/* TOPIC CARD SPEC DETAILED DRAWER/MODAL (For easy developer expansion) */}
@@ -536,7 +573,7 @@ export default function App() {
               {activeTopicDetails.visualExplanation && (
                 <div className="space-y-3 pt-2">
                   <span className="text-[10px] font-mono text-brand-accent uppercase block tracking-wider">
-                    {language === 'uk' ? '4. КОНЦЕПТУАЛЬНИЙ АНАЛІЗ ТА ПОЯСНЕННЯ' : language === 'en' ? '4. CONCEPTUAL ANALYSIS & EXPLANATION' : language === 'hi' ? '4. वैचारिक विश्लेषण और विस्तृत स्पष्टीकरण' : language === 'zh' ? '4. 原理机制分析与图解说明' : language === 'ur' ? '4. تصوراتی تجزیہ اور وضاحت' : language === 'vi' ? '4. PHÂN TÍCH & GIẢI THÍCH KHÁI NIỆM' : '৪. বিশদ বিশ্লেষণ এবং ধারণাগত ব্যাখ্যা'}
+                    {language === 'uk' ? '4. КОНЦЕПТУАЛЬНИЙ АНАЛІЗ ТА ПОЯСНЕННЯ' : language === 'en' ? '4. CONCEPTUAL ANALYSIS & EXPLANATION' : language === 'hi' ? '4. वैचारिक विश्लेषण और विस्तृत स्पष्टीकरण' : language === 'zh' ? '4. 原理机制分析与图解说明' : language === 'ur' ? '4. تصوراتی تجزیہ اور وضاحت' : language === 'vi' ? '4. PHÂN TÍCH & GIẢI THÍCH KHÁI NIỆM' : language === 'in' ? '4. ANALISIS & PENJELASAN KONSEPTUAL' : '৪. বিশদ বিশ্লেষণ এবং ধারণাগত ব্যাখ্যা'}
                   </span>
                   <div className="p-4 rounded-lg bg-brand-black/30 border border-brand-cream/5">
                     <p className="text-sm font-sans font-light text-brand-cream/80 leading-relaxed">
@@ -550,7 +587,7 @@ export default function App() {
               {activeTopicDetails.relatedTopics && activeTopicDetails.relatedTopicIds && activeTopicDetails.relatedTopicIds.length > 0 && (
                 <div className="space-y-2 pt-4 border-t border-brand-cream/10">
                   <span className="text-[9px] font-mono text-brand-cream/40 uppercase block tracking-wider">
-                    {language === 'uk' ? 'ПОВ’ЯЗАНІ МОДУЛІ ЕКОСИСТЕМИ' : language === 'en' ? 'RELATED ECOSYSTEM MODULES' : language === 'hi' ? 'संबंधित पारिस्थितिकी तंत्र मॉड्यूल' : language === 'zh' ? '相关生态子系统模块' : language === 'ur' ? 'متعلقہ ماحولیاتی نظام کے ماڈیولز' : language === 'vi' ? 'CÁC PHÂN HỆ HỆ SINH THÁI LIÊN QUAN' : 'অন্যান্য সহযোগী বিষয়সমূহ'}
+                    {language === 'uk' ? 'ПОВ’ЯЗАНІ МОДУЛІ ЕКОСИСТЕМИ' : language === 'en' ? 'RELATED ECOSYSTEM MODULES' : language === 'hi' ? 'संबंधित पारिस्थितिकी तंत्र मॉड्यूल' : language === 'zh' ? '相关生态子系统模块' : language === 'ur' ? 'متعلقہ ماحولیاتی نظام کے ماڈیولز' : language === 'vi' ? 'CÁC PHÂN HỆ HỆ SINH THÁI LIÊN QUAN' : language === 'in' ? 'MODUL EKOSISTEM TERKAIT' : 'অন্যান্য সহযোগী বিষয়সমূহ'}
                   </span>
                   <div className="flex flex-wrap gap-2">
                     {activeTopicDetails.relatedTopicIds.map((rid: string, idx: number) => {
@@ -582,7 +619,7 @@ export default function App() {
                       className="flex-1 p-3 rounded-lg bg-brand-black/45 hover:bg-brand-black/70 border border-brand-cream/10 hover:border-brand-accent/30 text-left transition-all duration-300 group cursor-pointer"
                     >
                       <span className="text-[9px] font-mono text-brand-cream/40 group-hover:text-brand-accent uppercase block mb-1">
-                        &larr; {language === 'uk' ? 'ПОПЕРЕДНЯ ТЕМА' : language === 'en' ? 'PREVIOUS TOPIC' : language === 'hi' ? 'पिछला विषय' : language === 'zh' ? '上一章节' : language === 'ur' ? 'پچھلا عنوان' : language === 'vi' ? 'CHỦ ĐỀ TRƯỚC' : 'পূর্ববর্তী বিষয়'}
+                        &larr; {language === 'uk' ? 'ПОПЕРЕДНЯ ТЕМА' : language === 'en' ? 'PREVIOUS TOPIC' : language === 'hi' ? 'पिछला विषय' : language === 'zh' ? '上一章节' : language === 'ur' ? 'پچھلا عنوان' : language === 'vi' ? 'CHỦ ĐỀ TRƯỚC' : language === 'in' ? 'TOPIK SEBELUMNYA' : 'পূর্ববর্তী বিষয়'}
                       </span>
                       <span className="text-xs font-serif text-brand-white font-medium line-clamp-1">
                         {getArticleById(activeTopicDetails.previousTopicId, language)?.title}
@@ -601,7 +638,7 @@ export default function App() {
                       className="flex-1 p-3 rounded-lg bg-brand-black/45 hover:bg-brand-black/70 border border-brand-cream/10 hover:border-brand-accent/30 text-right transition-all duration-300 group cursor-pointer"
                     >
                       <span className="text-[9px] font-mono text-brand-cream/40 group-hover:text-brand-accent uppercase block mb-1">
-                        {language === 'uk' ? 'НАСТУПНА ТЕМА' : language === 'en' ? 'NEXT TOPIC' : language === 'hi' ? 'अगला विषय' : language === 'zh' ? '下一章节' : language === 'ur' ? 'اگلا عنوان' : language === 'vi' ? 'CHỦ ĐỀ TIẾP THEO' : 'পরবর্তী বিষয়'} &rarr;
+                        {language === 'uk' ? 'НАСТУПНА ТЕМА' : language === 'en' ? 'NEXT TOPIC' : language === 'hi' ? 'अगला विषय' : language === 'zh' ? '下一章节' : language === 'ur' ? 'اگلا عنوان' : language === 'vi' ? 'CHỦ ĐỀ TIẾP THEO' : language === 'in' ? 'TOPIK BERIKUTNYA' : 'পরবর্তী বিষয়'} &rarr;
                       </span>
                       <span className="text-xs font-serif text-brand-white font-medium line-clamp-1">
                         {getArticleById(activeTopicDetails.nextTopicId, language)?.title}
@@ -621,7 +658,7 @@ export default function App() {
                 onClick={() => setSelectedTopic(null)}
                 className="text-brand-accent hover:text-brand-white transition-colors tracking-widest uppercase text-[10px] font-bold py-1 px-4 border border-brand-accent/20 hover:border-brand-accent rounded cursor-pointer"
               >
-                {language === 'uk' ? 'ГОТОВО' : language === 'en' ? 'DONE' : language === 'hi' ? 'संपन्न' : language === 'zh' ? '完成' : language === 'ur' ? 'مکمل' : language === 'vi' ? 'HOÀN THÀNH' : 'সম্পন্ন'}
+                {language === 'uk' ? 'ГОТОВО' : language === 'en' ? 'DONE' : language === 'hi' ? 'संपन्न' : language === 'zh' ? '完成' : language === 'ur' ? 'مکمل' : language === 'vi' ? 'HOÀN THÀNH' : language === 'in' ? 'SELESAI' : 'সম্পন্ন'}
               </button>
             </div>
 
@@ -631,8 +668,7 @@ export default function App() {
 
 
       {/* PrismaX Social Section */}
-      {(activeSection === 'home' || activeSection === 'about' || activeSection === 'teleoperating') && (
-        <section className="py-8 border-t border-brand-cream/10 bg-brand-black/20" id="prismas-social">
+      <section className="py-8 border-t border-brand-cream/10 bg-brand-black/20 scroll-mt-20" id="prismas-social">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-lg mx-auto mb-4">
               <h2 className="text-[10px] font-mono uppercase text-brand-cream/40 tracking-[0.25em]" id="social-title">
@@ -692,7 +728,6 @@ export default function App() {
             </div>
           </div>
         </section>
-      )}
 
 
     </div>
